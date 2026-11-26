@@ -1,0 +1,12 @@
+{
+  "name": "EVJF de Louison",
+  "short_name": "EVJF Louison",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff8fa",
+  "theme_color": "#c2185b",
+  "icons": [
+    {"src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml"},
+    {"src": "assets/apple-touch-icon.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
