@@ -373,6 +373,82 @@ DATA = {
   ]
 }
 
+
+# ---------------------------------------------------------------- RETOUCHES
+# 1) On retire les propositions bas de gamme (demande de Marie, 27/11/2026)
+REMOVE = {"reims-mellifera", "reims-apostrophe", "lille-grenier", "lille-vieuxlille",
+          "bxl-delirium", "bxl-sgery", "bdx-moulin", "bdx-hammam", "bdx-saunham",
+          "bdx-darwin", "bdx-gites-spa", "lyon-balicina", "lyon-vieuxlyon"}
+del DATA["tiers"]["1"]
+DATA["types"] = {
+  "logement": {"label": "Logements", "emoji": "🏡"},
+  "spa": {"label": "Spa de la journée", "emoji": "🧖‍♀️"},
+  "fun": {"label": "Activités marrantes", "emoji": "🎉"},
+  "activite": {"label": "Visite", "emoji": "🥂"},
+  "chef": {"label": "Chef à domicile", "emoji": "👩‍🍳"},
+  "soiree": {"label": "Sortir le soir", "emoji": "🪩"},
+}
+FUN = {
+ "reims": [
+  {"id": "reims-sabrage", "type": "fun", "tier": 2, "name": "Cours de sabrage – Champagne Caroline Dufour",
+   "desc": "Ouvrir une bouteille de champagne au sabre, comme des hussards. Puis on la boit, évidemment. Dès 50 €/pers. (Grande Réserve), jusqu'à 25 personnes.",
+   "address": "10 rue Noël, 51100 Reims", "url": "https://www.winedering.com/fr/introduction-to-sabrage-at-champagne-caroline-dufour-in-reims_d5577_travel",
+   "photo": "https://cdn.winedering.com/uploads/travels/5577/big/img1286.jpg.webp?hash=8e30a659c31b53017073692309ab0da1", "credit": "Photo : Winedering"}],
+ "deauville": [
+  {"id": "deau-cheval", "type": "fun", "tier": 2, "name": "Balade à cheval spéciale EVJF",
+   "desc": "Randonnée « spéciale EVG/EVJF » d'1 h avec une monitrice diplômée d'État, à 15 min de Deauville. 75 €/pers., par groupes de 4 cavaliers (on fait 2 tours).",
+   "address": "197 chemin du Calvaire, 14950 Glanville", "url": "https://www.funbooker.com/fr/annonce/balade-a-cheval-proche-de-deauville/voir",
+   "photo": "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/xgugnnw8aci4enhwxvlh", "credit": "Photo : Funbooker"}],
+ "lille": [
+  {"id": "lille-karafun", "type": "fun", "tier": 2, "name": "KaraFun Lille – karaoké en salle privée",
+   "desc": "Salles de karaoké et de quiz privatisées, rien que pour nous. Personne ne saura qui a chanté du Lara Fabian. Sauf tout le monde.",
+   "address": "8 rue Ratisbonne, 59000 Lille", "url": "https://www.privateaser.com/lieu/5628-karafun-bar-lille",
+   "photo": "https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/5628/750x375/404245.jpg", "credit": "Photo : Privateaser"}],
+ "bruxelles": [
+  {"id": "bxl-gerbaud", "type": "fun", "tier": 2, "name": "Chocolaterie Laurent Gerbaud",
+   "desc": "Atelier vitré où l'on voit fabriquer les chocolats, puis salon de dégustation près du Mont des Arts. Pour se donner bonne conscience avant les bières.",
+   "address": "Rue Ravenstein 2D, 1000 Bruxelles", "url": "https://www.visit.brussels/fr/visiteurs/boire-et-manger/ou-acheter-du-chocolat-a-bruxelles",
+   "photo": "https://www.visit.brussels/content/dam/visitbrussels/images/b2c/where-to-eat/specialites-culinaires/Chocolat_8660x5773.jpg/_jcr_content/renditions/facebook.jpeg", "credit": "Photo : visit.brussels"},
+  {"id": "bxl-bbp", "type": "fun", "tier": 2, "name": "Brussels Beer Project – taproom Dansaert",
+   "desc": "Brasserie artisanale culte : dégustation des bières maison en plein centre. Plus classe que le Delirium, on peut le dire à nos parents.",
+   "address": "Rue Antoine Dansaert 188, 1000 Bruxelles", "url": "https://www.beerproject.be/fr/pages/dansaert-taproom",
+   "photo": "https://beerproject.be/cdn/shop/files/ALL_STARS_9534e47e-18d5-4992-8cf8-6ba37ce749b8_1200x1200.jpg?v=1625556565", "credit": "Photo : Brussels Beer Project"}],
+ "bordeaux": [
+  {"id": "bdx-creevin", "type": "fun", "tier": 2, "name": "Atelier « Créez votre propre vin »",
+   "desc": "On assemble sa propre cuvée avec un œnologue, puis visite du Musée du Vin et du Négoce. 75 €/pers., privatisable. Nom de la cuvée suggéré : « Château Louison 2027 ».",
+   "address": "41 rue Borie, 33000 Bordeaux", "url": "https://www.funbooker.com/fr/annonce/decouvrez-et-creez-votre-vin-lors-dune-visite-a-bordeaux-33/voir",
+   "photo": "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/ea5nigp7ciuwblb6dpvi", "credit": "Photo : Funbooker"},
+  {"id": "bdx-citeduvin", "type": "activite", "tier": 2, "name": "La Cité du Vin",
+   "desc": "Le musée du vin XXL au bord de la Garonne, avec dégustation au belvédère tout en haut. Culturel ET alcoolisé.",
+   "address": "134 quai de Bacalan, 33300 Bordeaux", "url": "https://www.laciteduvin.com/fr",
+   "photo": "https://www.laciteduvin.com/derivation/image/front/1200/627/eyJpZCI6InBhZ2VoZWFkZXIvNDE4L2NvdmVyX2ltYWdlLzIxMTQ1YjBhNWVhYjA1MDM1OGMwMzhlMDY1MGIzM2UzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=a091a15301a4a91c03f106fca8cada4cd2da", "credit": "Photo : La Cité du Vin"}],
+ "lyon": [
+  {"id": "lyon-karaoke", "type": "fun", "tier": 2, "name": "Karaoké Box Guillotière",
+   "desc": "Box de karaoké privée pour 7 à 18 personnes, 2 h de micro. Noté 4,8/5. Le chef à domicile n'est pas invité à chanter.",
+   "address": "8 place Raspail, 69007 Lyon", "url": "https://www.funbooker.com/fr/annonce/karaoke-box-a-lyon-69/voir",
+   "photo": "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/p4rbl6ezuxry0vn3oi26", "credit": "Photo : Funbooker"},
+  {"id": "lyon-quizroom", "type": "fun", "tier": 2, "name": "Quiz Room – plateau télé",
+   "desc": "Jeu télé grandeur nature avec de vrais buzzers. Dès 50 €/pers. Idéal pour savoir enfin qui connaît le mieux Louise.",
+   "address": "51 rue Denuzière, 69002 Lyon", "url": "https://www.quizroom.fr/",
+   "photo": "https://cdn.prod.website-files.com/5cc01dcb6a3b686cd53e9e64/62610a33307149a27d9c153f_Buzzez%20pour%20de%20vrai%20comme%20sur%20un%20plateau%20TV.png", "credit": "Photo : Quiz Room"}],
+}
+VILLAS = {
+ "bordeaux": {"id": "bdx-villas", "type": "logement", "tier": 2, "name": "Villas avec spa autour de Bordeaux",
+   "desc": "Sélection Airbnb déjà filtrée : maisons entières, 7 voyageurs, au moins 4 chambres, avec jacuzzi. Vers Martillac et Léognan, au milieu des vignes et à 20 min des quais.",
+   "address": "Martillac, 33650 (20 min de Bordeaux)", "url": "https://www.airbnb.fr/s/Martillac--France/homes?adults=7&min_bedrooms=4&amenities%5B%5D=25&room_types%5B%5D=Entire%20home%2Fapt",
+   **wm("0/0d/Ch%C3%A2teau_Smith-Haut-Lafitte.jpg/960px-Ch%C3%A2teau_Smith-Haut-Lafitte.jpg", "vignes de Martillac, CC BY-SA")}
+}
+for c in DATA["cities"]:
+    c["items"] = [i for i in c["items"] if i["id"] not in REMOVE]
+    for i in c["items"]:
+        if i["id"] == "reims-pommery": i["tier"] = 2
+        if i["id"] == "bxl-airbnb":
+            i["name"] = "Maisons de maître à Ixelles / Uccle"
+            i["desc"] = "Sélection Airbnb déjà filtrée : maisons entières pour 7, au moins 4 chambres, dans les beaux quartiers au sud du centre. Assez de place pour le chef et pour la piste de danse."
+            i["url"] = "https://www.airbnb.fr/s/Ixelles--Belgique/homes?adults=7&min_bedrooms=4&room_types%5B%5D=Entire%20home%2Fapt"
+    if c["id"] in VILLAS: c["items"].insert(0, VILLAS[c["id"]])
+    c["items"] += FUN.get(c["id"], [])
+
 root = pathlib.Path(__file__).resolve().parent.parent
 (root / "data").mkdir(exist_ok=True)
 # Photos de Louise : toutes les images déposées dans assets/louise/
