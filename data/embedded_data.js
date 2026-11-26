@@ -25,13 +25,12 @@ window.EVJF_DATA = {
   "👩‍🍳 Le chef à domicile a été prévenu : pas de cuisine moléculaire, on veut du fromage.",
   "🪩 Code vestimentaire du samedi soir : paillettes obligatoires, dignité facultative.",
   "🚄 Rappel : le dernier train du dimanche ne nous attendra pas, même si on lui fait des yeux doux.",
-  "💕 Le couple du groupe est prié de ne pas se tenir la main plus de 30 secondes. Ça rend les autres jalouses.",
-  "🔊 Le karaoké n'est pas au programme. On sait toutes comment ça va finir quand même.",
+  "🔊 Le karaoké n'est pas au programme. On sait tous comment ça va finir quand même.",
   "📵 Aucune photo de cet EVJF ne fuitera. Sauf les meilleures. Et les pires surtout."
  ],
  "likeToasts": [
   "Excellent goût. Presque aussi bon que celui de Louise en matière de frange.",
-  "Like enregistré. Ta carte de demoiselle d'honneur de l'année est en cours d'impression.",
+  "Like enregistré. Ton trophée de témoin de l'année est en cours de gravure.",
   "Validé ! Le comité d'organisation (toi) approuve.",
   "Noté. On mettra ça sur la liste « choses qu'on regrettera dimanche ».",
   "Tu as cliqué avec ton cœur. Ton banquier, lui, a cliqué sur « annuler ».",
@@ -44,7 +43,7 @@ window.EVJF_DATA = {
  ],
  "group": {
   "adults": 7,
-  "note": "7 personnes dont 1 couple : viser au moins 4 chambres, dont 1 lit double pour le couple."
+  "note": "7 participants : viser au moins 4 chambres."
  },
  "tiers": {
   "1": {
@@ -134,7 +133,7 @@ window.EVJF_DATA = {
      "type": "logement",
      "tier": 1,
      "name": "La Villa Mellifera",
-     "desc": "Villa 215 m² pour 12 personnes, 6 chambres : chacune son lit, le couple a sa chambre. Aux portes de Reims, pratique pour sortir en VTC.",
+     "desc": "Villa 215 m² pour 12 personnes, 6 chambres : presque une chambre chacun. Aux portes de Reims, pratique pour sortir en VTC.",
      "address": "Cernay-lès-Reims, 51420 (10 min de Reims)",
      "url": "https://www.gites-de-france.com/fr/grand-est/marne/la-villa-mellifera-51g774",
      "ref": "Gîtes de France n° 51G774",
@@ -291,7 +290,7 @@ window.EVJF_DATA = {
      "type": "logement",
      "tier": 2,
      "name": "Les Deux Gîtes du Bel Angerville",
-     "desc": "Deux gîtes réunis jusqu'à 14 personnes, avec bain nordique. Idéal si on veut de la place (le couple a son coin).",
+     "desc": "Deux gîtes réunis jusqu'à 14 personnes, avec bain nordique. Idéal si on veut de la place pour tout le monde.",
      "address": "Pays d'Auge (25 min de Deauville)",
      "url": "https://www.vrbo.com/2682027a",
      "photo": "https://media.vrbo.com/lodging/131000000/130850000/130841700/130841694/43230640.jpg?impolicy=resizecrop&rw=575&rh=575&ra=fill",
@@ -565,7 +564,7 @@ window.EVJF_DATA = {
      "type": "soiree",
      "tier": 2,
      "name": "Fuse",
-     "desc": "Club mythique de Bruxelles (depuis 1994), le samedi jusqu'au matin. Pour celles qui veulent danser.",
+     "desc": "Club mythique de Bruxelles (depuis 1994), le samedi jusqu'au matin. Pour ceux qui veulent danser.",
      "address": "208 rue Blaes, 1000 Bruxelles",
      "url": "https://www.fuse.be/",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",

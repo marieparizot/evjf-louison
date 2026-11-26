@@ -169,7 +169,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <header class="hero">
   <div class="wrap">
     <h1>EVJF de Louison 💍</h1>
-    <p><b>7 filles (dont 1 couple)</b> · chef à domicile, spa la journée, sortie le soir · max 2 h 15 de Paris</p>
+    <p><b>7 participants</b> · chef à domicile, spa la journée, sortie le soir · max 2 h 15 de Paris</p>
     <p id="dateline"></p>
     <div class="louise" id="louiseHero"></div>
     <span class="ribbon" id="louiseRibbon">💖 Team Louise 💖</span>
@@ -195,7 +195,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   <h2>🗓️ Le programme type</h2>
   <div class="plan">
     <div class="box"><b>Samedi midi</b>Arrivée en train, dépôt des valises, déjeuner « léger » (on se ment déjà).</div>
-    <div class="box"><b>Samedi 14h – 18h</b>Spa : hammam, sauna, massages. Objectif : être fraîches comme des gardons pour ne plus l'être à 2h. Réserver 2 mois avant.</div>
+    <div class="box"><b>Samedi 14h – 18h</b>Spa : hammam, sauna, massages. Objectif : être frais comme des gardons pour ne plus l'être du tout à 2h. Réserver 2 mois avant.</div>
     <div class="box"><b>Samedi 20h</b>Chef à domicile : apéro, dîner, jeux de l'EVJF. Louise ne sait pas encore ce qui l'attend (nous non plus).</div>
     <div class="box"><b>Samedi 23h</b>On sort : bars puis club. VTC si la maison est loin, parce que « on rentre à pied, c'est à côté » n'a jamais marché.</div>
     <div class="box"><b>Dimanche</b>Brunch, lunettes de soleil (même s'il pleut), balade digne, retour. Ce qui se passe à l'EVJF reste à l'EVJF.</div>
@@ -225,7 +225,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="toast" id="toast"></div>
 
 <script src="config.js?v=1"></script>
-<script src="data/embedded_data.js?v=3"></script>
+<script src="data/embedded_data.js?v=4"></script>
 <script>
 (function(){
 "use strict";
@@ -404,7 +404,7 @@ function renderAllLikes(){
     b.classList.toggle("on", on);
     b.innerHTML = (on ? "❤️" : "🤍") + " <span>" + names.length + "</span>";
     const l = b.parentNode.querySelector(".likers");
-    if(l) l.textContent = names.length ? names.join(", ") : "Sois la première ❤️";
+    if(l) l.textContent = names.length ? names.join(", ") : "Personne pour l'instant : lance-toi ❤️";
   });
   renderTop();
 }
@@ -422,7 +422,7 @@ function renderTop(){
   const topItems = all.filter(x => x.n).sort((a,b) => b.n - a.n).slice(0, 8);
   const voters = new Set(); Object.values(state.likes).forEach(o => Object.values(o||{}).forEach(n => voters.add(n)));
   $("#top").innerHTML =
-    `<p class="muted" style="margin:0 0 8px">${voters.size} invitée${voters.size>1?"s":""} ont voté : ${esc([...voters].join(", "))}</p>
+    `<p class="muted" style="margin:0 0 8px">${voters.size} participant${voters.size>1?"s ont":" a"} voté : ${esc([...voters].join(", "))}</p>
      <b>Villes</b>
      <ol>${cityScore.map(x => `<li><a href="#city-${x.c.id}">${x.c.emoji} ${esc(x.c.name)}</a> — ${x.n} ❤️<div class="bar"><i style="width:${Math.round(100*x.n/max)}%"></i></div></li>`).join("")}</ol>
      <b>Coups de cœur</b>
