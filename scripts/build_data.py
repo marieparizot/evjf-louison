@@ -18,7 +18,7 @@ CHEF_NOTE = ("Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026
 DATA = {
   "version": 1,
   "updated": "2026-11-26",
-  "title": "EVJF de Louison",
+  "title": "Louison la reine et ses 6 gueux",
   "dates": [
     {"id": "we1", "label": "WE du 3-4 avril 2027", "fri": "2027-04-02", "sat": "2027-04-03", "sun": "2027-04-04"},
     {"id": "we2", "label": "WE du 10-11 avril 2027", "fri": "2027-04-09", "sat": "2027-04-10", "sun": "2027-04-11"}

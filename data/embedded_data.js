@@ -1,7 +1,7 @@
 window.EVJF_DATA = {
  "version": 1,
  "updated": "2026-11-26",
- "title": "EVJF de Louison",
+ "title": "Louison la reine et ses 6 gueux",
  "dates": [
   {
    "id": "we1",
