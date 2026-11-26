@@ -154,6 +154,12 @@ main,header,.controls{position:relative;z-index:2}
 .controls{z-index:20}
 @media (prefers-reduced-motion:reduce){.hframe,.hframe .hin,.hframe:after,.ribbon,#floaties span{animation:none}}
 body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='8' y='22' font-size='12' opacity='.13'%3E%E2%9D%A4%3C/text%3E%3Ctext x='38' y='52' font-size='9' opacity='.1'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E")}
+.ticker{background:#2b1a22;color:#ffe3ef;overflow:hidden;white-space:nowrap;font-size:14px;padding:7px 0;position:relative;z-index:3}
+.ticker span{display:inline-block;padding-left:100%;animation:tick 70s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+.joke{font-style:italic;color:#ad1457;background:#fff0f6;border-left:4px solid #ff80ab;border-radius:8px;padding:8px 10px;margin:8px 0;font-size:14px}
+.tjoke{font-size:12px;color:var(--muted);font-style:italic}
+@media (prefers-reduced-motion:reduce){.ticker span{animation:none;padding-left:0}}
 </style>
 </head>
 <body>
@@ -174,6 +180,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   </div>
 </header>
 
+<div class="ticker" aria-label="Flash info"><span id="ticker"></span></div>
 <div class="controls">
   <div class="wrap">
     <div class="row" id="cityNav"></div>
@@ -187,11 +194,11 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 
   <h2>🗓️ Le programme type</h2>
   <div class="plan">
-    <div class="box"><b>Samedi midi</b>Arrivée en train, dépôt des valises, déjeuner léger.</div>
-    <div class="box"><b>Samedi 14h – 18h</b>Spa : hammam, sauna, massages. Réserver pour 7 au moins 2 mois avant.</div>
-    <div class="box"><b>Samedi 20h</b>Chef à domicile dans la maison : apéro, dîner, jeux de l'EVJF.</div>
-    <div class="box"><b>Samedi 23h</b>On sort : bars puis club. VTC/taxi si la maison est hors de la ville.</div>
-    <div class="box"><b>Dimanche</b>Brunch à la maison ou en ville, balade (caves, plage, vieux quartiers), retour.</div>
+    <div class="box"><b>Samedi midi</b>Arrivée en train, dépôt des valises, déjeuner « léger » (on se ment déjà).</div>
+    <div class="box"><b>Samedi 14h – 18h</b>Spa : hammam, sauna, massages. Objectif : être fraîches comme des gardons pour ne plus l'être à 2h. Réserver 2 mois avant.</div>
+    <div class="box"><b>Samedi 20h</b>Chef à domicile : apéro, dîner, jeux de l'EVJF. Louise ne sait pas encore ce qui l'attend (nous non plus).</div>
+    <div class="box"><b>Samedi 23h</b>On sort : bars puis club. VTC si la maison est loin, parce que « on rentre à pied, c'est à côté » n'a jamais marché.</div>
+    <div class="box"><b>Dimanche</b>Brunch, lunettes de soleil (même s'il pleut), balade digne, retour. Ce qui se passe à l'EVJF reste à l'EVJF.</div>
   </div>
   <p class="muted" id="groupNote"></p>
 
@@ -200,6 +207,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   <footer>
     <p><b>Comment ça marche ?</b> Indique ton prénom, puis touche ❤️ sur ce qui te plaît. Le classement en haut se met à jour.
       Les prix sont <b>indicatifs</b> (relevés en novembre 2026) : toujours vérifier sur le site du lieu pour nos dates.</p>
+    <p>⚠️ La future moitié de Louise n'a pas été consultée pour ce site. Aucune frange n'a été maltraitée pendant le choix des photos. Toute ressemblance avec une soirée ayant réellement existé serait purement fortuite.</p>
     <p><b>Sources</b></p>
     <ul id="sources"></ul>
     <p id="updated"></p>
@@ -209,7 +217,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="modal" id="nameModal" role="dialog" aria-modal="true" aria-labelledby="nmTitle">
   <div class="sheet">
     <h3 id="nmTitle">Coucou ! C'est qui ? 💕</h3>
-    <p class="muted">Ton prénom s'affichera à côté de tes likes, pour que les autres voient tes préférés.</p>
+    <p class="muted">Ton prénom s'affichera à côté de tes likes. Oui, tout le monde verra que tu as liké le palace à 450 €.</p>
     <input id="nameInput" maxlength="30" autocomplete="given-name" placeholder="Ton prénom">
     <button id="nameOk">C'est moi !</button>
   </div>
@@ -217,7 +225,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="toast" id="toast"></div>
 
 <script src="config.js?v=1"></script>
-<script src="data/embedded_data.js?v=2"></script>
+<script src="data/embedded_data.js?v=3"></script>
 <script>
 (function(){
 "use strict";
@@ -263,6 +271,8 @@ async function toggleLike(id){
   LS.set("likes", state.likes);
   renderAllLikes();
   if(navigator.vibrate) navigator.vibrate(10);
+  const pool = on ? (D.likeToasts || []) : (D.unlikeToasts || []);
+  if(pool.length) toast(pool[Math.floor(Math.random() * pool.length)]);
   if(!FB) return;
   try{
     const url = FB + "/likes/" + encodeURIComponent(id) + "/" + encodeURIComponent(k) + ".json";
@@ -338,6 +348,7 @@ function card(it){
     </div>
     <div class="body">
       <h4>${esc(it.name)}</h4>
+      ${t.joke ? `<span class="tjoke">${esc(t.label)} · ${esc(t.joke)}</span>` : ""}
       <p>${esc(it.desc)}</p>
       ${it.ref ? `<span class="ref">${esc(it.ref)}</span>` : ""}
       <div class="contact">
@@ -370,6 +381,7 @@ function renderCities(){
         <div class="txt"><h2>${c.emoji} ${esc(c.name)}</h2><div>🚄 ${esc(c.trip)}</div></div>
       </div>
       <p>${esc(c.vibe)}</p>
+      ${c.joke ? `<div class="joke">😏 ${esc(c.joke)}</div>` : ""}
       <div class="meta">
         <span>Spa <span class="score">${dots(c.scores.spa)}</span></span>
         <span>Soirée <span class="score">${dots(c.scores.soiree)}</span></span>
@@ -424,8 +436,9 @@ function toast(m){ const t = $("#toast"); t.textContent = m; t.classList.add("sh
 /* ---------- Louise dans des cœurs ---------- */
 const LP = D.louise || [];
 function heart(i, size, rot, delay, bow){
-  const src = LP.length ? LP[i % LP.length] : "";
-  const inner = src ? `<img src="${esc(src)}" alt="Louise" loading="lazy" onerror="this.outerHTML='<div class=ph-empty>💖</div>'">` : `<div class="ph-empty">💖</div>`;
+  const ph = LP.length ? LP[i % LP.length] : null;
+  const src = ph ? (ph.src || ph) : "";
+  const inner = src ? `<img src="${esc(src)}" style="object-position:${esc(ph.pos || "50% 35%")}" alt="Louise" loading="lazy" onerror="this.outerHTML='<div class=ph-empty>💖</div>'">` : `<div class="ph-empty">💖</div>`;
   return `<span class="hframe" style="--s:${size}px;--r:${rot}deg;--d:${delay}s">${bow ? '<span class="bow">🎀</span>' : ""}<span class="hin">${inner}</span></span>`;
 }
 function renderLouise(){
@@ -483,6 +496,7 @@ $("#nameModal").addEventListener("click", e => { if(e.target.id === "nameModal" 
 })();
 
 /* ---------- init ---------- */
+$("#ticker").textContent = (D.ticker || []).join("   ✦   ");
 $("#groupNote").textContent = "🛏️ " + D.group.note + " Budgets indicatifs : " + Object.values(D.tiers).map(t => t.label + " " + t.budget).join(" · ") + ".";
 $("#sources").innerHTML = D.sources.map(s => `<li>${esc(s)}</li>`).join("");
 $("#updated").textContent = "Mis à jour le " + new Date(D.updated).toLocaleDateString("fr-FR", {day:"numeric", month:"long", year:"numeric"}) + ".";

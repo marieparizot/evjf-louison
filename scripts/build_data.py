@@ -23,11 +23,35 @@ DATA = {
     {"id": "we1", "label": "WE du 3-4 avril 2027", "fri": "2027-04-02", "sat": "2027-04-03", "sun": "2027-04-04"},
     {"id": "we2", "label": "WE du 10-11 avril 2027", "fri": "2027-04-09", "sat": "2027-04-10", "sun": "2027-04-11"}
   ],
+  "ticker": [
+    "💍 FLASH INFO : Louise a dit oui. On ne sait toujours pas qui a été le plus surpris.",
+    "📸 Les photos de Louise ont été choisies avec amour et une totale absence de pitié.",
+    "🧖‍♀️ Le spa sert à réparer la soirée de la veille. Ou à préparer celle du soir. Les deux, en fait.",
+    "👩‍🍳 Le chef à domicile a été prévenu : pas de cuisine moléculaire, on veut du fromage.",
+    "🪩 Code vestimentaire du samedi soir : paillettes obligatoires, dignité facultative.",
+    "🚄 Rappel : le dernier train du dimanche ne nous attendra pas, même si on lui fait des yeux doux.",
+    "💕 Le couple du groupe est prié de ne pas se tenir la main plus de 30 secondes. Ça rend les autres jalouses.",
+    "🔊 Le karaoké n'est pas au programme. On sait toutes comment ça va finir quand même.",
+    "📵 Aucune photo de cet EVJF ne fuitera. Sauf les meilleures. Et les pires surtout."
+  ],
+  "likeToasts": [
+    "Excellent goût. Presque aussi bon que celui de Louise en matière de frange.",
+    "Like enregistré. Ta carte de demoiselle d'honneur de l'année est en cours d'impression.",
+    "Validé ! Le comité d'organisation (toi) approuve.",
+    "Noté. On mettra ça sur la liste « choses qu'on regrettera dimanche ».",
+    "Tu as cliqué avec ton cœur. Ton banquier, lui, a cliqué sur « annuler ».",
+    "❤️ Merci ! Ce vote compte double si tu ramènes des chips."
+  ],
+  "unlikeToasts": [
+    "Like retiré. On respecte, mais on juge un peu.",
+    "Changement d'avis ? Typique d'une veille de mariage.",
+    "OK, on fait comme si on n'avait rien vu."
+  ],
   "group": {"adults": 7, "note": "7 personnes dont 1 couple : viser au moins 4 chambres, dont 1 lit double pour le couple."},
   "tiers": {
-    "1": {"label": "€", "name": "Malin", "budget": "≈ 150 à 230 €/pers le week-end (1 nuit, hors train)"},
-    "2": {"label": "€€", "name": "Confort", "budget": "≈ 250 à 400 €/pers le week-end (1 nuit, hors train)"},
-    "3": {"label": "€€€", "name": "Waouh", "budget": "≈ 450 €/pers et plus le week-end (1 nuit, hors train)"}
+    "1": {"label": "€", "name": "Malin", "joke": "on garde des sous pour le cadeau (et les shots)", "budget": "≈ 150 à 230 €/pers le week-end (1 nuit, hors train)"},
+    "2": {"label": "€€", "name": "Confort", "joke": "raisonnable, donc personne ne le choisira", "budget": "≈ 250 à 400 €/pers le week-end (1 nuit, hors train)"},
+    "3": {"label": "€€€", "name": "Waouh", "joke": "on vend un rein, mais un rein bien hydraté", "budget": "≈ 450 €/pers et plus le week-end (1 nuit, hors train)"}
   },
   "types": {
     "logement": {"label": "Logements", "emoji": "🏡"},
@@ -39,7 +63,7 @@ DATA = {
   "cities": [
     # ------------------------------------------------------------------ REIMS
     {
-      "id": "reims", "name": "Reims & la Champagne", "emoji": "🥂",
+      "joke": "Le seul endroit où boire du champagne au petit-déjeuner s'appelle « découvrir le patrimoine local ».", "id": "reims", "name": "Reims & la Champagne", "emoji": "🥂",
       "trip": "45 min en TGV (Paris-Est → Reims)",
       "vibe": "Champagne à volonté, caves, vignes et spas nordiques. Soirées plus calmes : bars à cocktails et à champagne autour de la place d'Erlon.",
       "scores": {"spa": 5, "soiree": 3, "budget": 4},
@@ -100,7 +124,7 @@ DATA = {
     },
     # -------------------------------------------------------------- DEAUVILLE
     {
-      "id": "deauville", "name": "Deauville & Trouville", "emoji": "🌊",
+      "joke": "Ambiance Planches, casino et brushing. Mettez une veste : la mer du Nord ne fait pas de cadeau aux EVJF en avril.", "id": "deauville", "name": "Deauville & Trouville", "emoji": "🌊",
       "trip": "2 h en train (Paris-Saint-Lazare → Trouville-Deauville) ou 2 h en voiture (A13)",
       "vibe": "Bord de mer chic, les Planches, casino et boîte de nuit le samedi. Spas marins haut de gamme. Gîtes à colombages dans le Pays d'Auge.",
       "scores": {"spa": 5, "soiree": 4, "budget": 3},
@@ -154,7 +178,7 @@ DATA = {
     },
     # ------------------------------------------------------------------ LILLE
     {
-      "id": "lille", "name": "Lille", "emoji": "🍻",
+      "joke": "On y vient pour le spa, on y reste pour la welsh. Les régimes d'avant-mariage ne passent pas la gare Lille-Flandres.", "id": "lille", "name": "Lille", "emoji": "🍻",
       "trip": "1 h en TGV (Paris-Nord → Lille-Flandres)",
       "vibe": "Très festive et abordable : bars du Vieux-Lille, rue de la Barre, estaminets. Gîtes avec spa à 15 min dans la campagne.",
       "scores": {"spa": 4, "soiree": 5, "budget": 5},
@@ -205,7 +229,7 @@ DATA = {
     },
     # -------------------------------------------------------------- BRUXELLES
     {
-      "id": "bruxelles", "name": "Bruxelles", "emoji": "🇧🇪",
+      "joke": "2 000 bières au Delirium : on ne les goûtera pas toutes. Enfin, en théorie.", "id": "bruxelles", "name": "Bruxelles", "emoji": "🇧🇪",
       "trip": "1 h 25 en train (Paris-Nord → Bruxelles-Midi). Carte d'identité obligatoire.",
       "vibe": "La plus festive : bières, clubs mythiques (Fuse), quartier Saint-Géry. Très bon rapport qualité-prix. Logement plutôt en ville.",
       "scores": {"spa": 3, "soiree": 5, "budget": 4},
@@ -246,7 +270,7 @@ DATA = {
     },
     # --------------------------------------------------------------- BORDEAUX
     {
-      "id": "bordeaux", "name": "Bordeaux", "emoji": "🍷",
+      "joke": "Spa de vinothérapie : on se baigne dans le raisin, on finit en buvant le reste. C'est du soin.", "id": "bordeaux", "name": "Bordeaux", "emoji": "🍷",
       "trip": "2 h 05 en TGV (Paris-Montparnasse → Bordeaux-Saint-Jean)",
       "vibe": "Élégante et festive : quais, bars de Saint-Pierre, péniche I.Boat. Le spa de vinothérapie des Sources de Caudalie, au milieu des vignes.",
       "scores": {"spa": 5, "soiree": 4, "budget": 3},
@@ -293,7 +317,7 @@ DATA = {
     },
     # ------------------------------------------------------------------- LYON
     {
-      "id": "lyon", "name": "Lyon", "emoji": "🦁",
+      "joke": "Capitale de la gastronomie : le chef à domicile va devoir assurer, sinon on le dénonce à Paul Bocuse.", "id": "lyon", "name": "Lyon", "emoji": "🦁",
       "trip": "2 h en TGV (Paris-Gare de Lyon → Lyon Part-Dieu)",
       "vibe": "Capitale de la gastronomie, Vieux Lyon, rooftop-club Le Sucre. Spas variés de 35 € à très chic. Gîtes avec spa en périphérie et dans le Beaujolais.",
       "scores": {"spa": 4, "soiree": 5, "budget": 4},
@@ -353,8 +377,12 @@ DATA = {
 root = pathlib.Path(__file__).resolve().parent.parent
 (root / "data").mkdir(exist_ok=True)
 # Photos de Louise : toutes les images déposées dans assets/louise/
-DATA["louise"] = sorted("assets/louise/" + f.name for f in (root / "assets" / "louise").glob("*")
-                        if f.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp"))
+POS = {"01-metro-selfie": "66% 40%", "02-parc-trio": "47% 32%", "03-dos-a-dos": "72% 28%", "04-cuisine": "38% 36%",
+       "05-frange": "55% 32%", "06-profil": "36% 36%", "07-bac": "48% 28%", "08-metro": "76% 38%",
+       "09-photomaton": "50% 12%", "10-floue": "62% 45%"}
+DATA["louise"] = [{"src": "assets/louise/" + f.name, "pos": POS.get(f.stem, "50% 35%")}
+                  for f in sorted((root / "assets" / "louise").glob("*"))
+                  if f.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")]
 txt = json.dumps(DATA, ensure_ascii=False, indent=1)
 (root / "data" / "evjf.json").write_text(txt, encoding="utf-8")
 (root / "data" / "embedded_data.js").write_text("window.EVJF_DATA = " + txt + ";\n", encoding="utf-8")

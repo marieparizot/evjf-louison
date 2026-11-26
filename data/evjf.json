@@ -18,6 +18,30 @@
    "sun": "2027-04-11"
   }
  ],
+ "ticker": [
+  "💍 FLASH INFO : Louise a dit oui. On ne sait toujours pas qui a été le plus surpris.",
+  "📸 Les photos de Louise ont été choisies avec amour et une totale absence de pitié.",
+  "🧖‍♀️ Le spa sert à réparer la soirée de la veille. Ou à préparer celle du soir. Les deux, en fait.",
+  "👩‍🍳 Le chef à domicile a été prévenu : pas de cuisine moléculaire, on veut du fromage.",
+  "🪩 Code vestimentaire du samedi soir : paillettes obligatoires, dignité facultative.",
+  "🚄 Rappel : le dernier train du dimanche ne nous attendra pas, même si on lui fait des yeux doux.",
+  "💕 Le couple du groupe est prié de ne pas se tenir la main plus de 30 secondes. Ça rend les autres jalouses.",
+  "🔊 Le karaoké n'est pas au programme. On sait toutes comment ça va finir quand même.",
+  "📵 Aucune photo de cet EVJF ne fuitera. Sauf les meilleures. Et les pires surtout."
+ ],
+ "likeToasts": [
+  "Excellent goût. Presque aussi bon que celui de Louise en matière de frange.",
+  "Like enregistré. Ta carte de demoiselle d'honneur de l'année est en cours d'impression.",
+  "Validé ! Le comité d'organisation (toi) approuve.",
+  "Noté. On mettra ça sur la liste « choses qu'on regrettera dimanche ».",
+  "Tu as cliqué avec ton cœur. Ton banquier, lui, a cliqué sur « annuler ».",
+  "❤️ Merci ! Ce vote compte double si tu ramènes des chips."
+ ],
+ "unlikeToasts": [
+  "Like retiré. On respecte, mais on juge un peu.",
+  "Changement d'avis ? Typique d'une veille de mariage.",
+  "OK, on fait comme si on n'avait rien vu."
+ ],
  "group": {
   "adults": 7,
   "note": "7 personnes dont 1 couple : viser au moins 4 chambres, dont 1 lit double pour le couple."
@@ -26,16 +50,19 @@
   "1": {
    "label": "€",
    "name": "Malin",
+   "joke": "on garde des sous pour le cadeau (et les shots)",
    "budget": "≈ 150 à 230 €/pers le week-end (1 nuit, hors train)"
   },
   "2": {
    "label": "€€",
    "name": "Confort",
+   "joke": "raisonnable, donc personne ne le choisira",
    "budget": "≈ 250 à 400 €/pers le week-end (1 nuit, hors train)"
   },
   "3": {
    "label": "€€€",
    "name": "Waouh",
+   "joke": "on vend un rein, mais un rein bien hydraté",
    "budget": "≈ 450 €/pers et plus le week-end (1 nuit, hors train)"
   }
  },
@@ -63,6 +90,7 @@
  },
  "cities": [
   {
+   "joke": "Le seul endroit où boire du champagne au petit-déjeuner s'appelle « découvrir le patrimoine local ».",
    "id": "reims",
    "name": "Reims & la Champagne",
    "emoji": "🥂",
@@ -207,6 +235,7 @@
    ]
   },
   {
+   "joke": "Ambiance Planches, casino et brushing. Mettez une veste : la mer du Nord ne fait pas de cadeau aux EVJF en avril.",
    "id": "deauville",
    "name": "Deauville & Trouville",
    "emoji": "🌊",
@@ -328,6 +357,7 @@
    ]
   },
   {
+   "joke": "On y vient pour le spa, on y reste pour la welsh. Les régimes d'avant-mariage ne passent pas la gare Lille-Flandres.",
    "id": "lille",
    "name": "Lille",
    "emoji": "🍻",
@@ -448,6 +478,7 @@
    ]
   },
   {
+   "joke": "2 000 bières au Delirium : on ne les goûtera pas toutes. Enfin, en théorie.",
    "id": "bruxelles",
    "name": "Bruxelles",
    "emoji": "🇧🇪",
@@ -543,6 +574,7 @@
    ]
   },
   {
+   "joke": "Spa de vinothérapie : on se baigne dans le raisin, on finit en buvant le reste. C'est du soin.",
    "id": "bordeaux",
    "name": "Bordeaux",
    "emoji": "🍷",
@@ -652,6 +684,7 @@
    ]
   },
   {
+   "joke": "Capitale de la gastronomie : le chef à domicile va devoir assurer, sinon on le dénonce à Paul Bocuse.",
    "id": "lyon",
    "name": "Lyon",
    "emoji": "🦁",
@@ -770,5 +803,46 @@
   "Brochure spa Les Sources de Caudalie 2025",
   "Photos : sites officiels des lieux ou Wikimedia Commons (licences libres, auteurs sur commons.wikimedia.org)"
  ],
- "louise": []
+ "louise": [
+  {
+   "src": "assets/louise/01-metro-selfie.jpg",
+   "pos": "66% 40%"
+  },
+  {
+   "src": "assets/louise/02-parc-trio.jpg",
+   "pos": "47% 32%"
+  },
+  {
+   "src": "assets/louise/03-dos-a-dos.jpg",
+   "pos": "72% 28%"
+  },
+  {
+   "src": "assets/louise/04-cuisine.jpg",
+   "pos": "38% 36%"
+  },
+  {
+   "src": "assets/louise/05-frange.jpg",
+   "pos": "55% 32%"
+  },
+  {
+   "src": "assets/louise/06-profil.jpg",
+   "pos": "36% 36%"
+  },
+  {
+   "src": "assets/louise/07-bac.jpg",
+   "pos": "48% 28%"
+  },
+  {
+   "src": "assets/louise/08-metro.jpg",
+   "pos": "76% 38%"
+  },
+  {
+   "src": "assets/louise/09-photomaton.jpg",
+   "pos": "50% 12%"
+  },
+  {
+   "src": "assets/louise/10-floue.jpg",
+   "pos": "62% 45%"
+  }
+ ]
 }
