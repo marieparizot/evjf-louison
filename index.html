@@ -121,9 +121,43 @@ h3{font-size:16px;margin:18px 0 8px;color:var(--rose)}
 footer{margin:34px 0 10px;font-size:12px;color:var(--muted)}
 footer ul{padding-left:18px}
 .sync{font-size:12px;opacity:.9}
+
+/* ---------- déco kitsch : Louise dans des cœurs ---------- */
+:root{--heart:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 92'%3E%3Cpath d='M50 90 C20 68 0 50 0 27 C0 11 12 0 27 0 C37 0 45 6 50 14 C55 6 63 0 73 0 C88 0 100 11 100 27 C100 50 80 68 50 90Z'/%3E%3C/svg%3E")}
+.hframe{position:relative;display:inline-block;width:var(--s,120px);aspect-ratio:100/92;flex:0 0 auto;
+  filter:drop-shadow(0 0 0 #fff) drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)
+         drop-shadow(0 0 2px #ffd54f) drop-shadow(0 0 6px #ff4fa3) drop-shadow(0 4px 8px rgba(120,0,60,.35));
+  transform:rotate(var(--r,0deg));animation:wobble 3.2s ease-in-out infinite;animation-delay:var(--d,0s)}
+.hframe .hin{position:absolute;inset:0;-webkit-mask:var(--heart) center/contain no-repeat;mask:var(--heart) center/contain no-repeat;
+  background:linear-gradient(135deg,#ff80ab,#f8bbd0,#fff59d,#ff80ab);background-size:300% 300%;animation:glit 4s linear infinite}
+.hframe img{width:100%;height:100%;object-fit:cover}
+.hframe .ph-empty{display:flex;align-items:center;justify-content:center;height:100%;font-size:calc(var(--s,120px)/3.2)}
+.hframe:after{content:"✨";position:absolute;right:-6%;top:-8%;font-size:calc(var(--s,120px)/5);filter:none;animation:twinkle 1.6s ease-in-out infinite;animation-delay:var(--d,0s)}
+.hframe .bow{position:absolute;left:50%;top:-14%;transform:translateX(-50%);font-size:calc(var(--s,120px)/4.2);z-index:2}
+@keyframes wobble{0%,100%{transform:rotate(var(--r,0deg)) scale(1)}50%{transform:rotate(calc(var(--r,0deg) * -1)) scale(1.05)}}
+@keyframes glit{to{background-position:300% 0}}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}}
+.louise{display:flex;justify-content:center;align-items:center;gap:0;margin:16px -8px 4px;padding:6px 0 2px;overflow:hidden}
+.louise .hframe{margin:0 -6px}
+.louise .hframe:nth-child(odd){margin-top:22px}
+.ribbon{display:block;width:max-content;max-width:100%;margin:8px auto 0;padding:5px 16px;border-radius:999px;font-weight:800;letter-spacing:.5px;
+  color:#fff;background:linear-gradient(90deg,#ff4fa3,#ffb3d1,#ffd54f,#ff4fa3);background-size:300% 100%;animation:glit 3s linear infinite;
+  text-shadow:0 1px 0 #c2185b,0 0 6px rgba(194,24,91,.6);box-shadow:0 0 0 3px #fff,0 0 12px #ff80ab;font-family:"Brush Script MT","Snell Roundhand",cursive;font-size:22px}
+.cityheart{display:flex;justify-content:center;margin:26px 0 -6px}
+.cityheart .hframe{--s:96px}
+.citydivider{display:flex;align-items:center;gap:10px;color:#ff4fa3;font-size:14px;margin:30px 0 -10px}
+.citydivider:before,.citydivider:after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,#ff80ab 0 6px,transparent 6px 12px)}
+#floaties{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+#floaties span{position:absolute;bottom:-40px;animation:floatup linear infinite;opacity:.55}
+@keyframes floatup{to{transform:translateY(-115vh) rotate(25deg)}}
+main,header,.controls{position:relative;z-index:2}
+.controls{z-index:20}
+@media (prefers-reduced-motion:reduce){.hframe,.hframe .hin,.hframe:after,.ribbon,#floaties span{animation:none}}
+body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ctext x='8' y='22' font-size='12' opacity='.13'%3E%E2%9D%A4%3C/text%3E%3Ctext x='38' y='52' font-size='9' opacity='.1'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E")}
 </style>
 </head>
 <body>
+<div id="floaties" aria-hidden="true"></div>
 <div id="ptr" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg></div>
 
 <header class="hero">
@@ -131,6 +165,8 @@ footer ul{padding-left:18px}
     <h1>EVJF de Louison 💍</h1>
     <p><b>7 filles (dont 1 couple)</b> · chef à domicile, spa la journée, sortie le soir · max 2 h 15 de Paris</p>
     <p id="dateline"></p>
+    <div class="louise" id="louiseHero"></div>
+    <span class="ribbon" id="louiseRibbon">💖 Team Louise 💖</span>
     <div class="who">
       <button class="pill solid" id="whoBtn">👋 Qui es-tu ?</button>
       <span class="sync" id="syncInfo"></span>
@@ -181,7 +217,7 @@ footer ul{padding-left:18px}
 <div class="toast" id="toast"></div>
 
 <script src="config.js?v=1"></script>
-<script src="data/embedded_data.js?v=1"></script>
+<script src="data/embedded_data.js?v=2"></script>
 <script>
 (function(){
 "use strict";
@@ -343,6 +379,7 @@ function renderCities(){
     </section>`;
   }).join("");
   $("#cities").innerHTML = out;
+  decorateCities();
   renderAllLikes();
 }
 
@@ -383,6 +420,38 @@ function renderTop(){
 let toastT;
 function toast(m){ const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2200); }
 
+
+/* ---------- Louise dans des cœurs ---------- */
+const LP = D.louise || [];
+function heart(i, size, rot, delay, bow){
+  const src = LP.length ? LP[i % LP.length] : "";
+  const inner = src ? `<img src="${esc(src)}" alt="Louise" loading="lazy" onerror="this.outerHTML='<div class=ph-empty>💖</div>'">` : `<div class="ph-empty">💖</div>`;
+  return `<span class="hframe" style="--s:${size}px;--r:${rot}deg;--d:${delay}s">${bow ? '<span class="bow">🎀</span>' : ""}<span class="hin">${inner}</span></span>`;
+}
+function renderLouise(){
+  const w = Math.min(window.innerWidth, 1100);
+  const n = w < 420 ? 4 : w < 760 ? 5 : 7;
+  const size = Math.round(Math.min(140, (w - 30) / n + 4));
+  const rots = [-12, 8, -5, 11, -9, 6, -10];
+  let h = ""; for(let i = 0; i < n; i++) h += heart(i, size, rots[i % rots.length], (i * .4).toFixed(1), i === Math.floor(n/2));
+  $("#louiseHero").innerHTML = h;
+}
+function decorateCities(){
+  document.querySelectorAll(".city").forEach((sec, i) => {
+    const d = document.createElement("div");
+    d.className = "cityheart";
+    d.innerHTML = heart(i + 3, 96, i % 2 ? 9 : -9, (i * .3).toFixed(1), false);
+    sec.insertBefore(d, sec.firstChild);
+  });
+}
+function floaties(){
+  const box = $("#floaties"); const em = ["💖","💕","💗","✨","💘","🎀","💓"];
+  let h = ""; for(let i = 0; i < 14; i++){
+    h += `<span style="left:${Math.random()*100}%;font-size:${14 + Math.random()*16}px;animation-duration:${12 + Math.random()*14}s;animation-delay:${-Math.random()*20}s">${em[i % em.length]}</span>`;
+  }
+  box.innerHTML = h;
+}
+
 /* ---------- events ---------- */
 document.addEventListener("click", e => {
   const b = e.target.closest("button"); if(!b) return;
@@ -417,7 +486,8 @@ $("#nameModal").addEventListener("click", e => { if(e.target.id === "nameModal" 
 $("#groupNote").textContent = "🛏️ " + D.group.note + " Budgets indicatifs : " + Object.values(D.tiers).map(t => t.label + " " + t.budget).join(" · ") + ".";
 $("#sources").innerHTML = D.sources.map(s => `<li>${esc(s)}</li>`).join("");
 $("#updated").textContent = "Mis à jour le " + new Date(D.updated).toLocaleDateString("fr-FR", {day:"numeric", month:"long", year:"numeric"}) + ".";
-whoLabel(); renderControls(); renderCities(); loadLikes();
+whoLabel(); renderLouise(); floaties(); renderControls(); renderCities(); loadLikes();
+window.addEventListener("resize", () => renderLouise());
 if(FB) setInterval(() => { if(!document.hidden) loadLikes(); }, 20000);
 document.addEventListener("visibilitychange", () => { if(!document.hidden && FB) loadLikes(); });
 if(!state.me) setTimeout(() => askName(), 600);

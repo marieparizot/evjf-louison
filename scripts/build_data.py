@@ -352,8 +352,11 @@ DATA = {
 
 root = pathlib.Path(__file__).resolve().parent.parent
 (root / "data").mkdir(exist_ok=True)
+# Photos de Louise : toutes les images déposées dans assets/louise/
+DATA["louise"] = sorted("assets/louise/" + f.name for f in (root / "assets" / "louise").glob("*")
+                        if f.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp"))
 txt = json.dumps(DATA, ensure_ascii=False, indent=1)
 (root / "data" / "evjf.json").write_text(txt, encoding="utf-8")
 (root / "data" / "embedded_data.js").write_text("window.EVJF_DATA = " + txt + ";\n", encoding="utf-8")
 n = sum(len(c["items"]) for c in DATA["cities"])
-print(f"OK : {len(DATA['cities'])} villes, {n} propositions")
+print(f"OK : {len(DATA['cities'])} villes, {n} propositions, {len(DATA['louise'])} photos de Louise")

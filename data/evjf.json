@@ -492,7 +492,6 @@
      "name": "Aspria Royal La Rasante (David Lloyd)",
      "desc": "Grand club bien-être : piscines, saunas, hammam. Les soins du spa sont ouverts aux non-membres.",
      "address": "Rue Sombre 56, 1200 Woluwe-Saint-Lambert",
-     "phone": "+32 2 609 19 10",
      "url": "https://www.davidlloyd.be/en/clubs/brussels-royal-la-rasante/club-facilities/spa-and-wellbeing/",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Royal_Palace_in_Brussels.JPG/960px-Royal_Palace_in_Brussels.JPG",
      "credit": "Photo Wikimedia Commons · Bruxelles, CC BY-SA 3.0"
@@ -635,7 +634,7 @@
      "desc": "Ancien ferry transformé en club et salle de concert, aux Bassins à flot. Tram B, arrêt Bassins à flot.",
      "address": "Bassin à flot n° 1, quai Armand-Lalande, 33300 Bordeaux",
      "phone": "+33 5 56 10 48 35",
-     "url": "https://www.iboat.eu/",
+     "url": "https://www.privateaser.com/lieu/57908-iboat",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Bassins_%C3%A0_flot_de_Bordeaux.jpg/960px-Bassins_%C3%A0_flot_de_Bordeaux.jpg",
      "credit": "Photo Wikimedia Commons · Bassins à flot, CC BY-SA"
     },
@@ -770,5 +769,6 @@
   "Take a Chef : tarifs moyens 2026",
   "Brochure spa Les Sources de Caudalie 2025",
   "Photos : sites officiels des lieux ou Wikimedia Commons (licences libres, auteurs sur commons.wikimedia.org)"
- ]
+ ],
+ "louise": []
 }
