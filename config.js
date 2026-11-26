@@ -3,5 +3,5 @@
 // Mettre l'adresse de la base Firebase (ex. "https://evjf-louison-default-rtdb.europe-west1.firebasedatabase.app")
 // pour que toutes les invitées voient les likes des autres.
 window.EVJF_CONFIG = {
-  firebaseUrl: ""
+  firebaseUrl: "https://evjf-louison-default-rtdb.europe-west1.firebasedatabase.app"
 };
