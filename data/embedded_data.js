@@ -5,14 +5,14 @@ window.EVJF_DATA = {
  "dates": [
   {
    "id": "we1",
-   "label": "WE du 3-4 avril 2027",
+   "label": "WE du 2 au 4 avril 2027",
    "fri": "2027-04-02",
    "sat": "2027-04-03",
    "sun": "2027-04-04"
   },
   {
    "id": "we2",
-   "label": "WE du 10-11 avril 2027",
+   "label": "WE du 9 au 11 avril 2027",
    "fri": "2027-04-09",
    "sat": "2027-04-10",
    "sun": "2027-04-11"
@@ -43,20 +43,20 @@ window.EVJF_DATA = {
  ],
  "group": {
   "adults": 7,
-  "note": "7 participants : viser au moins 4 chambres."
+  "note": "7 participants, 2 nuits (vendredi et samedi) : viser au moins 4 chambres."
  },
  "tiers": {
   "2": {
    "label": "€€",
    "name": "Confort",
    "joke": "raisonnable, donc personne ne le choisira",
-   "budget": "≈ 250 à 400 €/pers le week-end (1 nuit, hors train)"
+   "budget": "≈ 350 à 550 €/pers le week-end (2 nuits, hors transport)"
   },
   "3": {
    "label": "€€€",
    "name": "Waouh",
    "joke": "on vend un rein, mais un rein bien hydraté",
-   "budget": "≈ 450 €/pers et plus le week-end (1 nuit, hors train)"
+   "budget": "≈ 650 €/pers et plus le week-end (2 nuits, hors transport)"
   }
  },
  "types": {

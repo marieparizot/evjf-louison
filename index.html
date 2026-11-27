@@ -224,7 +224,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   <div class="wrap">
     <h1>Louison la reine et ses 6 gueux 👑</h1>
     <p><b>7 participants, reviendront-ils tous vivants ?</b> · chef à domicile, spa la journée, sortie le soir</p>
-    <p class="when">📅 <b>Week-end du 3-4 avril 2027 ou du 10-11 avril 2027</b> (à trancher ensemble)</p>
+    <p class="when">📅 <b>Du vendredi 2 au dimanche 4 avril 2027, ou du vendredi 9 au dimanche 11 avril 2027</b> · 2 nuits (vendredi et samedi), date à trancher ensemble</p>
     <p id="dateline"></p>
     <div class="louise" id="louiseHero"></div>
     <span class="ribbon">💖 Team Louise 💖</span>
@@ -262,11 +262,12 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 
     <h2>🗓️ Le programme type</h2>
     <div class="plan">
-      <div class="box"><b>Samedi midi</b>Arrivée, dépôt des valises, déjeuner « léger » (on se ment déjà).</div>
+      <div class="box"><b>Vendredi soir</b>Arrivée, installation dans la maison, premier apéro « tranquille » (personne n'y croit).</div>
+      <div class="box"><b>Samedi matin</b>Grasse matinée, brunch, puis une activité marrante pour se réveiller.</div>
       <div class="box"><b>Samedi 14h – 18h</b>Spa : hammam, sauna, massages. Objectif : être frais comme des gardons pour ne plus l'être du tout à 2h. Réserver 2 mois avant.</div>
       <div class="box"><b>Samedi 20h</b>Chef à domicile : apéro, dîner, jeux de l'EVJF. Louise ne sait pas encore ce qui l'attend (nous non plus).</div>
       <div class="box"><b>Samedi 23h</b>On sort : bars puis club. VTC si la maison est loin, parce que « on rentre à pied, c'est à côté » n'a jamais marché.</div>
-      <div class="box"><b>Dimanche</b>Brunch, lunettes de soleil (même s'il pleut), balade digne, retour. Ce qui se passe à l'EVJF reste à l'EVJF.</div>
+      <div class="box"><b>Dimanche</b>Rangement de la maison, brunch, lunettes de soleil (même s'il pleut), balade digne, retour. Ce qui se passe à l'EVJF reste à l'EVJF.</div>
     </div>
     <p class="muted" id="groupNote"></p>
   </section>
@@ -314,7 +315,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="toast" id="toast"></div>
 
 <script src="config.js?v=3"></script>
-<script src="data/embedded_data.js?v=12"></script>
+<script src="data/embedded_data.js?v=13"></script>
 <script>
 (function(){
 "use strict";
@@ -328,7 +329,7 @@ const LS = {
   set(k, v){ try{ localStorage.setItem("evjf_"+k, JSON.stringify(v)); }catch(e){} }
 };
 const state = {
-  me: LS.get("me", ""), date: LS.get("date", "we1"), nights: LS.get("nights", 1),
+  me: LS.get("me", ""), date: LS.get("date", "we1"), nights: 2,
   tier: "all", type: "all",
   likes: LS.get("likes", {}), ratings: LS.get("ratings", {}), photos: {}, comments: LS.get("comments", {}), openCm: new Set(), drafts: {}
 };
@@ -501,8 +502,8 @@ function renderFilters(){
     '<span class="lbl">Quoi</span>' + types.map(([k,l]) => `<button class="chip ${state.type===k?"on":""}" data-type="${k}">${esc(l)}</button>`).join("") +
     '<span class="lbl">Prix</span>' + tiers.map(([k,l]) => `<button class="chip ${state.tier===k?"on":""}" data-tier="${k}">${esc(l)}</button>`).join("") +
     '<span class="lbl">Dates</span>' + D.dates.map(d => `<button class="chip ${state.date===d.id?"on":""}" data-date="${d.id}">${esc(d.label.replace("WE du ",""))}</button>`).join("") +
-    `<button class="chip ${state.nights===1?"on":""}" data-n="1">1 nuit</button><button class="chip ${state.nights===2?"on":""}" data-n="2">2 nuits</button>`;
-  const d = dates(); $("#dateline").textContent = "📅 " + d.label + (state.nights === 2 ? " · 2 nuits (ven → dim)" : " · 1 nuit (sam → dim)");
+    "";
+  const d = dates(); $("#dateline").textContent = "🔎 Recherches de logement réglées sur : " + d.label + " (2 nuits)";
 }
 function renderCity(){
   renderFilters();
@@ -653,7 +654,6 @@ document.addEventListener("click", e => {
   if(b.dataset.go){ location.hash = "#ville/" + b.dataset.go; return; }
   if(b.dataset.pid){ const src = photoCache[b.dataset.pid]; if(src){ $("#lbImg").src = src; $("#lbCap").textContent = "par " + b.dataset.by; $("#lb").classList.add("open"); } return; }
   if(b.dataset.date){ state.date = b.dataset.date; LS.set("date", state.date); renderCity(); renderLikes(); return; }
-  if(b.dataset.n && !b.dataset.rate){ state.nights = +b.dataset.n; LS.set("nights", state.nights); renderCity(); renderLikes(); return; }
   if(b.dataset.tier){ state.tier = b.dataset.tier; renderCity(); renderLikes(); return; }
   if(b.dataset.type){ state.type = b.dataset.type; renderCity(); renderLikes(); return; }
 });
