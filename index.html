@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Louison la reine et ses 6 gueux 👑</title>
-<meta name="description" content="Logements, spas, chefs à domicile et soirées pour l'EVJF — à liker !">
+<meta name="description" content="11 villes, logements, spas, chefs à domicile, activités marrantes et soirées — à noter et à liker !">
 <meta property="og:title" content="Louison la reine et ses 6 gueux 👑">
-<meta property="og:description" content="6 villes à moins de 2 h 15 de Paris : logements, spa, chef à domicile et soirées. Like tes préférés !">
+<meta property="og:description" content="11 villes en train ou en avion : note-les, like tes coups de cœur et balance tes photos dossiers.">
 <meta property="og:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg">
 <meta name="theme-color" content="#c2185b">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -90,7 +90,7 @@ h3{font-size:16px;margin:18px 0 8px;color:var(--rose)}
 /* card */
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
 .ph{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,var(--rose-3),#fff)}
-.ph img{width:100%;height:100%;object-fit:cover}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ph .credit{position:absolute;left:0;right:0;bottom:0;font-size:10px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.55));padding:10px 8px 3px;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tier{position:absolute;top:8px;left:8px;background:#fff;color:var(--ink);font-weight:700;border-radius:8px;padding:2px 8px;font-size:13px;box-shadow:0 1px 4px rgba(0,0,0,.2)}
@@ -161,6 +161,48 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 .tjoke{font-size:12px;color:var(--muted);font-style:italic}
 @media (prefers-reduced-motion:reduce){.ticker span{animation:none;padding-left:0}}
 </style>
+<style>
+/* ---------- v2 : navigation par ville, étoiles, photos dossiers ---------- */
+.tabs{display:flex;gap:6px}
+.tab{flex:1;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 6px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;text-align:center}
+.tab.on{background:var(--rose);border-color:var(--rose);color:#fff}
+.back{border:0;background:none;color:var(--rose);font-weight:700;font-size:15px;padding:6px 0;cursor:pointer}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.ccard{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(194,24,91,.06)}
+.ccard:active{transform:scale(.99)}
+.ccard .img{position:relative;aspect-ratio:16/10;background:#eee}
+.ccard .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ccard .img .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,0) 60%)}
+.ccard .img .nm{position:absolute;left:12px;bottom:10px;right:12px;color:#fff}
+.ccard .img .nm b{display:block;font-size:22px}
+.ccard .img .nm span{font-size:13px;opacity:.95}
+.ccard .bd{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px}
+.avg{font-size:14px;color:var(--muted)}
+.avg b{color:var(--ink);font-size:16px}
+.stars{display:inline-flex;gap:2px;align-items:center}
+.star{border:0;background:none;font-size:26px;line-height:1;padding:2px;cursor:pointer;color:#e7c9d6}
+.star.on{color:#ffb300;text-shadow:0 0 6px rgba(255,179,0,.5)}
+.star:active{transform:scale(1.25)}
+.rate{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.disc{margin-left:auto;font-weight:700;color:var(--rose);font-size:14px;white-space:nowrap}
+.raters{font-size:12px;color:var(--muted)}
+.cityrate{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 12px;margin:12px 0}
+.cityrate .star{font-size:34px}
+.upl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
+.upl label{display:inline-flex;align-items:center;gap:8px;background:var(--rose);color:#fff;font-weight:700;border-radius:14px;padding:12px 18px;cursor:pointer;font-size:16px}
+.upl input{display:none}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:6px}
+.pt{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--rose-3),#fff);cursor:pointer}
+.pt img{width:100%;height:100%;object-fit:cover}
+.pt span{position:absolute;left:0;right:0;bottom:0;font-size:11px;color:#fff;padding:12px 6px 3px;background:linear-gradient(transparent,rgba(0,0,0,.6));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lb{position:fixed;inset:0;background:rgba(20,8,14,.92);z-index:80;display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:80vh;border-radius:12px}
+.lb p{color:#fff;margin:10px 0 0;font-size:14px}
+.lb button{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;background:#fff;border:0;border-radius:999px;width:40px;height:40px;font-size:20px}
+.sect{margin:6px 0 2px;font-size:15px;color:var(--muted);font-weight:700}
+.hidden{display:none!important}
+</style>
 </head>
 <body>
 <div id="floaties" aria-hidden="true"></div>
@@ -169,10 +211,10 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <header class="hero">
   <div class="wrap">
     <h1>Louison la reine et ses 6 gueux 👑</h1>
-    <p><b>7 participants, reviendront-ils tous vivants ?</b> · chef à domicile, spa la journée, sortie le soir · max 2 h 15 de Paris</p>
+    <p><b>7 participants, reviendront-ils tous vivants ?</b> · chef à domicile, spa la journée, sortie le soir</p>
     <p id="dateline"></p>
     <div class="louise" id="louiseHero"></div>
-    <span class="ribbon" id="louiseRibbon">💖 Team Louise 💖</span>
+    <span class="ribbon">💖 Team Louise 💖</span>
     <div class="who">
       <button class="pill solid" id="whoBtn">👋 Qui es-tu ?</button>
       <span class="sync" id="syncInfo"></span>
@@ -181,31 +223,64 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 </header>
 
 <div class="ticker" aria-label="Flash info"><span id="ticker"></span></div>
-<div class="controls">
+<div class="controls" id="controls">
   <div class="wrap">
-    <div class="row" id="cityNav"></div>
-    <div class="row" id="filters"></div>
+    <div class="tabs" id="tabs">
+      <button class="tab" data-nav="#villes">🏙️ Villes</button>
+      <button class="tab" data-nav="#photos">📸 Photos dossiers</button>
+      <button class="tab" data-nav="#classement">🏆 Classement</button>
+    </div>
+    <div id="cityBar" class="hidden">
+      <div class="row" style="margin-top:6px"><button class="back" data-nav="#villes">‹ Toutes les villes</button></div>
+      <div class="row" id="filters"></div>
+    </div>
   </div>
 </div>
 
-<main class="wrap">
-  <h2>❤️ Le classement des likes</h2>
-  <div class="box top" id="top"></div>
+<main class="wrap" id="main">
+  <!-- ACCUEIL : les villes -->
+  <section id="v-villes">
+    <h2>🏙️ Choisis ta ville</h2>
+    <p class="muted">Note chaque ville de 1 à 5 étoiles, puis touche-la pour découvrir les logements, spas, activités marrantes et soirées.</p>
+    <p class="sect">🚄 En train, à moins de 2 h 15 de Paris</p>
+    <div class="cgrid" id="gTrain"></div>
+    <p class="sect" style="margin-top:22px">✈️ En avion (week-end de reine)</p>
+    <div class="cgrid" id="gAvion"></div>
 
-  <h2>🗓️ Le programme type</h2>
-  <div class="plan">
-    <div class="box"><b>Samedi midi</b>Arrivée en train, dépôt des valises, déjeuner « léger » (on se ment déjà).</div>
-    <div class="box"><b>Samedi 14h – 18h</b>Spa : hammam, sauna, massages. Objectif : être frais comme des gardons pour ne plus l'être du tout à 2h. Réserver 2 mois avant.</div>
-    <div class="box"><b>Samedi 20h</b>Chef à domicile : apéro, dîner, jeux de l'EVJF. Louise ne sait pas encore ce qui l'attend (nous non plus).</div>
-    <div class="box"><b>Samedi 23h</b>On sort : bars puis club. VTC si la maison est loin, parce que « on rentre à pied, c'est à côté » n'a jamais marché.</div>
-    <div class="box"><b>Dimanche</b>Brunch, lunettes de soleil (même s'il pleut), balade digne, retour. Ce qui se passe à l'EVJF reste à l'EVJF.</div>
-  </div>
-  <p class="muted" id="groupNote"></p>
+    <h2>🗓️ Le programme type</h2>
+    <div class="plan">
+      <div class="box"><b>Samedi midi</b>Arrivée, dépôt des valises, déjeuner « léger » (on se ment déjà).</div>
+      <div class="box"><b>Samedi 14h – 18h</b>Spa : hammam, sauna, massages. Objectif : être frais comme des gardons pour ne plus l'être du tout à 2h. Réserver 2 mois avant.</div>
+      <div class="box"><b>Samedi 20h</b>Chef à domicile : apéro, dîner, jeux de l'EVJF. Louise ne sait pas encore ce qui l'attend (nous non plus).</div>
+      <div class="box"><b>Samedi 23h</b>On sort : bars puis club. VTC si la maison est loin, parce que « on rentre à pied, c'est à côté » n'a jamais marché.</div>
+      <div class="box"><b>Dimanche</b>Brunch, lunettes de soleil (même s'il pleut), balade digne, retour. Ce qui se passe à l'EVJF reste à l'EVJF.</div>
+    </div>
+    <p class="muted" id="groupNote"></p>
+  </section>
 
-  <div id="cities"></div>
+  <!-- UNE VILLE -->
+  <section id="v-ville" class="hidden"></section>
+
+  <!-- PHOTOS DOSSIERS -->
+  <section id="v-photos" class="hidden">
+    <h2>📸 Photos dossiers</h2>
+    <p class="muted">Ici, chacun dépose ses photos les plus compromettantes de Louise (et des autres gueux). Plus c'est gênant, plus c'est apprécié. Elles serviront peut-être pendant le week-end… 😈</p>
+    <div class="upl">
+      <label>📤 Ajouter des photos<input type="file" id="fileIn" accept="image/*" multiple></label>
+      <span class="muted" id="uplInfo"></span>
+    </div>
+    <p class="muted" style="font-size:12px">Les photos sont réduites et nettoyées (date, lieu GPS retirés) avant l'envoi. Une fois envoyée, une photo ne peut plus être modifiée : pour en retirer une, demande à Marie.</p>
+    <div class="pgrid" id="pgrid"></div>
+  </section>
+
+  <!-- CLASSEMENT -->
+  <section id="v-classement" class="hidden">
+    <h2>🏆 Le classement</h2>
+    <div class="box top" id="top"></div>
+  </section>
 
   <footer>
-    <p><b>Comment ça marche ?</b> Indique ton prénom, puis touche ❤️ sur ce qui te plaît. Le classement en haut se met à jour.
+    <p><b>Comment ça marche ?</b> Indique ton prénom, note les villes ⭐ et like ❤️ ce qui te plaît. Tout est partagé avec le groupe.
       Les prix sont <b>indicatifs</b> (relevés en novembre 2026) : toujours vérifier sur le site du lieu pour nos dates.</p>
     <p>⚠️ La future moitié de Louise n'a pas été consultée pour ce site. Aucune frange n'a été maltraitée pendant le choix des photos. Toute ressemblance avec une soirée ayant réellement existé serait purement fortuite.</p>
     <p><b>Sources</b></p>
@@ -217,15 +292,16 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="modal" id="nameModal" role="dialog" aria-modal="true" aria-labelledby="nmTitle">
   <div class="sheet">
     <h3 id="nmTitle">Coucou ! C'est qui ? 💕</h3>
-    <p class="muted">Ton prénom s'affichera à côté de tes likes. Oui, tout le monde verra que tu as liké le palace à 450 €.</p>
+    <p class="muted">Ton prénom s'affichera à côté de tes likes, de tes notes et de tes photos. Oui, tout le monde verra que tu as mis 5 étoiles au palace.</p>
     <input id="nameInput" maxlength="30" autocomplete="given-name" placeholder="Ton prénom">
     <button id="nameOk">C'est moi !</button>
   </div>
 </div>
+<div class="lb" id="lb"><button aria-label="Fermer" id="lbClose">✕</button><img id="lbImg" alt=""><p id="lbCap"></p></div>
 <div class="toast" id="toast"></div>
 
-<script src="config.js?v=2"></script>
-<script src="data/embedded_data.js?v=9"></script>
+<script src="config.js?v=3"></script>
+<script src="data/embedded_data.js?v=10"></script>
 <script>
 (function(){
 "use strict";
@@ -238,114 +314,157 @@ const LS = {
   get(k, d){ try{ const v = localStorage.getItem("evjf_"+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
   set(k, v){ try{ localStorage.setItem("evjf_"+k, JSON.stringify(v)); }catch(e){} }
 };
-
 const state = {
-  me: LS.get("me", ""),
-  date: LS.get("date", "we1"),
-  nights: LS.get("nights", 1),
-  tier: "all",
-  type: "all",
-  likes: LS.get("likes", {})  // { itemId: { guestKey: "Prénom" } }
+  me: LS.get("me", ""), date: LS.get("date", "we1"), nights: LS.get("nights", 1),
+  tier: "all", type: "all",
+  likes: LS.get("likes", {}), ratings: LS.get("ratings", {}), photos: {}
 };
-const keyOf = name => name.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "invitee";
+const keyOf = n => n.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "invite";
+const cityById = id => D.cities.find(c => c.id === id);
+let toastT;
+function toast(m, ms){ const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), ms || 2400); }
 
-/* ---------- likes storage ---------- */
-async function loadLikes(){
+/* ---------- Firebase ---------- */
+async function fbGet(path){ const r = await fetch(FB + "/" + path + ".json?t=" + Date.now(), {cache:"no-store"}); if(!r.ok) throw new Error(r.status); return (await r.json()) || {}; }
+async function fbPut(path, val){ const r = await fetch(FB + "/" + path + ".json", {method:"PUT", body: JSON.stringify(val)}); if(!r.ok) throw new Error(r.status); }
+async function fbDel(path){ const r = await fetch(FB + "/" + path + ".json", {method:"DELETE"}); if(!r.ok) throw new Error(r.status); }
+async function loadAll(){
   if(!FB){ syncInfo(); return; }
   try{
-    const r = await fetch(FB + "/likes.json?t=" + Date.now(), {cache:"no-store"});
-    if(!r.ok) throw new Error(r.status);
-    state.likes = (await r.json()) || {};
-    LS.set("likes", state.likes);
+    const [l, r, p] = await Promise.all([fbGet("likes"), fbGet("ratings"), fbGet("photos")]);
+    state.likes = l; state.ratings = r; state.photos = p;
+    LS.set("likes", l); LS.set("ratings", r);
     syncInfo(true);
   }catch(e){ syncInfo(false); }
-  renderAllLikes();
-}
-async function toggleLike(id){
-  if(!state.me){ askName(() => toggleLike(id)); return; }
-  const k = keyOf(state.me);
-  const cur = state.likes[id] || {};
-  const on = !cur[k];
-  if(on) cur[k] = state.me; else delete cur[k];
-  state.likes[id] = cur;
-  LS.set("likes", state.likes);
-  renderAllLikes();
-  if(navigator.vibrate) navigator.vibrate(10);
-  const pool = on ? (D.likeToasts || []) : (D.unlikeToasts || []);
-  if(pool.length) toast(pool[Math.floor(Math.random() * pool.length)]);
-  if(!FB) return;
-  try{
-    const url = FB + "/likes/" + encodeURIComponent(id) + "/" + encodeURIComponent(k) + ".json";
-    const r = await fetch(url, on ? {method:"PUT", body: JSON.stringify(state.me)} : {method:"DELETE"});
-    if(!r.ok) throw new Error(r.status);
-  }catch(e){ toast("Pas de connexion : like gardé sur ton téléphone"); }
+  refresh();
 }
 function syncInfo(ok){
   const el = $("#syncInfo");
   if(!FB) el.textContent = "Likes enregistrés sur ce téléphone";
-  else el.textContent = ok === false ? "⚠️ Hors connexion" : "❤️ Likes partagés avec tout le groupe";
+  else el.textContent = ok === false ? "⚠️ Hors connexion" : "❤️ Likes, notes et photos partagés avec le groupe";
 }
 
-/* ---------- name ---------- */
+/* ---------- prénom ---------- */
 let afterName = null;
-function askName(cb){ afterName = cb || null; $("#nameInput").value = state.me; $("#nameModal").classList.add("open"); setTimeout(()=>$("#nameInput").focus(), 50); }
+function askName(cb){ afterName = cb || null; $("#nameInput").value = state.me; $("#nameModal").classList.add("open"); setTimeout(() => $("#nameInput").focus(), 50); }
 function setName(){
   const v = $("#nameInput").value.trim().slice(0,30);
   if(!v){ $("#nameInput").focus(); return; }
-  const old = state.me;
   state.me = v; LS.set("me", v);
-  // si changement de prénom, on transfère les likes locaux
-  if(old && keyOf(old) !== keyOf(v)){
-    Object.keys(state.likes).forEach(id => { const o = state.likes[id]; if(o && o[keyOf(old)]){ delete o[keyOf(old)]; o[keyOf(v)] = v; } });
-    LS.set("likes", state.likes);
-  }
   $("#nameModal").classList.remove("open");
-  whoLabel(); renderAllLikes();
+  whoLabel(); refresh();
   const cb = afterName; afterName = null; if(cb) cb();
 }
-function whoLabel(){ $("#whoBtn").textContent = state.me ? "💁‍♀️ " + state.me + " (changer)" : "👋 Qui es-tu ?"; }
+function whoLabel(){ $("#whoBtn").textContent = state.me ? "💁 " + state.me + " (changer)" : "👋 Qui es-tu ?"; }
+function needName(cb){ if(state.me) return true; askName(cb); return false; }
 
-/* ---------- links ---------- */
-function dates(){
-  const d = D.dates.find(x => x.id === state.date) || D.dates[0];
-  return { label: d.label, checkin: state.nights === 2 ? d.fri : d.sat, checkout: d.sun };
+/* ---------- likes ---------- */
+async function toggleLike(id){
+  if(!needName(() => toggleLike(id))) return;
+  const k = keyOf(state.me), cur = state.likes[id] || {}, on = !cur[k];
+  if(on) cur[k] = state.me; else delete cur[k];
+  state.likes[id] = cur; LS.set("likes", state.likes);
+  renderLikes(); if(navigator.vibrate) navigator.vibrate(10);
+  const pool = on ? (D.likeToasts || []) : (D.unlikeToasts || []);
+  if(pool.length) toast(pool[Math.floor(Math.random() * pool.length)]);
+  if(!FB) return;
+  try{ const path = "likes/" + encodeURIComponent(id) + "/" + encodeURIComponent(k); on ? await fbPut(path, state.me) : await fbDel(path); }
+  catch(e){ toast("Pas de connexion : like gardé sur ton téléphone"); }
 }
+
+/* ---------- étoiles ---------- */
+const RATE_JOKES = {1:"1 étoile… Louise s'en souviendra.", 2:"2 étoiles : poli mais pas convaincu.", 3:"3 étoiles : le « pourquoi pas » des gueux.", 4:"4 étoiles : ça sent la bonne idée !", 5:"5 étoiles ! Prépare ta valise (et ton foie)."};
+function cityStats(cid){
+  const o = state.ratings[cid] || {}; const vals = Object.values(o).filter(x => x && x.n);
+  const avg = vals.length ? vals.reduce((s,x) => s + x.n, 0) / vals.length : 0;
+  const mine = state.me ? (o[keyOf(state.me)] || {}).n || 0 : 0;
+  return {avg, count: vals.length, mine, names: vals.map(x => x.by + " " + x.n + "★")};
+}
+async function rate(cid, n){
+  if(!needName(() => rate(cid, n))) return;
+  const k = keyOf(state.me);
+  state.ratings[cid] = state.ratings[cid] || {};
+  state.ratings[cid][k] = {n, by: state.me};
+  LS.set("ratings", state.ratings);
+  refresh(); toast(RATE_JOKES[n]); if(navigator.vibrate) navigator.vibrate(10);
+  if(!FB) return;
+  try{ await fbPut("ratings/" + encodeURIComponent(cid) + "/" + encodeURIComponent(k), {n, by: state.me}); }
+  catch(e){ toast("Pas de connexion : note gardée sur ton téléphone"); }
+}
+function starsHtml(cid, mine){
+  let h = '<span class="stars">';
+  for(let i = 1; i <= 5; i++) h += `<button class="star ${i <= mine ? "on" : ""}" data-rate="${cid}" data-n="${i}" aria-label="${i} étoile${i>1?"s":""}">★</button>`;
+  return h + "</span>";
+}
+const avgTxt = s => s.count ? `<b>${s.avg.toFixed(1).replace(".", ",")} ★</b> · ${s.count} vote${s.count>1?"s":""}` : "Pas encore noté";
+
+/* ---------- liens ---------- */
+function dates(){ const d = D.dates.find(x => x.id === state.date) || D.dates[0]; return {label: d.label, checkin: state.nights === 2 ? d.fri : d.sat, checkout: d.sun}; }
 function searchLinks(city){
-  const {checkin, checkout} = dates();
-  const q = encodeURIComponent(city.search);
-  return [
-    ["Airbnb", `https://www.airbnb.fr/s/${q}/homes?adults=7&checkin=${checkin}&checkout=${checkout}&min_bedrooms=4`],
-    ["Abritel", `https://www.abritel.fr/search?destination=${q}&startDate=${checkin}&endDate=${checkout}&adults=7`],
-    ["Booking", `https://www.booking.com/searchresults.fr.html?ss=${q}&checkin=${checkin}&checkout=${checkout}&group_adults=7&no_rooms=4`]
-  ];
+  const {checkin, checkout} = dates(), q = encodeURIComponent(city.search);
+  return [["Airbnb", `https://www.airbnb.fr/s/${q}/homes?adults=7&checkin=${checkin}&checkout=${checkout}&min_bedrooms=4`],
+          ["Abritel", `https://www.abritel.fr/search?destination=${q}&startDate=${checkin}&endDate=${checkout}&adults=7`],
+          ["Booking", `https://www.booking.com/searchresults.fr.html?ss=${q}&checkin=${checkin}&checkout=${checkout}&group_adults=7&no_rooms=4`]];
 }
 const maps = a => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(a);
 const tel = p => "tel:" + p.replace(/[^+0-9]/g, "");
 const host = u => { try{ return new URL(u).hostname.replace(/^www\./,""); }catch(e){ return "site"; } };
 
-/* ---------- render ---------- */
-function renderControls(){
-  $("#cityNav").innerHTML = '<span class="lbl">Aller à</span>' + D.cities.map(c => `<button class="chip" data-go="${c.id}">${c.emoji} ${esc(c.name.split(" ")[0])}</button>`).join("");
-  const tiers = [["all","Tous les prix"]].concat(Object.entries(D.tiers).map(([k,t]) => [k, t.label + " " + t.name]));
-  const types = [["all","Tout"]].concat(Object.entries(D.types).map(([k,t]) => [k, t.emoji + " " + t.label]));
-  const dts = D.dates.map(d => [d.id, d.label.replace("WE du ","")]);
-  $("#filters").innerHTML =
-    '<span class="lbl">Dates</span>' + dts.map(([k,l]) => `<button class="chip ${state.date===k?"on":""}" data-date="${k}">${esc(l)}</button>`).join("") +
-    `<button class="chip ${state.nights===1?"on":""}" data-n="1">1 nuit</button><button class="chip ${state.nights===2?"on":""}" data-n="2">2 nuits</button>` +
-    '<span class="lbl">Prix</span>' + tiers.map(([k,l]) => `<button class="chip ${state.tier===k?"on":""}" data-tier="${k}">${esc(l)}</button>`).join("") +
-    '<span class="lbl">Quoi</span>' + types.map(([k,l]) => `<button class="chip ${state.type===k?"on":""}" data-type="${k}">${esc(l)}</button>`).join("");
-  const d = dates();
-  $("#dateline").textContent = "📅 " + d.label + (state.nights === 2 ? " · 2 nuits (ven → dim)" : " · 1 nuit (sam → dim)");
+/* ---------- Louise dans des cœurs ---------- */
+const LP = D.louise || [];
+function heart(i, size, rot, delay, bow){
+  const ph = LP.length ? LP[i % LP.length] : null;
+  const inner = ph ? `<img src="${esc(ph.src)}" style="object-position:${esc(ph.pos || "50% 35%")}" alt="Louise" loading="lazy" onerror="this.outerHTML='<div class=ph-empty>💖</div>'">` : `<div class="ph-empty">💖</div>`;
+  return `<span class="hframe" style="--s:${size}px;--r:${rot}deg;--d:${delay}s">${bow ? '<span class="bow">🎀</span>' : ""}<span class="hin">${inner}</span></span>`;
+}
+function renderLouise(){
+  const w = Math.min(window.innerWidth, 1100), n = Math.min(LP.length || 4, w < 420 ? 4 : w < 760 ? 5 : 7);
+  const size = Math.round(Math.min(140, (w - 30) / n + 4)), rots = [-12, 8, -5, 11, -9, 6, -10];
+  let h = ""; for(let i = 0; i < n; i++) h += heart(i, size, rots[i % 7], (i * .4).toFixed(1), i === Math.floor(n/2));
+  $("#louiseHero").innerHTML = h;
+}
+function floaties(){
+  const em = ["💖","💕","💗","✨","💘","🎀","💓"]; let h = "";
+  for(let i = 0; i < 14; i++) h += `<span style="left:${Math.random()*100}%;font-size:${14 + Math.random()*16}px;animation-duration:${12 + Math.random()*14}s;animation-delay:${-Math.random()*20}s">${em[i % 7]}</span>`;
+  $("#floaties").innerHTML = h;
 }
 
+/* ---------- vues ---------- */
+function route(){
+  const h = location.hash || "#villes";
+  const m = h.match(/^#ville\/([a-z]+)/);
+  const view = m ? "ville" : (["#photos","#classement"].includes(h) ? h.slice(1) : "villes");
+  ["villes","ville","photos","classement"].forEach(v => $("#v-" + v).classList.toggle("hidden", v !== view));
+  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.nav === "#" + view || (view === "ville" && t.dataset.nav === "#villes")));
+  $("#tabs").classList.toggle("hidden", view === "ville");
+  $("#cityBar").classList.toggle("hidden", view !== "ville");
+  state.city = m ? m[1] : null;
+  if(view === "photos") renderPhotos();
+  refresh();
+}
+function refresh(){
+  renderHome(); renderCity(); renderTop(); renderLikes();
+  if(!$("#v-photos").classList.contains("hidden")) renderPhotos();
+}
+function cityCard(c){
+  const s = cityStats(c.id);
+  return `<article class="ccard" data-go="${c.id}">
+    <div class="img"><img loading="lazy" referrerpolicy="no-referrer" src="${esc(c.photo)}" alt="${esc(c.name)}" onerror="this.style.display='none'"><div class="shade"></div>
+      <div class="nm"><b>${c.emoji} ${esc(c.name)}</b><span>${esc(c.trip)}</span></div></div>
+    <div class="bd">
+      <div class="avg">${avgTxt(s)}</div>
+      <div class="rate">Ta note ${starsHtml(c.id, s.mine)}<span class="disc">Découvrir ›</span></div>
+    </div></article>`;
+}
+function renderHome(){
+  $("#gTrain").innerHTML = D.cities.filter(c => c.mode !== "avion").map(cityCard).join("");
+  $("#gAvion").innerHTML = D.cities.filter(c => c.mode === "avion").map(cityCard).join("");
+}
 function card(it){
-  const t = D.tiers[it.tier];
-  return `<article class="card" data-id="${esc(it.id)}">
-    <div class="ph">
-      <img loading="lazy" referrerpolicy="no-referrer" alt="${esc(it.name)}" src="${esc(it.photo)}" onerror="this.style.display='none'">
-      <span class="tier ${it.tier===3?"t3":""}" title="${esc(t.name)}">${esc(t.label)}</span>
-      ${it.credit ? `<span class="credit">${esc(it.credit)}</span>` : ""}
-    </div>
+  const t = D.tiers[it.tier] || {label:"", name:""};
+  return `<article class="card">
+    <div class="ph"><img loading="lazy" referrerpolicy="no-referrer" alt="${esc(it.name)}" src="${esc(it.photo)}" onerror="this.style.display='none'">
+      <span class="tier ${it.tier===3?"t3":""}">${esc(t.label)}</span>${it.credit ? `<span class="credit">${esc(it.credit)}</span>` : ""}</div>
     <div class="body">
       <h4>${esc(it.name)}</h4>
       ${t.joke ? `<span class="tjoke">${esc(t.label)} · ${esc(t.joke)}</span>` : ""}
@@ -356,154 +475,175 @@ function card(it){
         ${it.phone ? `<a href="${tel(it.phone)}">📞 ${esc(it.phone)}</a>` : ""}
         <a href="${esc(it.url)}" target="_blank" rel="noopener">🔗 ${esc(host(it.url))}</a>
       </div>
-      <div class="foot">
-        <button class="like" data-like="${esc(it.id)}" aria-label="J'aime ${esc(it.name)}">🤍 <span>0</span></button>
-        <span class="likers"></span>
-      </div>
-    </div>
-  </article>`;
+      <div class="foot"><button class="like" data-like="${esc(it.id)}">🤍 <span>0</span></button><span class="likers"></span></div>
+    </div></article>`;
 }
-
-function renderCities(){
-  const out = D.cities.map(c => {
-    const items = c.items.filter(i => (state.tier==="all" || String(i.tier)===state.tier) && (state.type==="all" || i.type===state.type));
-    const groups = Object.keys(D.types).map(tp => {
-      const list = items.filter(i => i.type === tp);
-      if(!list.length) return "";
-      const extra = tp === "logement" ? `<div class="search">${searchLinks(c).map(([n,u]) => `<a class="btn" target="_blank" rel="noopener" href="${u}">🔎 ${n} · 7 pers.</a>`).join("")}</div>` : "";
-      return `<h3>${D.types[tp].emoji} ${esc(D.types[tp].label)}</h3>${extra}<div class="grid">${list.map(card).join("")}</div>`;
-    }).join("");
-    const dots = n => "●".repeat(n) + "○".repeat(5-n);
-    return `<section class="city" id="city-${c.id}">
-      <div class="cityhead">
-        <img loading="lazy" referrerpolicy="no-referrer" src="${esc(c.photo)}" alt="${esc(c.name)}" onerror="this.style.display='none'">
-        <div class="shade"></div><span class="credit">${esc(c.credit)}</span>
-        <div class="txt"><h2>${c.emoji} ${esc(c.name)}</h2><div>🚄 ${esc(c.trip)}</div></div>
-      </div>
-      <p>${esc(c.vibe)}</p>
-      ${c.joke ? `<div class="joke">😏 ${esc(c.joke)}</div>` : ""}
-      <div class="meta">
-        <span>Spa <span class="score">${dots(c.scores.spa)}</span></span>
-        <span>Soirée <span class="score">${dots(c.scores.soiree)}</span></span>
-        <span>Petit budget <span class="score">${dots(c.scores.budget)}</span></span>
-      </div>
-      ${groups || '<p class="empty">Rien dans cette gamme de prix ici : change le filtre.</p>'}
-    </section>`;
+function renderFilters(){
+  const tiers = [["all","Tous les prix"]].concat(Object.entries(D.tiers).map(([k,t]) => [k, t.label + " " + t.name]));
+  const types = [["all","Tout"]].concat(Object.entries(D.types).map(([k,t]) => [k, t.emoji + " " + t.label]));
+  $("#filters").innerHTML =
+    '<span class="lbl">Quoi</span>' + types.map(([k,l]) => `<button class="chip ${state.type===k?"on":""}" data-type="${k}">${esc(l)}</button>`).join("") +
+    '<span class="lbl">Prix</span>' + tiers.map(([k,l]) => `<button class="chip ${state.tier===k?"on":""}" data-tier="${k}">${esc(l)}</button>`).join("") +
+    '<span class="lbl">Dates</span>' + D.dates.map(d => `<button class="chip ${state.date===d.id?"on":""}" data-date="${d.id}">${esc(d.label.replace("WE du ",""))}</button>`).join("") +
+    `<button class="chip ${state.nights===1?"on":""}" data-n="1">1 nuit</button><button class="chip ${state.nights===2?"on":""}" data-n="2">2 nuits</button>`;
+  const d = dates(); $("#dateline").textContent = "📅 " + d.label + (state.nights === 2 ? " · 2 nuits (ven → dim)" : " · 1 nuit (sam → dim)");
+}
+function renderCity(){
+  renderFilters();
+  const c = state.city && cityById(state.city);
+  if(!c){ $("#v-ville").innerHTML = ""; return; }
+  const s = cityStats(c.id);
+  const items = c.items.filter(i => (state.tier==="all" || String(i.tier)===state.tier) && (state.type==="all" || i.type===state.type));
+  const groups = Object.keys(D.types).map(tp => {
+    const list = items.filter(i => i.type === tp); if(!list.length) return "";
+    const extra = tp === "logement" ? `<div class="search">${searchLinks(c).map(([n,u]) => `<a class="btn" target="_blank" rel="noopener" href="${u}">🔎 ${n} · 7 pers.</a>`).join("")}</div>` : "";
+    return `<h3>${D.types[tp].emoji} ${esc(D.types[tp].label)}</h3>${extra}<div class="grid">${list.map(card).join("")}</div>`;
   }).join("");
-  $("#cities").innerHTML = out;
-  decorateCities();
-  renderAllLikes();
+  const dots = n => "●".repeat(n) + "○".repeat(5-n);
+  const idx = D.cities.indexOf(c);
+  $("#v-ville").innerHTML = `
+    <div class="cityheart">${heart(idx, 96, idx % 2 ? 9 : -9, (idx*.3).toFixed(1), false)}</div>
+    <div class="cityhead" style="margin-top:14px">
+      <img referrerpolicy="no-referrer" src="${esc(c.photo)}" alt="${esc(c.name)}" onerror="this.style.display='none'">
+      <div class="shade"></div><span class="credit">${esc(c.credit)}</span>
+      <div class="txt"><h2>${c.emoji} ${esc(c.name)}</h2><div>${esc(c.trip)}</div></div>
+    </div>
+    <div class="cityrate"><div class="rate" style="font-size:15px">Ta note ${starsHtml(c.id, s.mine)}</div>
+      <div class="avg" style="margin-top:4px">Moyenne du groupe : ${avgTxt(s)}</div>
+      ${s.names.length ? `<div class="raters">${esc(s.names.join(" · "))}</div>` : ""}</div>
+    <p>${esc(c.vibe)}</p>
+    ${c.joke ? `<div class="joke">😏 ${esc(c.joke)}</div>` : ""}
+    <div class="meta"><span>Spa <span class="score">${dots(c.scores.spa)}</span></span><span>Soirée <span class="score">${dots(c.scores.soiree)}</span></span><span>Petit budget <span class="score">${dots(c.scores.budget)}</span></span></div>
+    ${groups || '<p class="empty">Rien avec ces filtres : change-les.</p>'}`;
 }
-
-function renderAllLikes(){
+function renderLikes(){
   const myK = state.me ? keyOf(state.me) : "";
   document.querySelectorAll("[data-like]").forEach(b => {
-    const o = state.likes[b.dataset.like] || {};
-    const names = Object.values(o).filter(Boolean);
-    const on = !!(myK && o[myK]);
-    b.classList.toggle("on", on);
-    b.innerHTML = (on ? "❤️" : "🤍") + " <span>" + names.length + "</span>";
-    const l = b.parentNode.querySelector(".likers");
-    if(l) l.textContent = names.length ? names.join(", ") : "Personne pour l'instant : lance-toi ❤️";
+    const o = state.likes[b.dataset.like] || {}, names = Object.values(o).filter(Boolean), on = !!(myK && o[myK]);
+    b.classList.toggle("on", on); b.innerHTML = (on ? "❤️" : "🤍") + " <span>" + names.length + "</span>";
+    const l = b.parentNode.querySelector(".likers"); if(l) l.textContent = names.length ? names.join(", ") : "Personne pour l'instant : lance-toi ❤️";
   });
-  renderTop();
 }
-
 function renderTop(){
-  const all = [];
-  D.cities.forEach(c => c.items.forEach(i => all.push({c, i, n: Object.keys(state.likes[i.id] || {}).length})));
-  const cityScore = D.cities.map(c => ({c, n: c.items.reduce((s,i) => s + Object.keys(state.likes[i.id] || {}).length, 0)})).sort((a,b) => b.n - a.n);
-  const total = all.reduce((s,x) => s + x.n, 0);
-  if(!total){
-    $("#top").innerHTML = '<p class="muted" style="margin:0">Pas encore de like. Parcours les villes et touche 🤍 sur ce qui te plaît : le classement apparaîtra ici.</p>';
-    return;
-  }
-  const max = cityScore[0].n || 1;
-  const topItems = all.filter(x => x.n).sort((a,b) => b.n - a.n).slice(0, 8);
-  const voters = new Set(); Object.values(state.likes).forEach(o => Object.values(o||{}).forEach(n => voters.add(n)));
+  const cs = D.cities.map(c => ({c, s: cityStats(c.id), likes: c.items.reduce((a,i) => a + Object.keys(state.likes[i.id] || {}).length, 0)}))
+    .sort((a,b) => (b.s.avg - a.s.avg) || (b.likes - a.likes));
+  const items = []; D.cities.forEach(c => c.items.forEach(i => { const n = Object.keys(state.likes[i.id] || {}).length; if(n) items.push({c, i, n}); }));
+  items.sort((a,b) => b.n - a.n);
+  const voters = new Set();
+  Object.values(state.likes).forEach(o => Object.values(o||{}).forEach(n => voters.add(n)));
+  Object.values(state.ratings).forEach(o => Object.values(o||{}).forEach(x => x && x.by && voters.add(x.by)));
+  if(!voters.size){ $("#top").innerHTML = '<p class="muted" style="margin:0">Personne n\'a encore voté. Note les villes ⭐ et like ❤️ tes coups de cœur : le classement apparaîtra ici.</p>'; return; }
   $("#top").innerHTML =
     `<p class="muted" style="margin:0 0 8px">${voters.size} participant${voters.size>1?"s ont":" a"} voté : ${esc([...voters].join(", "))}</p>
-     <b>Villes</b>
-     <ol>${cityScore.map(x => `<li><a href="#city-${x.c.id}">${x.c.emoji} ${esc(x.c.name)}</a> — ${x.n} ❤️<div class="bar"><i style="width:${Math.round(100*x.n/max)}%"></i></div></li>`).join("")}</ol>
+     <b>Villes (moyenne des étoiles)</b>
+     <ol>${cs.map(x => `<li><a href="#ville/${x.c.id}">${x.c.emoji} ${esc(x.c.name)}</a> — ${x.s.count ? x.s.avg.toFixed(1).replace(".", ",") + " ★ (" + x.s.count + ")" : "pas noté"} · ${x.likes} ❤️<div class="bar"><i style="width:${Math.round(20 * x.s.avg)}%"></i></div></li>`).join("")}</ol>
      <b>Coups de cœur</b>
-     <ol>${topItems.map(x => `<li>${D.types[x.i.type].emoji} ${esc(x.i.name)} <span class="muted">(${esc(x.c.name.split(" ")[0])})</span> — ${x.n} ❤️</li>`).join("")}</ol>`;
+     ${items.length ? `<ol>${items.slice(0, 10).map(x => `<li>${D.types[x.i.type].emoji} ${esc(x.i.name)} <span class="muted">(${esc(x.c.name)})</span> — ${x.n} ❤️</li>`).join("")}</ol>` : '<p class="muted">Pas encore de like.</p>'}`;
 }
 
-let toastT;
-function toast(m){ const t = $("#toast"); t.textContent = m; t.classList.add("show"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("show"), 2200); }
-
-
-/* ---------- Louise dans des cœurs ---------- */
-const LP = D.louise || [];
-function heart(i, size, rot, delay, bow){
-  const ph = LP.length ? LP[i % LP.length] : null;
-  const src = ph ? (ph.src || ph) : "";
-  const inner = src ? `<img src="${esc(src)}" style="object-position:${esc(ph.pos || "50% 35%")}" alt="Louise" loading="lazy" onerror="this.outerHTML='<div class=ph-empty>💖</div>'">` : `<div class="ph-empty">💖</div>`;
-  return `<span class="hframe" style="--s:${size}px;--r:${rot}deg;--d:${delay}s">${bow ? '<span class="bow">🎀</span>' : ""}<span class="hin">${inner}</span></span>`;
+/* ---------- photos dossiers ---------- */
+const photoCache = {};
+let io = null;
+function renderPhotos(){
+  const g = $("#pgrid");
+  if(!FB){ g.innerHTML = '<p class="muted">Les photos partagées ne sont pas encore activées.</p>'; return; }
+  const list = Object.entries(state.photos || {}).sort((a,b) => (b[1].at||0) - (a[1].at||0));
+  if(!list.length){ g.innerHTML = '<p class="muted">Aucune photo pour l\'instant. Sois le premier à balancer 😏</p>'; return; }
+  const have = new Set([...g.querySelectorAll(".pt")].map(e => e.dataset.pid));
+  if(list.length === have.size && list.every(([id]) => have.has(id))) return;
+  g.innerHTML = list.map(([id, m]) => `<div class="pt" data-pid="${esc(id)}" data-by="${esc(m.by)}"><span>par ${esc(m.by)}</span></div>`).join("");
+  if(io) io.disconnect();
+  io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ io.unobserve(e.target); loadPhoto(e.target); } }), {rootMargin: "300px"});
+  g.querySelectorAll(".pt").forEach(el => io.observe(el));
 }
-function renderLouise(){
-  const w = Math.min(window.innerWidth, 1100);
-  const n = w < 420 ? 4 : w < 760 ? 5 : 7;
-  const size = Math.round(Math.min(140, (w - 30) / n + 4));
-  const rots = [-12, 8, -5, 11, -9, 6, -10];
-  let h = ""; for(let i = 0; i < n; i++) h += heart(i, size, rots[i % rots.length], (i * .4).toFixed(1), i === Math.floor(n/2));
-  $("#louiseHero").innerHTML = h;
+async function loadPhoto(el){
+  const id = el.dataset.pid;
+  try{
+    if(!photoCache[id]){ const r = await fetch(FB + "/photoData/" + encodeURIComponent(id) + ".json"); photoCache[id] = await r.json(); }
+    if(photoCache[id]) el.insertAdjacentHTML("afterbegin", `<img alt="" src="${photoCache[id]}">`);
+  }catch(e){}
 }
-function decorateCities(){
-  document.querySelectorAll(".city").forEach((sec, i) => {
-    const d = document.createElement("div");
-    d.className = "cityheart";
-    d.innerHTML = heart(i + 3, 96, i % 2 ? 9 : -9, (i * .3).toFixed(1), false);
-    sec.insertBefore(d, sec.firstChild);
+function compress(file){
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file), img = new Image();
+    img.onload = () => {
+      let max = 1280, q = 0.8, out = "";
+      for(let k = 0; k < 8; k++){
+        const r = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+        const cv = document.createElement("canvas"); cv.width = Math.round(img.naturalWidth * r); cv.height = Math.round(img.naturalHeight * r);
+        cv.getContext("2d").drawImage(img, 0, 0, cv.width, cv.height);
+        out = cv.toDataURL("image/jpeg", q);
+        if(out.length <= 560000) break;
+        if(q > 0.5) q -= 0.1; else max = Math.round(max * 0.8);
+      }
+      URL.revokeObjectURL(url); out.length <= 590000 ? resolve(out) : reject(new Error("trop grande"));
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("illisible")); };
+    img.src = url;
   });
 }
-function floaties(){
-  const box = $("#floaties"); const em = ["💖","💕","💗","✨","💘","🎀","💓"];
-  let h = ""; for(let i = 0; i < 14; i++){
-    h += `<span style="left:${Math.random()*100}%;font-size:${14 + Math.random()*16}px;animation-duration:${12 + Math.random()*14}s;animation-delay:${-Math.random()*20}s">${em[i % em.length]}</span>`;
+async function upload(files){
+  if(!FB){ toast("Photos partagées pas encore activées"); return; }
+  if(!needName(() => upload(files))) return;
+  const info = $("#uplInfo"); let ok = 0, ko = 0;
+  for(let i = 0; i < files.length; i++){
+    info.textContent = `Envoi ${i+1}/${files.length}…`;
+    try{
+      const data = await compress(files[i]);
+      const id = Date.now().toString(36) + "-" + keyOf(state.me).slice(0,12) + "-" + Math.random().toString(36).slice(2,6);
+      await fbPut("photoData/" + id, data);
+      await fbPut("photos/" + id, {by: state.me, at: Date.now()});
+      photoCache[id] = data; state.photos[id] = {by: state.me, at: Date.now()}; ok++;
+    }catch(e){ ko++; }
   }
-  box.innerHTML = h;
+  info.textContent = ok ? `✅ ${ok} photo${ok>1?"s":""} envoyée${ok>1?"s":""}` + (ko ? `, ${ko} échec${ko>1?"s":""}` : "") : "❌ Échec de l'envoi, réessaie";
+  if(ok) toast(["Dossier reçu. Louise n'est pas prête.","Merci pour cette contribution au patrimoine de l'humanité.","Photo ajoutée. Ton anonymat n'est pas garanti."][Math.floor(Math.random()*3)]);
+  renderPhotos();
 }
 
-/* ---------- events ---------- */
+/* ---------- évènements ---------- */
 document.addEventListener("click", e => {
-  const b = e.target.closest("button"); if(!b) return;
+  const b = e.target.closest("button, .ccard, .pt");
+  if(!b) return;
+  if(b.dataset.rate){ e.stopPropagation(); rate(b.dataset.rate, +b.dataset.n); return; }
   if(b.dataset.like){ toggleLike(b.dataset.like); return; }
-  if(b.dataset.go){ document.getElementById("city-" + b.dataset.go).scrollIntoView({behavior:"smooth"}); return; }
-  if(b.dataset.date){ state.date = b.dataset.date; LS.set("date", state.date); renderControls(); renderCities(); return; }
-  if(b.dataset.n){ state.nights = +b.dataset.n; LS.set("nights", state.nights); renderControls(); renderCities(); return; }
-  if(b.dataset.tier){ state.tier = b.dataset.tier; renderControls(); renderCities(); return; }
-  if(b.dataset.type){ state.type = b.dataset.type; renderControls(); renderCities(); return; }
+  if(b.dataset.nav){ location.hash = b.dataset.nav; return; }
+  if(b.dataset.go){ location.hash = "#ville/" + b.dataset.go; return; }
+  if(b.dataset.pid){ const src = photoCache[b.dataset.pid]; if(src){ $("#lbImg").src = src; $("#lbCap").textContent = "par " + b.dataset.by; $("#lb").classList.add("open"); } return; }
+  if(b.dataset.date){ state.date = b.dataset.date; LS.set("date", state.date); renderCity(); renderLikes(); return; }
+  if(b.dataset.n && !b.dataset.rate){ state.nights = +b.dataset.n; LS.set("nights", state.nights); renderCity(); renderLikes(); return; }
+  if(b.dataset.tier){ state.tier = b.dataset.tier; renderCity(); renderLikes(); return; }
+  if(b.dataset.type){ state.type = b.dataset.type; renderCity(); renderLikes(); return; }
 });
+window.addEventListener("hashchange", () => { route(); const c = $("#controls"); window.scrollTo({top: c.offsetTop - 2}); });
 $("#whoBtn").addEventListener("click", () => askName());
 $("#nameOk").addEventListener("click", setName);
 $("#nameInput").addEventListener("keydown", e => { if(e.key === "Enter") setName(); });
 $("#nameModal").addEventListener("click", e => { if(e.target.id === "nameModal" && state.me) $("#nameModal").classList.remove("open"); });
+$("#fileIn").addEventListener("change", e => { const f = [...e.target.files]; e.target.value = ""; if(f.length) upload(f); });
+$("#lbClose").addEventListener("click", () => $("#lb").classList.remove("open"));
+$("#lb").addEventListener("click", e => { if(e.target.id === "lb") $("#lb").classList.remove("open"); });
 
-/* pull to refresh (mobile) */
+/* tirer pour rafraîchir */
 (function(){
   const ptr = $("#ptr"); let y0 = null, dy = 0;
-  window.addEventListener("touchstart", e => { if(window.scrollY <= 0 && !$("#nameModal").classList.contains("open")) { y0 = e.touches[0].clientY; dy = 0; } }, {passive:true});
-  window.addEventListener("touchmove", e => {
-    if(y0 === null) return; dy = e.touches[0].clientY - y0;
-    if(dy > 0){ const p = Math.min(dy, 120); ptr.style.opacity = Math.min(p/70, 1); ptr.style.transform = `translate(-50%, ${p/2 - 30}px) rotate(${p*3}deg)`; }
-  }, {passive:true});
-  window.addEventListener("touchend", async () => {
-    if(y0 === null) return; const go = dy > 80; y0 = null;
-    if(go){ ptr.classList.add("spin"); ptr.style.transform = "translate(-50%, 18px)"; await loadLikes(); setTimeout(() => location.reload(), 250); }
-    else { ptr.style.opacity = 0; ptr.style.transform = "translate(-50%,-40px)"; }
-  });
+  window.addEventListener("touchstart", e => { if(window.scrollY <= 0 && !$("#nameModal").classList.contains("open") && !$("#lb").classList.contains("open")) { y0 = e.touches[0].clientY; dy = 0; } }, {passive:true});
+  window.addEventListener("touchmove", e => { if(y0 === null) return; dy = e.touches[0].clientY - y0;
+    if(dy > 0){ const p = Math.min(dy, 120); ptr.style.opacity = Math.min(p/70, 1); ptr.style.transform = `translate(-50%, ${p/2 - 30}px) rotate(${p*3}deg)`; } }, {passive:true});
+  window.addEventListener("touchend", async () => { if(y0 === null) return; const go = dy > 80; y0 = null;
+    if(go){ ptr.classList.add("spin"); ptr.style.transform = "translate(-50%, 18px)"; await loadAll(); setTimeout(() => location.reload(), 250); }
+    else { ptr.style.opacity = 0; ptr.style.transform = "translate(-50%,-40px)"; } });
 })();
 
-/* ---------- init ---------- */
+/* ---------- démarrage ---------- */
 $("#ticker").textContent = (D.ticker || []).join("   ✦   ");
-$("#groupNote").textContent = "🛏️ " + D.group.note + " Budgets indicatifs : " + Object.values(D.tiers).map(t => t.label + " " + t.budget).join(" · ") + ".";
+$("#groupNote").textContent = "🛏️ " + D.group.note + " Budgets indicatifs : " + Object.values(D.tiers).map(t => t.label + " " + t.budget).join(" · ") + ". En avion, ajouter ≈ 100 à 250 € de vol aller-retour.";
 $("#sources").innerHTML = D.sources.map(s => `<li>${esc(s)}</li>`).join("");
 $("#updated").textContent = "Mis à jour le " + new Date(D.updated).toLocaleDateString("fr-FR", {day:"numeric", month:"long", year:"numeric"}) + ".";
-whoLabel(); renderLouise(); floaties(); renderControls(); renderCities(); loadLikes();
+whoLabel(); renderLouise(); floaties(); route(); loadAll();
 window.addEventListener("resize", () => renderLouise());
-if(FB) setInterval(() => { if(!document.hidden) loadLikes(); }, 20000);
-document.addEventListener("visibilitychange", () => { if(!document.hidden && FB) loadLikes(); });
+if(FB) setInterval(() => { if(!document.hidden) loadAll(); }, 20000);
+document.addEventListener("visibilitychange", () => { if(!document.hidden && FB) loadAll(); });
 if(!state.me) setTimeout(() => askName(), 600);
 })();
 </script>

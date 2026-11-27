@@ -17,7 +17,7 @@ CHEF_NOTE = ("Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026
 
 DATA = {
   "version": 1,
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "title": "Louison la reine et ses 6 gueux",
   "dates": [
     {"id": "we1", "label": "WE du 3-4 avril 2027", "fri": "2027-04-02", "sat": "2027-04-03", "sun": "2027-04-04"},
@@ -369,6 +369,7 @@ DATA = {
     "Offices de tourisme de Lille, Lyon, Bordeaux ; visit.brussels",
     "Take a Chef : tarifs moyens 2026",
     "Brochure spa Les Sources de Caudalie 2025",
+    "Offices de tourisme de Madrid (esmadrid.com), Rome (turismoroma.it), Amsterdam (iamsterdam.com) ; Time Out ; Funbooker, Winedering, Privateaser",
     "Photos : sites officiels des lieux ou Wikimedia Commons (licences libres, auteurs sur commons.wikimedia.org)"
   ]
 }
@@ -421,7 +422,7 @@ FUN = {
   {"id": "bdx-citeduvin", "type": "activite", "tier": 2, "name": "La Cité du Vin",
    "desc": "Le musée du vin XXL au bord de la Garonne, avec dégustation au belvédère tout en haut. Culturel ET alcoolisé.",
    "address": "134 quai de Bacalan, 33300 Bordeaux", "url": "https://www.laciteduvin.com/fr",
-   "photo": "https://www.laciteduvin.com/derivation/image/front/1200/627/eyJpZCI6InBhZ2VoZWFkZXIvNDE4L2NvdmVyX2ltYWdlLzIxMTQ1YjBhNWVhYjA1MDM1OGMwMzhlMDY1MGIzM2UzLmpwZyIsInN0b3JhZ2UiOiJzdG9yZSJ9?signature=a091a15301a4a91c03f106fca8cada4cd2da", "credit": "Photo : La Cité du Vin"}],
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Cit%C3%A9_du_Vin_Bordeaux_31.jpg/960px-Cit%C3%A9_du_Vin_Bordeaux_31.jpg", "credit": "Photo Wikimedia Commons · La Cité du Vin"}],
  "lyon": [
   {"id": "lyon-karaoke", "type": "fun", "tier": 2, "name": "Karaoké Box Guillotière",
    "desc": "Box de karaoké privée pour 7 à 18 personnes, 2 h de micro. Noté 4,8/5. Le chef à domicile n'est pas invité à chanter.",
@@ -448,6 +449,144 @@ for c in DATA["cities"]:
             i["url"] = "https://www.airbnb.fr/s/Ixelles--Belgique/homes?adults=7&min_bedrooms=4&room_types%5B%5D=Entire%20home%2Fapt"
     if c["id"] in VILLAS: c["items"].insert(0, VILLAS[c["id"]])
     c["items"] += FUN.get(c["id"], [])
+
+
+# ---------------------------------------------------------------- VILLES EN AVION (27/11/2026)
+WC = "https://thumb.wikimedia.org/wikipedia/commons/thumb/"
+TAC = "https://d1zzxdyvtq79bu.cloudfront.net/context/frontend/images/open-graph/chef_privado_take_a_chef.jpg"
+def airbnb(q, extra=""):
+    return f"https://www.airbnb.fr/s/{q}/homes?adults=7&min_bedrooms=4&room_types%5B%5D=Entire%20home%2Fapt{extra}"
+def chef(cid, city, url):
+    return {"id": cid, "type": "chef", "tier": 2, "name": f"Chef à domicile à {city} (Take a Chef)",
+            "desc": "Take a Chef fonctionne aussi ici : on décrit la soirée, plusieurs chefs proposent un menu. Prix souvent un peu plus doux qu'en France. " + CHEF_NOTE,
+            "address": city, "url": url, "photo": TAC, "credit": "Photo : Take a Chef"}
+for c in DATA["cities"]: c.setdefault("mode", "train")
+DATA["cities"] += [
+ {"id": "barcelone", "mode": "avion", "name": "Barcelone", "emoji": "🇪🇸",
+  "trip": "✈️ 1 h 45 de vol (Paris → Barcelone-El Prat)",
+  "vibe": "Plage, tapas, cava et soirées qui commencent à minuit. Spa dans des bains romains à la bougie, catamaran au coucher du soleil.",
+  "joke": "À Barcelone on dîne à 22 h et on sort à 1 h. Le chef à domicile fera donc le petit-déjeuner.",
+  "scores": {"spa": 5, "soiree": 5, "budget": 3}, "photo": WC + "7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+  "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0", "search": "Barcelone, Espagne",
+  "items": [
+   {"id": "bcn-villas", "type": "logement", "tier": 2, "name": "Maisons avec piscine autour de Barcelone",
+    "desc": "Sélection Airbnb déjà filtrée : maisons entières pour 7, au moins 4 chambres, avec piscine. Côté Sitges ou Castelldefels, à 30 min du centre et à 10 min de la plage.",
+    "address": "Sitges / Castelldefels (30 min de Barcelone)", "url": airbnb("Sitges--Espagne", "&amenities%5B%5D=7"),
+    "photo": WC + "7/7c/Boats%2C_Barcelona_%28P1170705%29.jpg/960px-Boats%2C_Barcelona_%28P1170705%29.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"},
+   {"id": "bcn-aire", "type": "spa", "tier": 3, "name": "AIRE Ancient Baths",
+    "desc": "Bains thermaux à la romaine dans une ancienne bâtisse du Born : bassins chaud, froid, salé, à la lueur des bougies. Massages possibles.",
+    "address": "Passeig de Picasso 22, 08003 Barcelone", "url": "https://beaire.com/en/aire-ancient-baths-barcelona",
+    "photo": WC + "e/e2/Porto_deportivo_en_Barcelona_B19.jpg/960px-Porto_deportivo_en_Barcelona_B19.jpg", "credit": "Photo Wikimedia Commons · Barcelone, CC BY-SA 4.0"},
+   chef("bcn-chef", "Barcelone", "https://www.takeachef.com/en-es/private-chef/barcelona"),
+   {"id": "bcn-cata", "type": "fun", "tier": 2, "name": "Catamaran privé au coucher du soleil",
+    "desc": "2 h en mer rien que pour nous, skipper inclus, départ du Port Olímpic environ 2 h avant le coucher du soleil. Cava, musique, et photos de groupe qui feront des jalouses.",
+    "address": "Port Olímpic, 08005 Barcelone", "url": "https://www.nautal.com/uk/activities/barcelona/sunset-catamaran-experience-in-barcelona-30306",
+    "photo": WC + "7/7c/Boats%2C_Barcelona_%28P1170705%29.jpg/960px-Boats%2C_Barcelona_%28P1170705%29.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"},
+   {"id": "bcn-opium", "type": "soiree", "tier": 3, "name": "Opium Barcelona",
+    "desc": "Club sur la plage, à côté du Port Olímpic : on danse les pieds presque dans le sable.",
+    "address": "Passeig Marítim de la Barceloneta 34, 08003 Barcelone", "url": "https://www.timeout.com/barcelona/clubs/opium-mar",
+    "photo": WC + "7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"}]},
+ {"id": "madrid", "mode": "avion", "name": "Madrid", "emoji": "💃",
+  "trip": "✈️ 2 h de vol (Paris → Madrid-Barajas)",
+  "vibe": "Tapas, flamenco, terrasses et clubs sur 7 étages. Hammam arabe en plein centre. Ville qui ne dort jamais, nous non plus.",
+  "joke": "Madrid, où « on rentre tôt » veut dire 6 h du matin. Prévoir des lunettes de soleil pour le brunch.",
+  "scores": {"spa": 4, "soiree": 5, "budget": 4}, "photo": WC + "f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+  "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0", "search": "Madrid, Espagne",
+  "items": [
+   {"id": "mad-maisons", "type": "logement", "tier": 2, "name": "Grandes maisons à Madrid",
+    "desc": "Sélection Airbnb déjà filtrée : logements entiers pour 7, au moins 4 chambres, avec jacuzzi. Viser les quartiers Salamanca, Chamberí ou La Latina pour tout faire à pied.",
+    "address": "Madrid (Salamanca, Chamberí, La Latina)", "url": airbnb("Madrid--Espagne", "&amenities%5B%5D=25"),
+    "photo": WC + "5/58/Plaza_Mayor_de_Madrid_-_01.jpg/960px-Plaza_Mayor_de_Madrid_-_01.jpg", "credit": "Photo Wikimedia Commons · Plaza Mayor, CC BY-SA 3.0"},
+   {"id": "mad-hammam", "type": "spa", "tier": 2, "name": "Hammam Al Ándalus",
+    "desc": "Bains arabes à la lumière tamisée : bassins chaud, tiède, froid, hammam et massages, à deux pas de la Puerta del Sol.",
+    "address": "Calle de Atocha 14, 28012 Madrid", "url": "https://www.esmadrid.com/mcb/en/venue-service/hammam-al-andalus-madrid",
+    "photo": WC + "0/04/Ba%C3%B1os_%C3%A1rabes_Hammam_al_%C3%81ndalus%2C_M%C3%A1laga%2C_Espa%C3%B1a%2C_2023-05-20%2C_DD_133.jpg/960px-Ba%C3%B1os_%C3%A1rabes_Hammam_al_%C3%81ndalus%2C_M%C3%A1laga%2C_Espa%C3%B1a%2C_2023-05-20%2C_DD_133.jpg", "credit": "Photo Wikimedia Commons · Hammam Al Ándalus (Málaga), CC BY-SA 4.0"},
+   chef("mad-chef", "Madrid", "https://www.takeachef.com/en-es/private-chef/madrid"),
+   {"id": "mad-corral", "type": "fun", "tier": 3, "name": "Flamenco au Corral de la Morería",
+    "desc": "Le tablao flamenco le plus célèbre du monde (depuis 1956). Spectacle avec dîner ou boisson. Défi : Louise doit apprendre un pas avant la fin du week-end.",
+    "address": "Calle de la Morería 17, 28005 Madrid", "url": "https://www.esmadrid.com/en/nightlife/corral-moreria",
+    "photo": "https://www.esmadrid.com/sites/default/files/styles/content_type_full/public/recursosturisticos/noche/2024884750_117201212926_adj.jpg?itok=r-L33uTt", "credit": "Photo : esmadrid.com"},
+   {"id": "mad-kapital", "type": "soiree", "tier": 2, "name": "Teatro Kapital",
+    "desc": "Club géant sur 7 étages, une ambiance par étage. On se perd, on se retrouve au rooftop.",
+    "address": "Calle de Atocha 125, 28012 Madrid", "url": "https://teatrokapital.com/",
+    "photo": WC + "b/b8/Teatro_Kapital_Madrid.jpg/960px-Teatro_Kapital_Madrid.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"}]},
+ {"id": "budapest", "mode": "avion", "name": "Budapest", "emoji": "🇭🇺",
+  "trip": "✈️ 2 h 15 de vol (Paris → Budapest)",
+  "vibe": "La capitale des bains thermaux et des « ruin bars ». Très bon rapport qualité-prix, et une fête dans les bains le samedi soir.",
+  "joke": "Budapest : le seul endroit où on peut faire la fête en maillot de bain en avril sans finir en hypothermie.",
+  "scores": {"spa": 5, "soiree": 5, "budget": 5}, "photo": WC + "f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+  "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0", "search": "Budapest, Hongrie",
+  "items": [
+   {"id": "bud-appart", "type": "logement", "tier": 2, "name": "Grands appartements de standing à Budapest",
+    "desc": "Sélection Airbnb déjà filtrée : logements entiers pour 7, au moins 4 chambres. Les beaux appartements haussmanniens du centre (districts V, VI, VII) sont très abordables.",
+    "address": "Budapest, districts V-VI-VII", "url": airbnb("Budapest--Hongrie"),
+    "photo": WC + "b/bc/BP_parliament_at_night_B%C3%85n.JPG/960px-BP_parliament_at_night_B%C3%85n.JPG", "credit": "Photo Wikimedia Commons · Parlement, CC BY 2.5"},
+   {"id": "bud-szechenyi", "type": "spa", "tier": 2, "name": "Bains Széchenyi",
+    "desc": "Les bains thermaux mythiques : 18 bassins dont des extérieurs à 38 °C, saunas, massages. Une journée entière pour quelques dizaines d'euros.",
+    "address": "Állatkerti körút 9-11, 1146 Budapest", "url": "https://szechenyibath.hu/",
+    "photo": WC + "7/71/Budapest_Sz%C3%A9chenyi_Baths_R01.jpg/960px-Budapest_Sz%C3%A9chenyi_Baths_R01.jpg", "credit": "Photo Wikimedia Commons · CC BY 3.0"},
+   chef("bud-chef", "Budapest", "https://www.takeachef.com/en-hu/private-chef/budapest"),
+   {"id": "bud-sparty", "type": "fun", "tier": 2, "name": "Sparty – la fête dans les bains Széchenyi",
+    "desc": "Le samedi soir : DJ, lasers et danseurs dans les bassins à 34-38 °C. Dès ≈ 30 €/pers. Le spa et la soirée en un seul ticket. Réservé aux majeurs.",
+    "address": "Állatkerti körút 9-11, 1146 Budapest", "url": "https://www.headout.com/sparty-budapest-c-802",
+    "photo": WC + "6/65/Budapest_Sz%C3%A9chenyi_Baths_R04.jpg/960px-Budapest_Sz%C3%A9chenyi_Baths_R04.jpg", "credit": "Photo Wikimedia Commons · CC BY 3.0"},
+   {"id": "bud-szimpla", "type": "soiree", "tier": 2, "name": "Szimpla Kert",
+    "desc": "Le premier et le plus célèbre des « ruin bars » : un immeuble en ruine rempli de bric-à-brac, de bars et de musique. Ouvert jusqu'à 4 h.",
+    "address": "Kazinczy utca 14, 1075 Budapest", "url": "https://www.timeout.com/budapest/bars-and-pubs/szimpla-kert",
+    "photo": "https://media.timeout.com/images/106021449/image.jpg", "credit": "Photo : Time Out"}]},
+ {"id": "rome", "mode": "avion", "name": "Rome", "emoji": "🇮🇹",
+  "trip": "✈️ 2 h 05 de vol (Paris → Rome-Fiumicino)",
+  "vibe": "Dolce vita : apéritivo à Trastevere, pâtes fraîches, hammam au cœur du Ghetto. Plus romantique que déchaînée, mais quel décor.",
+  "joke": "À Rome, on fera comme les Romains : apéritivo à 18 h, re-apéritivo à 19 h, et « juste un dernier » à 2 h.",
+  "scores": {"spa": 4, "soiree": 4, "budget": 3}, "photo": WC + "d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+  "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5", "search": "Rome, Italie",
+  "items": [
+   {"id": "rom-villas", "type": "logement", "tier": 2, "name": "Villas et grands appartements à Rome",
+    "desc": "Sélection Airbnb déjà filtrée : logements entiers pour 7, au moins 4 chambres, avec jacuzzi. Trastevere ou Monti pour sortir à pied.",
+    "address": "Rome (Trastevere, Monti)", "url": airbnb("Rome--Italie", "&amenities%5B%5D=25"),
+    "photo": WC + "9/98/Santa_Maria_in_Trastevere_church_in_Rome_%2812%29.jpg/960px-Santa_Maria_in_Trastevere_church_in_Rome_%2812%29.jpg", "credit": "Photo Wikimedia Commons · Trastevere, CC BY-SA 4.0"},
+   {"id": "rom-acqua", "type": "spa", "tier": 3, "name": "AcquaMadre Hammam",
+    "desc": "Hammam élégant dans le Ghetto, près de Piazza Argentina : bains chaud, tiède, froid, gommage. Réservation nécessaire.",
+    "address": "Via di Sant'Ambrogio 17, 00186 Rome", "url": "https://www.wantedinrome.com/yellowpage/acquamadre-hammam.html",
+    "photo": WC + "7/7e/Santa_Maria_in_Trastevere_church_in_Rome_%2813%29.jpg/960px-Santa_Maria_in_Trastevere_church_in_Rome_%2813%29.jpg", "credit": "Photo Wikimedia Commons · Rome, CC BY-SA 4.0"},
+   chef("rom-chef", "Rome", "https://www.takeachef.com/en-it/private-chef/rome"),
+   {"id": "rom-pasta", "type": "fun", "tier": 2, "name": "Cours de pâtes fraîches à la maison",
+    "desc": "On demande au chef à domicile de commencer par un cours de pâtes : chacun fait ses tagliatelles, puis on les mange. Celui qui rate ses pâtes paie le limoncello.",
+    "address": "Dans la maison louée", "url": "https://www.takeachef.com/en-it/private-chef/rome",
+    "photo": WC + "d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 2.5"},
+   {"id": "rom-freni", "type": "soiree", "tier": 2, "name": "Freni e Frizioni",
+    "desc": "Bar à cocktails culte de Trastevere (classé parmi les meilleurs du monde), apéritivo et foule sur la placette jusqu'à tard.",
+    "address": "Via del Politeama 4, 00153 Rome", "phone": "+39 06 4549 7499", "url": "https://www.timeout.com/rome/bars-and-pubs/freni-e-frizioni",
+    "photo": "https://media.timeout.com/images/106111178/image.jpg", "credit": "Photo : Time Out"}]},
+ {"id": "amsterdam", "mode": "avion", "name": "Amsterdam", "emoji": "🇳🇱",
+  "trip": "✈️ 1 h 20 de vol, ou 3 h 20 de train direct (Paris-Nord → Amsterdam)",
+  "vibe": "Canaux, vélos, bières et clubs mythiques. Grand spa urbain avec 8 saunas. Facile d'accès, même en train.",
+  "joke": "Amsterdam : on ira voir les tulipes. Enfin, c'est ce qu'on dira aux parents.",
+  "scores": {"spa": 5, "soiree": 5, "budget": 3}, "photo": WC + "d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+  "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0", "search": "Amsterdam, Pays-Bas",
+  "items": [
+   {"id": "ams-maisons", "type": "logement", "tier": 3, "name": "Maisons de canal à Amsterdam",
+    "desc": "Sélection Airbnb déjà filtrée : logements entiers pour 7, au moins 4 chambres. Les maisons de canal sont chères mais magiques. Plan B moins cher : une péniche-logement.",
+    "address": "Amsterdam (Jordaan, De Pijp)", "url": airbnb("Amsterdam--Pays-Bas"),
+    "photo": WC + "e/ef/Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg/960px-Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"},
+   {"id": "ams-zuiver", "type": "spa", "tier": 2, "name": "Spa Zuiver",
+    "desc": "Grand spa dans les bois d'Amsterdam : 8 saunas, bains, salles de repos et piscine de 40 m en partie couverte.",
+    "address": "Koenenkade 8, 1081 KH Amsterdam", "phone": "+31 20 301 0700", "url": "https://www.inyourpocket.com/Amsterdam/Spa-Amsterdam-Zuiver_96928v",
+    "photo": "https://s.inyourpocket.com/gallery/31809.jpg", "credit": "Photo : In Your Pocket"},
+   chef("ams-chef", "Amsterdam", "https://www.takeachef.com/en-nl/private-chef/amsterdam"),
+   {"id": "ams-heineken", "type": "fun", "tier": 2, "name": "Heineken Experience",
+    "desc": "Visite interactive de l'ancienne brasserie, avec dégustation et rooftop en option. Espaces privatisables pour les groupes. Pédagogique, on vous jure.",
+    "address": "Stadhouderskade 78, 1072 AE Amsterdam", "url": "https://www.heinekenexperience.com/en/about-the-experience",
+    "photo": WC + "d/d4/Heineken_Museum_Experience_%2C_Amsterdam_-_Ank_Kumar_01.jpg/960px-Heineken_Museum_Experience_%2C_Amsterdam_-_Ank_Kumar_01.jpg", "credit": "Photo Wikimedia Commons · CC0"},
+   {"id": "ams-bateau", "type": "fun", "tier": 2, "name": "Bateau privé sur les canaux",
+    "desc": "Petit bateau privatisé pour 7 avec skipper, boissons à bord, 1 à 2 h sur les canaux. Plusieurs compagnies partent du centre : comparer sur le site officiel de la ville.",
+    "address": "Canaux du centre d'Amsterdam", "url": "https://www.iamsterdam.com/en/see-and-do/things-to-do",
+    "photo": WC + "5/52/Canal_boats_in_Amsterdam_04.jpg/960px-Canal_boats_in_Amsterdam_04.jpg", "credit": "Photo Wikimedia Commons · CC BY 4.0"},
+   {"id": "ams-paradiso", "type": "soiree", "tier": 2, "name": "Paradiso",
+    "desc": "Ancienne église devenue salle de concert et club mythique. Soirées jusqu'au bout de la nuit.",
+    "address": "Weteringschans 6-8, 1017 SG Amsterdam", "url": "https://www.paradiso.nl/",
+    "photo": WC + "0/00/Paradiso%2C_Amsterdam_7239.jpg/960px-Paradiso%2C_Amsterdam_7239.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"}]},
+]
 
 root = pathlib.Path(__file__).resolve().parent.parent
 (root / "data").mkdir(exist_ok=True)
