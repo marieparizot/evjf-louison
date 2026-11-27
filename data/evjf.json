@@ -711,6 +711,82 @@
    ]
   },
   {
+   "id": "marseille",
+   "mode": "train",
+   "name": "Marseille",
+   "emoji": "☀️",
+   "trip": "🚄 3 h 10 en TGV (Paris-Gare de Lyon → Marseille-Saint-Charles)",
+   "vibe": "Soleil, Vieux-Port, bateau dans les Calanques et apéro qui dure. Spa dans un ancien hôtel-Dieu transformé en palace.",
+   "joke": "À Marseille, tout est « le plus beau du monde ». Même nos pas de danse à 3 h du matin.",
+   "scores": {
+    "spa": 4,
+    "soiree": 4,
+    "budget": 3
+   },
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+   "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0",
+   "search": "Marseille, France",
+   "items": [
+    {
+     "id": "mrs-villas",
+     "type": "logement",
+     "tier": 2,
+     "name": "Villas avec piscine autour de Marseille",
+     "desc": "Sélection Airbnb déjà filtrée : maisons entières pour 7, au moins 4 chambres, avec piscine. Côté Roucas-Blanc, Endoume ou Cassis : vue mer et Calanques à côté.",
+     "address": "Marseille (Endoume, Roucas-Blanc) / Cassis",
+     "url": "https://www.airbnb.fr/s/Marseille--France/homes?adults=7&min_bedrooms=4&room_types%5B%5D=Entire%20home%2Fapt&amenities%5B%5D=7",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/1027_Basilique_Notre-Dame-de-la-Garde_in_Marseille_at_sunset_Photo_by_Giles_Laurent.jpg/960px-1027_Basilique_Notre-Dame-de-la-Garde_in_Marseille_at_sunset_Photo_by_Giles_Laurent.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "mrs-clarins",
+     "type": "spa",
+     "tier": 3,
+     "name": "Spa Clarins – InterContinental Hôtel-Dieu",
+     "desc": "Le spa du palace installé dans l'ancien Hôtel-Dieu, au-dessus du Vieux-Port : soins Clarins, piscine intérieure, sauna.",
+     "address": "1 place Daviel, 13002 Marseille",
+     "phone": "+33 4 13 42 42 42",
+     "url": "https://marseille.intercontinental.com/en/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/H%C3%B4tel-Dieu_de_Marseille.JPG/960px-H%C3%B4tel-Dieu_de_Marseille.JPG",
+     "credit": "Photo Wikimedia Commons · Hôtel-Dieu, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-calanques",
+     "type": "fun",
+     "tier": 2,
+     "name": "Bateau privatisé dans les Calanques",
+     "desc": "Semi-rigide rien que pour nous (11 places), skipper et carburant inclus, départ du Vieux-Port. ≈ 580 € la matinée pour le groupe (tarif 2024, à vérifier). Cheveux au vent garantis, brushing non.",
+     "address": "1 quai du Port, 13002 Marseille (face à La Samaritaine)",
+     "url": "https://www.marseille-tourisme.com/experience/toutes-les-activites-marseille-experience/privatisation-dun-bateau-visite-des-calanques-de-marseille-marseille-fr-4357642/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Calanques_de_Marseille_20120922_50.jpg/960px-Calanques_de_Marseille_20120922_50.jpg",
+     "credit": "Photo Wikimedia Commons · Calanques, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-chef",
+     "type": "chef",
+     "tier": 2,
+     "name": "Chef à domicile à Marseille (Take a Chef)",
+     "desc": "Plein de chefs à Marseille et autour : on peut demander une bouillabaisse revisitée. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
+     "address": "Marseille et alentours",
+     "url": "https://www.takeachef.com/fr-fr/chef-a-domicile/marseille",
+     "photo": "https://d1zzxdyvtq79bu.cloudfront.net/context/frontend/images/open-graph/chef_privado_take_a_chef.jpg",
+     "credit": "Photo : Take a Chef"
+    },
+    {
+     "id": "mrs-caravelle",
+     "type": "soiree",
+     "tier": 2,
+     "name": "La Caravelle",
+     "desc": "Bar mythique avec balcon sur le Vieux-Port et concerts de jazz plusieurs soirs par semaine. Parfait pour l'apéro avant de sortir.",
+     "address": "34 quai du Port, 13002 Marseille",
+     "phone": "+33 4 91 90 36 64",
+     "url": "https://www.marseille-tourisme.com/offres/bar-cafe-la-caravelle-marseille-2eme-fr-2796515/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Vieux-Port_de_Marseille%2C_France.jpg/960px-Vieux-Port_de_Marseille%2C_France.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    }
+   ]
+  },
+  {
    "id": "barcelone",
    "mode": "avion",
    "name": "Barcelone",

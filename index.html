@@ -205,6 +205,15 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 .lb button{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;background:#fff;border:0;border-radius:999px;width:40px;height:40px;font-size:20px}
 .sect{margin:6px 0 2px;font-size:15px;color:var(--muted);font-weight:700}
 .hidden{display:none!important}
+.cmts{border-top:1px dashed var(--line);padding-top:8px;margin-top:4px}
+.cmbtn{border:0;background:var(--rose-3);color:var(--rose);font-weight:700;border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer}
+.cmlist{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+.cm{background:#fff7fa;border:1px solid var(--line);border-radius:12px;padding:7px 10px;font-size:14px}
+.cm b{color:var(--rose)}
+.cm small{color:var(--muted);font-size:11px;margin-left:4px}
+.cmform{display:flex;gap:6px;align-items:flex-end}
+.cmform textarea{flex:1;min-width:0;font:inherit;font-size:16px;border:1px solid var(--line);border-radius:12px;padding:8px;resize:vertical;min-height:42px}
+.cmform button{border:0;background:var(--rose);color:#fff;font-weight:700;border-radius:12px;padding:10px 12px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -246,7 +255,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   <section id="v-villes">
     <h2>🏙️ Choisis ta ville</h2>
     <p class="muted">Note chaque ville de 1 à 5 étoiles, puis touche-la pour découvrir les logements, spas, activités marrantes et soirées.</p>
-    <p class="sect">🚄 En train (2 h 30 max depuis Paris)</p>
+    <p class="sect">🚄 En train</p>
     <div class="cgrid" id="gTrain"></div>
     <p class="sect" style="margin-top:22px">✈️ En avion (week-end de reine)</p>
     <div class="cgrid" id="gAvion"></div>
@@ -284,7 +293,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   </section>
 
   <footer>
-    <p><b>Comment ça marche ?</b> Indique ton prénom, note les villes ⭐ et like ❤️ ce qui te plaît. Tout est partagé avec le groupe.
+    <p><b>Comment ça marche ?</b> Indique ton prénom, note les villes ⭐, like ❤️ et commente 💬 ce qui te plaît. Tout est partagé avec le groupe.
       Les prix sont <b>indicatifs</b> (relevés en novembre 2026) : toujours vérifier sur le site du lieu pour nos dates.</p>
     <p>⚠️ La future moitié de Louise n'a pas été consultée pour ce site. Aucune frange n'a été maltraitée pendant le choix des photos. Toute ressemblance avec une soirée ayant réellement existé serait purement fortuite.</p>
     <p><b>Sources</b></p>
@@ -305,7 +314,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="toast" id="toast"></div>
 
 <script src="config.js?v=3"></script>
-<script src="data/embedded_data.js?v=11"></script>
+<script src="data/embedded_data.js?v=12"></script>
 <script>
 (function(){
 "use strict";
@@ -321,7 +330,7 @@ const LS = {
 const state = {
   me: LS.get("me", ""), date: LS.get("date", "we1"), nights: LS.get("nights", 1),
   tier: "all", type: "all",
-  likes: LS.get("likes", {}), ratings: LS.get("ratings", {}), photos: {}
+  likes: LS.get("likes", {}), ratings: LS.get("ratings", {}), photos: {}, comments: LS.get("comments", {}), openCm: new Set(), drafts: {}
 };
 const keyOf = n => n.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "invite";
 const cityById = id => D.cities.find(c => c.id === id);
@@ -335,11 +344,12 @@ async function fbDel(path){ const r = await fetch(FB + "/" + path + ".json", {me
 async function loadAll(){
   if(!FB){ syncInfo(); return; }
   try{
-    const [l, r, p] = await Promise.all([fbGet("likes"), fbGet("ratings"), fbGet("photos")]);
-    state.likes = l; state.ratings = r; state.photos = p;
+    const [l, r, p, cm] = await Promise.all([fbGet("likes"), fbGet("ratings"), fbGet("photos"), fbGet("comments")]);
+    state.likes = l; state.ratings = r; state.photos = p; state.comments = cm; LS.set("comments", cm);
     LS.set("likes", l); LS.set("ratings", r);
     syncInfo(true);
   }catch(e){ syncInfo(false); }
+  if(document.activeElement && document.activeElement.tagName === "TEXTAREA") return; // on ne coupe pas quelqu'un qui écrit
   refresh();
 }
 function syncInfo(ok){
@@ -481,6 +491,7 @@ function card(it){
         <a href="${esc(it.url)}" target="_blank" rel="noopener">🔗 ${esc(host(it.url))}</a>
       </div>
       <div class="foot"><button class="like" data-like="${esc(it.id)}">🤍 <span>0</span></button><span class="likers"></span></div>
+      <div class="cmts" data-cm="${esc(it.id)}"><button class="cmbtn" data-cmt="${esc(it.id)}">💬 Commentaires</button><div class="cmlist hidden"></div></div>
     </div></article>`;
 }
 function renderFilters(){
@@ -521,7 +532,31 @@ function renderCity(){
     <div class="meta"><span>Spa <span class="score">${dots(c.scores.spa)}</span></span><span>Soirée <span class="score">${dots(c.scores.soiree)}</span></span><span>Petit budget <span class="score">${dots(c.scores.budget)}</span></span></div>
     ${groups || '<p class="empty">Rien avec ces filtres : change-les.</p>'}`;
 }
+function cmList(id){ return Object.entries(state.comments[id] || {}).map(([k, v]) => v).filter(v => v && v.text).sort((a,b) => a.at - b.at); }
+function renderComments(){
+  document.querySelectorAll("[data-cm]").forEach(box => {
+    const id = box.dataset.cm, list = cmList(id), open = state.openCm.has(id);
+    box.querySelector(".cmbtn").textContent = "💬 " + (list.length ? list.length + " commentaire" + (list.length > 1 ? "s" : "") : "Commenter") + (open ? " ▲" : "");
+    const el = box.querySelector(".cmlist"); el.classList.toggle("hidden", !open);
+    if(!open) return;
+    const typed = state.drafts[id] || "";
+    el.innerHTML = (list.length ? list.map(c => `<div class="cm"><b>${esc(c.by)}</b><small>${new Date(c.at).toLocaleDateString("fr-FR", {day:"numeric", month:"short"})}</small><br>${esc(c.text)}</div>`).join("") : '<p class="muted" style="margin:0">Aucun commentaire. Lance le débat 🍿</p>') +
+      `<div class="cmform"><textarea maxlength="300" rows="2" placeholder="Ton avis (300 caractères max)">${esc(typed)}</textarea><button data-cmsend="${esc(id)}">Envoyer</button></div>`;
+  });
+}
+async function sendComment(id, btn){
+  if(!needName(() => sendComment(id, btn))) return;
+  const ta = btn.parentNode.querySelector("textarea"), text = ta.value.trim().slice(0, 300);
+  if(!text){ ta.focus(); return; }
+  const c = {by: state.me, text, at: Date.now()}, cid = Date.now().toString(36) + "-" + keyOf(state.me).slice(0,12);
+  state.comments[id] = state.comments[id] || {}; state.comments[id][cid] = c; ta.value = ""; delete state.drafts[id];
+  renderComments(); toast(["Commentaire publié. Le débat est lancé.","Avis enregistré. Louise appréciera (ou pas).","C'est noté, au tribunal de l'EVJF."][Math.floor(Math.random()*3)]);
+  if(!FB) return;
+  try{ await fbPut("comments/" + encodeURIComponent(id) + "/" + encodeURIComponent(cid), c); }
+  catch(e){ toast("Pas de connexion : commentaire non envoyé"); }
+}
 function renderLikes(){
+  renderComments();
   const myK = state.me ? keyOf(state.me) : "";
   document.querySelectorAll("[data-like]").forEach(b => {
     const o = state.likes[b.dataset.like] || {}, names = Object.values(o).filter(Boolean), on = !!(myK && o[myK]);
@@ -612,6 +647,8 @@ document.addEventListener("click", e => {
   if(!b) return;
   if(b.dataset.rate){ e.stopPropagation(); rate(b.dataset.rate, +b.dataset.n); return; }
   if(b.dataset.like){ toggleLike(b.dataset.like); return; }
+  if(b.dataset.cmt){ const id = b.dataset.cmt; state.openCm.has(id) ? state.openCm.delete(id) : state.openCm.add(id); renderComments(); return; }
+  if(b.dataset.cmsend){ sendComment(b.dataset.cmsend, b); return; }
   if(b.dataset.nav){ location.hash = b.dataset.nav; return; }
   if(b.dataset.go){ location.hash = "#ville/" + b.dataset.go; return; }
   if(b.dataset.pid){ const src = photoCache[b.dataset.pid]; if(src){ $("#lbImg").src = src; $("#lbCap").textContent = "par " + b.dataset.by; $("#lb").classList.add("open"); } return; }
@@ -626,6 +663,7 @@ $("#nameOk").addEventListener("click", setName);
 $("#nameInput").addEventListener("keydown", e => { if(e.key === "Enter") setName(); });
 $("#nameModal").addEventListener("click", e => { if(e.target.id === "nameModal" && state.me) $("#nameModal").classList.remove("open"); });
 $("#fileIn").addEventListener("change", e => { const f = [...e.target.files]; e.target.value = ""; if(f.length) upload(f); });
+document.addEventListener("input", e => { const box = e.target.closest && e.target.closest("[data-cm]"); if(box && e.target.tagName === "TEXTAREA") state.drafts[box.dataset.cm] = e.target.value; });
 $("#lbClose").addEventListener("click", () => $("#lb").classList.remove("open"));
 $("#lb").addEventListener("click", e => { if(e.target.id === "lb") $("#lb").classList.remove("open"); });
 
