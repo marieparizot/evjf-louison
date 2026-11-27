@@ -56,6 +56,15 @@ img{max-width:100%;display:block}
 .chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer;white-space:nowrap}
 .chip.on{background:var(--rose);border-color:var(--rose);color:#fff}
 .row+.row{margin-top:6px}
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 4px}
+.cat{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 8px 12px;border:2px solid var(--line);border-radius:16px;background:#fff;color:var(--ink);cursor:pointer;touch-action:manipulation;font:inherit;min-width:0}
+.cat .em{font-size:30px;line-height:1.1}
+.cat b{font-size:15px;text-align:center}
+.cat small{font-size:12px;color:var(--muted)}
+.cat .box{position:absolute;top:8px;left:8px;width:22px;height:22px;border:2px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;background:#fff}
+.cat.on{border-color:var(--rose);background:#fff0f5}
+.cat.on .box{background:var(--rose);border-color:var(--rose)}
+.cat.on small{color:var(--rose)}
 .lbl{flex:0 0 auto;font-size:12px;color:var(--muted);align-self:center;padding-right:2px}
 
 /* sections */
@@ -330,7 +339,7 @@ const LS = {
 };
 const state = {
   me: LS.get("me", ""), date: LS.get("date", "we1"), nights: 2,
-  tier: "all", type: "all",
+  tier: "all", type: "all", cats: new Set(), catCity: null,
   likes: LS.get("likes", {}), ratings: LS.get("ratings", {}), photos: {}, comments: LS.get("comments", {}), openCm: new Set(), drafts: {}
 };
 const keyOf = n => n.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "invite";
@@ -499,7 +508,6 @@ function renderFilters(){
   const tiers = [["all","Tous les prix"]].concat(Object.entries(D.tiers).map(([k,t]) => [k, t.label + " " + t.name]));
   const types = [["all","Tout"]].concat(Object.entries(D.types).map(([k,t]) => [k, t.emoji + " " + t.label]));
   $("#filters").innerHTML =
-    '<span class="lbl">Quoi</span>' + types.map(([k,l]) => `<button class="chip ${state.type===k?"on":""}" data-type="${k}">${esc(l)}</button>`).join("") +
     '<span class="lbl">Prix</span>' + tiers.map(([k,l]) => `<button class="chip ${state.tier===k?"on":""}" data-tier="${k}">${esc(l)}</button>`).join("") +
     '<span class="lbl">Dates</span>' + D.dates.map(d => `<button class="chip ${state.date===d.id?"on":""}" data-date="${d.id}">${esc(d.label.replace("WE du ",""))}</button>`).join("") +
     "";
@@ -510,11 +518,16 @@ function renderCity(){
   const c = state.city && cityById(state.city);
   if(!c){ $("#v-ville").innerHTML = ""; return; }
   const s = cityStats(c.id);
-  const items = c.items.filter(i => (state.tier==="all" || String(i.tier)===state.tier) && (state.type==="all" || i.type===state.type));
-  const groups = Object.keys(D.types).map(tp => {
-    const list = items.filter(i => i.type === tp); if(!list.length) return "";
+  if(state.catCity !== c.id){ state.catCity = c.id; state.cats = new Set(); }
+  const items = c.items.filter(i => state.tier==="all" || String(i.tier)===state.tier);
+  const tiles = `<h3 class="cathead">👇 Coche ce que tu veux voir</h3><div class="cats">${Object.entries(D.types).map(([k,t]) => {
+    const n = items.filter(i => i.type === k).length, on = state.cats.has(k);
+    return `<button class="cat ${on?"on":""}" data-cat="${k}" aria-pressed="${on}"><span class="box">${on?"✓":""}</span><span class="em">${t.emoji}</span><b>${esc(t.label)}</b><small>${n} proposition${n>1?"s":""}</small></button>`;
+  }).join("")}</div>`;
+  const groups = Object.keys(D.types).filter(tp => state.cats.has(tp)).map(tp => {
+    const list = items.filter(i => i.type === tp); if(!list.length) return `<h3>${D.types[tp].emoji} ${esc(D.types[tp].label)}</h3><p class="empty">Rien à ce prix-là : change le filtre de prix.</p>`;
     const extra = tp === "logement" ? `<div class="search">${searchLinks(c).map(([n,u]) => `<a class="btn" target="_blank" rel="noopener" href="${u}">🔎 ${n} · 7 pers.</a>`).join("")}</div>` : "";
-    return `<h3>${D.types[tp].emoji} ${esc(D.types[tp].label)}</h3>${extra}<div class="grid">${list.map(card).join("")}</div>`;
+    return `<h3 data-sec="${tp}" style="scroll-margin-top:120px">${D.types[tp].emoji} ${esc(D.types[tp].label)}</h3>${extra}<div class="grid">${list.map(card).join("")}</div>`;
   }).join("");
   const dots = n => "●".repeat(n) + "○".repeat(5-n);
   const idx = D.cities.indexOf(c);
@@ -531,7 +544,8 @@ function renderCity(){
     <p>${esc(c.vibe)}</p>
     ${c.joke ? `<div class="joke">😏 ${esc(c.joke)}</div>` : ""}
     <div class="meta"><span>Spa <span class="score">${dots(c.scores.spa)}</span></span><span>Soirée <span class="score">${dots(c.scores.soiree)}</span></span><span>Petit budget <span class="score">${dots(c.scores.budget)}</span></span></div>
-    ${groups || '<p class="empty">Rien avec ces filtres : change-les.</p>'}`;
+    ${tiles}
+    ${groups || '<p class="empty">Touche une ou plusieurs cases pour afficher les propositions 💖</p>'}`;
 }
 function cmList(id){ return Object.entries(state.comments[id] || {}).map(([k, v]) => v).filter(v => v && v.text).sort((a,b) => a.at - b.at); }
 function renderComments(){
@@ -655,6 +669,8 @@ document.addEventListener("click", e => {
   if(b.dataset.pid){ const src = photoCache[b.dataset.pid]; if(src){ $("#lbImg").src = src; $("#lbCap").textContent = "par " + b.dataset.by; $("#lb").classList.add("open"); } return; }
   if(b.dataset.date){ state.date = b.dataset.date; LS.set("date", state.date); renderCity(); renderLikes(); return; }
   if(b.dataset.tier){ state.tier = b.dataset.tier; renderCity(); renderLikes(); return; }
+  if(b.dataset.cat){ const k = b.dataset.cat, add = !state.cats.has(k); add ? state.cats.add(k) : state.cats.delete(k); renderCity(); renderLikes();
+    if(add){ const h = [...document.querySelectorAll("#v-ville h3")].find(x => x.dataset.sec === k); if(h) h.scrollIntoView({behavior:"smooth", block:"start"}); } return; }
   if(b.dataset.type){ state.type = b.dataset.type; renderCity(); renderLikes(); return; }
 });
 window.addEventListener("hashchange", () => { route(); const c = $("#controls"); window.scrollTo({top: c.offsetTop - 2}); });
