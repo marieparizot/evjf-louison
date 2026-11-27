@@ -656,6 +656,159 @@ MARSEILLE = {"id": "marseille", "mode": "train", "name": "Marseille", "emoji": "
 _i = max(i for i, c in enumerate(DATA["cities"]) if c.get("mode") == "train") + 1
 DATA["cities"].insert(_i, MARSEILLE)
 
+# ---------------------------------------------------------------- 27/11/2026 : plus d'activités, plusieurs budgets
+# Prix relevés en novembre 2026 (sites des lieux ou plateformes de réservation), indicatifs.
+def act(i, typ, tier, name, desc, address, url, photo=None, credit=None, **kw):
+    d = {"id": i, "type": typ, "tier": tier, "name": name, "desc": desc, "address": address, "url": url}
+    if photo: d["photo"], d["credit"] = photo, credit
+    d.update(kw); return d
+MORE = {
+ "deauville": [
+  act("deau-zodiac", "fun", 2, "Balade en zodiac depuis le port de Deauville",
+      "Sortie en mer rapide avec pilote, par groupes de 4 à 8 : on tient tous dans un bateau. Proposée d'avril à août, sur réservation. Prévoir un K-way, le brushing ne survivra pas.",
+      "Port de Deauville, 14800 Deauville", "https://www.adrenactive.com/balade-bateau-deauville-9096.htm",
+      WC + "7/7f/Le_port%2C_les_bateaux_de_p%C3%AAche_vue_prise_depuis_la_jet%C3%A9e_de_Deauville_-_A23017.jpg/960px-Le_port%2C_les_bateaux_de_p%C3%AAche_vue_prise_depuis_la_jet%C3%A9e_de_Deauville_-_A23017.jpg", "Photo Wikimedia Commons · port de Deauville, CC BY-SA 4.0"),
+  act("deau-drouin", "activite", 2, "Calvados Christian Drouin – visite et dégustation",
+      "Maison familiale de calvados dans une ferme normande à colombages, à 15 min de Deauville : chais, alambics, puis dégustation de calvados, pommeau et cidre. Petit prix, grand trou normand.",
+      "Route de Trouville, 14130 Coudray-Rabut (Pont-l'Évêque)", "https://www.calvados-drouin.com/fr/"),
+  act("deau-montgolfiere", "fun", 3, "Vol en montgolfière au-dessus du Pays d'Auge",
+      "Lever ou coucher de soleil en ballon : 45 min à 1 h de vol (2 h en tout), dès ≈ 130 €/pers. Réserver plusieurs semaines avant, et accepter que la météo décide. Photo de groupe dans la nacelle obligatoire.",
+      "Pays d'Auge (départ selon le vent)", "https://www.sport-decouverte.com/vol-montgolfiere-basse-normandie.html")],
+ "lille": [
+  act("lille-gin", "fun", 2, "Atelier cocktails dans une distillerie de gin",
+      "2 h dans une distillerie lilloise, salle de dégustation privatisée rien que pour nous : on crée et on boit nos cocktails. Dès ≈ 60 €/pers.",
+      "Lille (adresse de la distillerie donnée à la réservation)", "https://www.cap-adrenaline.com/atelier-cocktail-gin-lille.html",
+      "https://prdm2static.cap-adrenaline.com/media/catalog/product/cache/cf45802cd465083d13f645e2a66e0ee8/a/t/atelier_cocktail_gin_lille-91683.jpg", "Photo : Cap Adrénaline"),
+  act("lille-ceramique", "fun", 2, "Atelier céramique privatisé",
+      "Atelier de modelage rien que pour le groupe : chacun repart avec sa création. Défi : fabriquer la tasse officielle de Louise, version « petit-déj du lendemain ».",
+      "Lille", "https://www.funbooker.com/fr/annonce/atelier-modelage-privatise-a-lille-59-1/voir",
+      "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/wk4po6zn3snzmm1aikv0", "Photo : Funbooker")],
+ "bruxelles": [
+  act("bxl-chocostory", "fun", 2, "Atelier chocolat au Choco-Story",
+      "1 h à fabriquer ses propres pralines avec un maître chocolatier, musée compris, à deux pas du Manneken-Pis. ≈ 45 €/pers. Pour un groupe, réserver directement auprès du musée.",
+      "Rue de l'Étuve 41, 1000 Bruxelles", "https://www.choco-story-brussels.be/"),
+  act("bxl-atomium", "activite", 2, "Atomium",
+      "On monte dans les boules géantes de l'Expo 58, vue sur tout Bruxelles depuis la sphère du haut. Petit prix, et la photo de groupe la plus belge possible.",
+      "Place de l'Atomium 1, 1020 Bruxelles", "https://www.atomium.be/",
+      WC + "3/33/Atomium%2C_Bruselas%2C_B%C3%A9lgica%2C_2021-12-15%2C_DD_148-150_HDR.jpg/960px-Atomium%2C_Bruselas%2C_B%C3%A9lgica%2C_2021-12-15%2C_DD_148-150_HDR.jpg", "Photo Wikimedia Commons · CC BY-SA 4.0")],
+ "bordeaux": [
+  act("bdx-bassins", "activite", 2, "Bassins des Lumières",
+      "Le plus grand centre d'art numérique du monde, dans l'ancienne base sous-marine : œuvres projetées sur les murs et reflétées dans l'eau. ≈ 16 €/pers.",
+      "Impasse Brown de Colstoun, 33300 Bordeaux", "https://www.bassins-lumieres.com/",
+      "https://www.bassins-lumieres.com/themes/custom/ce_theme_immersive_bassins_lumieres/public/assets/images/opengraph.png", "Photo : Bassins des Lumières"),
+  act("bdx-smith", "fun", 3, "Château Smith Haut Lafitte – visite et dégustation",
+      "Grand cru classé de Pessac-Léognan, juste à côté des villas de Martillac (et des Sources de Caudalie). Visite des chais et dégustation, formules plus poussées sur réservation. Le luxe, mais avec un verre à la main.",
+      "4 chemin de Bourran, 33650 Martillac", "https://www.smith-haut-lafitte.com/",
+      "https://www.smith-haut-lafitte.com/wp-content/uploads/2021/05/smith-haut-lafitte.jpg", "Photo : Château Smith Haut Lafitte")],
+ "lyon": [
+  act("lyon-halles", "activite", 2, "Halles Paul Bocuse – huîtres et vin blanc",
+      "Le rituel lyonnais du samedi matin : huîtres, charcuterie et petit blanc au comptoir des Halles. Parfait pour soigner la veille.",
+      "102 cours Lafayette, 69003 Lyon", "https://www.halles-de-lyon-paulbocuse.com/",
+      "https://www.halles-de-lyon-paulbocuse.com/wp-content/uploads/2023/07/2004-jpg.webp", "Photo : Halles de Lyon Paul Bocuse"),
+  act("lyon-apero-bateau", "fun", 2, "Croisière apéro sur la Saône",
+      "Apéritif à bord en glissant sous les ponts de Lyon, dès ≈ 38 €/pers. Bateau partagé avec d'autres passagers : on les convertira à la cause de Louise.",
+      "Quais de Saône, Lyon", "https://www.cap-adrenaline.com/croisiere-apero-lyon.html",
+      "https://prdm2static.cap-adrenaline.com/media/catalog/product/cache/cf45802cd465083d13f645e2a66e0ee8/c/r/croisiere_apero_lyon-84190_1.jpg", "Photo : Cap Adrénaline"),
+  act("lyon-bateau-prive", "fun", 3, "Bateau privé avec skipper (2 h)",
+      "Rien que nous sur le bateau, avec skipper, pour 2 h sur la Saône et le Rhône. Réservation par l'office de tourisme. On apporte le champagne, il apporte le gilet de sauvetage.",
+      "Lyon (départ indiqué à la réservation)", "https://shop.visiterlyon.com/croisiere-promenade-privee-avec-skipper-2h.html",
+      "https://shop.visiterlyon.com/media/catalog/product/cache/943b32bc1b48323ae7f6e7433b0af69b/i/m/img_2641.jpg", "Photo : OnlyLyon Tourisme")],
+ "londres": [
+  act("ldn-flightclub", "fun", 2, "Flight Club – fléchettes connectées",
+      "Fléchettes nouvelle génération avec jeux sur écran, cocktails et pizzas, dès ≈ 10 £/pers. Accessible à toutes les maladresses.",
+      "2a Worship Street, London EC2A 2AH (Shoreditch)", "https://flightclubdarts.com/uk/london-shoreditch/",
+      "https://flightclubdarts.com/external/img/fc-social-share.png", "Photo : Flight Club"),
+  act("ldn-teabus", "fun", 2, "Afternoon tea dans un bus à impériale",
+      "1 h 30 de tour de Londres dans un vieux Routemaster rouge, scones et petits gâteaux servis à bord. ≈ 70 £/pers. Le thé tangue un peu, c'est le jeu.",
+      "Départ : 8 Northumberland Avenue, London WC2N 5BY", "https://www.visitlondon.com/things-to-do/place/39518007-brigit-s-bakery-afternoon-tea-bus-tour",
+      WC + "8/85/Routemaster_Bus_on_London_Bridge.jpg/960px-Routemaster_Bus_on_London_Bridge.jpg", "Photo Wikimedia Commons · CC BY-SA 2.0"),
+  act("ldn-sketch", "fun", 3, "Afternoon tea au sketch (la salle rose)",
+      "Le tea time le plus instagrammé de Londres, dans une salle entièrement rose à Mayfair. Réserver tôt. Les toilettes en forme d'œufs valent à elles seules le voyage.",
+      "9 Conduit Street, London W1S 2XG", "https://sketch.london/",
+      "https://sketch.london/public/images/og-sketch-website-2400.jpg", "Photo : sketch")],
+ "marseille": [
+  act("mrs-petanque", "fun", 2, "Pétanque et pastis au Panier",
+      "2 h de pétanque avec un Marseillais pur jus, puis apéro pastis, rosé et amuse-bouches, pour un groupe de 1 à 8. Louise tire, on pointe, et on conteste chaque mesure.",
+      "Place des 13 Cantons, 13002 Marseille", "https://www.winedering.com/fr/petanque-in-marseille_d7940_travel",
+      "https://cdn.winedering.com/uploads/travels/7940/big/hgxgxjc.png.webp?hash=badbba34b77ecbe011c78e00c492a54c", "Photo : Winedering"),
+  act("mrs-mucem", "activite", 2, "Mucem et fort Saint-Jean",
+      "Le musée en dentelle de béton au bord de l'eau, relié au fort par une passerelle. Le toit-terrasse et les jardins du fort sont parfaits pour l'apéro au coucher du soleil.",
+      "7 promenade Robert Laffont, 13002 Marseille", "https://www.mucem.org/",
+      WC + "b/bd/Marseille_-_MuCEM_Fort_Saint-Jean_%2816225557268%29.jpg/960px-Marseille_-_MuCEM_Fort_Saint-Jean_%2816225557268%29.jpg", "Photo Wikimedia Commons · CC BY 2.0")],
+ "barcelone": [
+  act("bcn-cordobes", "fun", 2, "Flamenco au Tablao Cordobés",
+      "L'un des tablaos les plus réputés d'Espagne, sur La Rambla. Spectacle + boisson dès ≈ 48 €, formules avec dîner. Prix variables selon l'heure : réserver tôt.",
+      "La Rambla 35, 08002 Barcelone", "https://www.tablaocordobes.es/",
+      "https://tablaocordobes.es/wp-content/uploads/2020/03/irene-y-luis-adame-3.jpg", "Photo : Tablao Cordobés"),
+  act("bcn-paella", "fun", 2, "Cours de paella (Cook & Taste)",
+      "On cuisine paella, tapas et crème catalane, puis on mange tout ce qu'on a raté. Possible en groupe privé. Sangria non négociable.",
+      "Carrer del Paradís 3, 08002 Barcelone", "https://www.cookandtaste.net/",
+      "https://cookandtaste.net/wp-content/uploads/2019/12/cookandtaste-cookingclasses-home-0-2x.jpg", "Photo : Cook & Taste"),
+  act("bcn-sagrada", "activite", 2, "Sagrada Família",
+      "Incontournable : la basilique de Gaudí et ses vitraux de toutes les couleurs. Billet à réserver en ligne avec créneau horaire.",
+      "Carrer de Mallorca 401, 08013 Barcelone", "https://sagradafamilia.org/")],
+ "madrid": [
+  act("mad-cooking", "fun", 2, "Cours de paella et tapas (Cooking Point)",
+      "4 h de cuisine : marché, paella, tapas et sangria, puis repas tous ensemble. ≈ 70 à 90 €/pers.",
+      "Calle de Moratín 11, 28014 Madrid", "https://cookingpoint.es/",
+      "https://cookingpoint.es/images/for-google-seo.jpg", "Photo : Cooking Point"),
+  act("mad-azotea", "soiree", 2, "Rooftop du Círculo de Bellas Artes",
+      "La plus belle vue sur Madrid, au-dessus de la Gran Vía. Petit droit d'entrée, puis cocktails au coucher du soleil avant d'aller danser.",
+      "Calle de Alcalá 42, 28014 Madrid", "https://www.azoteadelcirculo.com/",
+      "https://azoteadelcirculo.azoteagrupo.com/wp-content/uploads/2024/12/circulo_slider_6.jpg", "Photo : Azotea del Círculo")],
+ "budapest": [
+  act("bud-croisiere", "fun", 2, "Croisière-dîner sur le Danube",
+      "Dîner sur le bateau devant le Parlement illuminé, souvent avec musique. ≈ 30 à 110 €/pers. selon la formule : comparatif des compagnies sur le lien.",
+      "Quais du Danube, Budapest", "https://hungaryunlocked.com/budapest-dinner-cruise/",
+      "https://hungaryunlocked.com/images/2026/07/danube-cruise-parliament.jpg", "Photo : Hungary Unlocked"),
+  act("bud-rudas", "fun", 2, "Bain de nuit aux bains Rudas",
+      "Bains turcs du XVIe siècle au pied du mont Gellért. Le vendredi et le samedi, ouverts tard dans la nuit (≈ 12 600 HUF, soit ≈ 32 €, en ligne). Le rooftop avec vue sur le Danube demande le forfait Wellness.",
+      "Döbrentei tér 9, 1013 Budapest", "https://en.rudasfurdo.hu/",
+      "https://budapestgyogyfurdoi.synergyfox.app/public/4/fooldal/rudas_og.jpg", "Photo : Rudas Fürdő")],
+ "rome": [
+  act("rom-vespa", "fun", 3, "Tour de Rome en Vespa avec chauffeur",
+      "Chacun derrière son pilote, cheveux au vent, du Colisée à Trastevere : 3 h en mode « Vacances romaines ». ≈ 150 à 200 €/pers. selon la formule.",
+      "Départ du centre de Rome", "https://www.walksinsiderome.com/tour/rome-vespa-tour/",
+      WC + "f/f6/Vespa_In_Rome.jpg/960px-Vespa_In_Rome.jpg", "Photo Wikimedia Commons · CC BY-SA 4.0"),
+  act("rom-colisee", "activite", 2, "Colisée, Forum romain et Palatin",
+      "Un seul billet pour les trois, à réserver en ligne avec créneau. Gladiateurs en option.",
+      "Piazza del Colosseo, 00184 Rome", "https://colosseo.it/",
+      WC + "1/16/Colosseum_exterior_at_night%2C_Rome%2C_Italy_%28Ank_Kumar%29_03.jpg/960px-Colosseum_exterior_at_night%2C_Rome%2C_Italy_%28Ank_Kumar%29_03.jpg", "Photo Wikimedia Commons · CC BY-SA 4.0")],
+ "amsterdam": [
+  act("ams-keukenhof", "activite", 2, "Keukenhof – le jardin des tulipes",
+      "7 millions de fleurs, ouvert du 18 mars au 9 mai 2027 : pile pour nos dates. À 40 min d'Amsterdam, billet avec créneau à réserver en ligne. On avait dit qu'on irait voir les tulipes, et on ne mentait pas.",
+      "Stationsweg 166A, 2161 AM Lisse", "https://keukenhof.nl/en/",
+      "https://api.keukenhof.nl/assets/2025-04-29-drone-foto-9.jpg", "Photo : Keukenhof"),
+  act("ams-lookout", "fun", 2, "A'DAM Lookout – la balançoire au-dessus du vide",
+      "Tour panoramique face à la gare centrale, avec une balançoire au bord du toit, à 100 m de haut. Hurler est autorisé, et même conseillé.",
+      "Overhoeksplein 5, 1031 KS Amsterdam", "https://www.adamlookout.com/",
+      "https://www.adamlookout.com/wp-content/uploads/2026/09/lookout-opengraph.jpg", "Photo : A'DAM Lookout")],
+}
+MORE["lille"].append(act("lille-tablestoques", "fun", 3, "Croisière gastronomique sur la Deûle",
+      "Déjeuner de chef à bord de la péniche L'Eldorado (Lille Tables & Toques), en glissant sur la Deûle. Dès ≈ 130 €/pers., sur réservation (calendrier 2027 à vérifier).",
+      "Départ de Lambersart (59130)", "https://booking.lilletourism.com/lille-tables-toques-gourmet-cruises.html",
+      "https://reservation.lilletourism.com/medias/images/prestations/tables-toques-895075.jpg", "Photo : Lille Tourisme"))
+MORE["marseille"].append(act("mrs-catamaran", "fun", 3, "Catamaran privatisé sur la Côte Bleue",
+      "Une après-midi en catamaran rien que pour nous, calanques de la Côte Bleue et baignade si on est courageux. ≈ 825 € le bateau pour 1 à 7 personnes, soit ≈ 120 €/pers.",
+      "Côte Bleue (ouest de Marseille)", "https://www.funbooker.com/fr/annonce/apres-midi-en-catamaran-privatise-sur-la-cote-bleue-13/voir",
+      "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/v6e6o08fji28jxuxpgdy", "Photo : Funbooker"))
+MORE["madrid"].append(act("mad-toledo", "fun", 3, "Journée à Tolède avec chauffeur privé",
+      "Minivan privé avec chauffeur, aller-retour Madrid-Tolède (1 h de route) : ruelles médiévales, vue sur le Tage, massepain. Dès ≈ 120 €/pers., entrées en plus.",
+      "Départ de notre logement à Madrid", "https://daytrip.com/fr/day-trips/from-madrid/toledo",
+      "https://images.daytrip.com/toledo4.jpg?fit=cover&w=1200&h=630&q=45&auto=enhance", "Photo : Daytrip"))
+MORE["budapest"].append(act("bud-yacht", "fun", 3, "Bateau privé sur le Danube",
+      "Une heure rien que pour nous sur le Danube (jusqu'à 10 pers.), départ quand on veut. On ajoute le champagne et on passe devant le Parlement illuminé en reines du fleuve.",
+      "Quais du Danube, Budapest", "https://aaa.com/tripcanvas/thing-to-do/budapest-private-danube-river-cruise-50946P2",
+      "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-400x400/15/82/4c/aa.jpg", "Photo : Tripadvisor"))
+MORE["amsterdam"].append(act("ams-champagne", "fun", 3, "Croisière privée au champagne",
+      "1 h 30 sur un bateau-salon ancien rien que pour nous (Rederij De Jordaan), champagne à bord, au fil des canaux classés. ≈ 145 €/pers.",
+      "Canaux du centre d'Amsterdam", "https://www.expedia.ie/things-to-do/private-champagne-cruise-in-amsterdam.a1192687.activity-details",
+      WC + "5/52/Canal_boats_in_Amsterdam_04.jpg/960px-Canal_boats_in_Amsterdam_04.jpg", "Photo Wikimedia Commons · CC BY 4.0"))
+for c in DATA["cities"]:
+    for it in MORE.get(c["id"], []):
+        it.setdefault("photo", c["photo"]); it.setdefault("credit", c["credit"])
+        c["items"].append(it)
+
 root = pathlib.Path(__file__).resolve().parent.parent
 (root / "data").mkdir(exist_ok=True)
 # Photos de Louise : toutes les images déposées dans assets/louise/

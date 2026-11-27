@@ -216,6 +216,39 @@
      "url": "https://www.funbooker.com/fr/annonce/balade-a-cheval-proche-de-deauville/voir",
      "photo": "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/xgugnnw8aci4enhwxvlh",
      "credit": "Photo : Funbooker"
+    },
+    {
+     "id": "deau-zodiac",
+     "type": "fun",
+     "tier": 2,
+     "name": "Balade en zodiac depuis le port de Deauville",
+     "desc": "Sortie en mer rapide avec pilote, par groupes de 4 à 8 : on tient tous dans un bateau. Proposée d'avril à août, sur réservation. Prévoir un K-way, le brushing ne survivra pas.",
+     "address": "Port de Deauville, 14800 Deauville",
+     "url": "https://www.adrenactive.com/balade-bateau-deauville-9096.htm",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Le_port%2C_les_bateaux_de_p%C3%AAche_vue_prise_depuis_la_jet%C3%A9e_de_Deauville_-_A23017.jpg/960px-Le_port%2C_les_bateaux_de_p%C3%AAche_vue_prise_depuis_la_jet%C3%A9e_de_Deauville_-_A23017.jpg",
+     "credit": "Photo Wikimedia Commons · port de Deauville, CC BY-SA 4.0"
+    },
+    {
+     "id": "deau-drouin",
+     "type": "activite",
+     "tier": 2,
+     "name": "Calvados Christian Drouin – visite et dégustation",
+     "desc": "Maison familiale de calvados dans une ferme normande à colombages, à 15 min de Deauville : chais, alambics, puis dégustation de calvados, pommeau et cidre. Petit prix, grand trou normand.",
+     "address": "Route de Trouville, 14130 Coudray-Rabut (Pont-l'Évêque)",
+     "url": "https://www.calvados-drouin.com/fr/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-montgolfiere",
+     "type": "fun",
+     "tier": 3,
+     "name": "Vol en montgolfière au-dessus du Pays d'Auge",
+     "desc": "Lever ou coucher de soleil en ballon : 45 min à 1 h de vol (2 h en tout), dès ≈ 130 €/pers. Réserver plusieurs semaines avant, et accepter que la météo décide. Photo de groupe dans la nacelle obligatoire.",
+     "address": "Pays d'Auge (départ selon le vent)",
+     "url": "https://www.sport-decouverte.com/vol-montgolfiere-basse-normandie.html",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
     }
    ],
    "mode": "train"
@@ -326,6 +359,39 @@
      "url": "https://www.privateaser.com/lieu/5628-karafun-bar-lille",
      "photo": "https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/5628/750x375/404245.jpg",
      "credit": "Photo : Privateaser"
+    },
+    {
+     "id": "lille-gin",
+     "type": "fun",
+     "tier": 2,
+     "name": "Atelier cocktails dans une distillerie de gin",
+     "desc": "2 h dans une distillerie lilloise, salle de dégustation privatisée rien que pour nous : on crée et on boit nos cocktails. Dès ≈ 60 €/pers.",
+     "address": "Lille (adresse de la distillerie donnée à la réservation)",
+     "url": "https://www.cap-adrenaline.com/atelier-cocktail-gin-lille.html",
+     "photo": "https://prdm2static.cap-adrenaline.com/media/catalog/product/cache/cf45802cd465083d13f645e2a66e0ee8/a/t/atelier_cocktail_gin_lille-91683.jpg",
+     "credit": "Photo : Cap Adrénaline"
+    },
+    {
+     "id": "lille-ceramique",
+     "type": "fun",
+     "tier": 2,
+     "name": "Atelier céramique privatisé",
+     "desc": "Atelier de modelage rien que pour le groupe : chacun repart avec sa création. Défi : fabriquer la tasse officielle de Louise, version « petit-déj du lendemain ».",
+     "address": "Lille",
+     "url": "https://www.funbooker.com/fr/annonce/atelier-modelage-privatise-a-lille-59-1/voir",
+     "photo": "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/wk4po6zn3snzmm1aikv0",
+     "credit": "Photo : Funbooker"
+    },
+    {
+     "id": "lille-tablestoques",
+     "type": "fun",
+     "tier": 3,
+     "name": "Croisière gastronomique sur la Deûle",
+     "desc": "Déjeuner de chef à bord de la péniche L'Eldorado (Lille Tables & Toques), en glissant sur la Deûle. Dès ≈ 130 €/pers., sur réservation (calendrier 2027 à vérifier).",
+     "address": "Départ de Lambersart (59130)",
+     "url": "https://booking.lilletourism.com/lille-tables-toques-gourmet-cruises.html",
+     "photo": "https://reservation.lilletourism.com/medias/images/prestations/tables-toques-895075.jpg",
+     "credit": "Photo : Lille Tourisme"
     }
    ],
    "mode": "train"
@@ -423,6 +489,28 @@
      "url": "https://www.beerproject.be/fr/pages/dansaert-taproom",
      "photo": "https://beerproject.be/cdn/shop/files/ALL_STARS_9534e47e-18d5-4992-8cf8-6ba37ce749b8_1200x1200.jpg?v=1625556565",
      "credit": "Photo : Brussels Beer Project"
+    },
+    {
+     "id": "bxl-chocostory",
+     "type": "fun",
+     "tier": 2,
+     "name": "Atelier chocolat au Choco-Story",
+     "desc": "1 h à fabriquer ses propres pralines avec un maître chocolatier, musée compris, à deux pas du Manneken-Pis. ≈ 45 €/pers. Pour un groupe, réserver directement auprès du musée.",
+     "address": "Rue de l'Étuve 41, 1000 Bruxelles",
+     "url": "https://www.choco-story-brussels.be/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-atomium",
+     "type": "activite",
+     "tier": 2,
+     "name": "Atomium",
+     "desc": "On monte dans les boules géantes de l'Expo 58, vue sur tout Bruxelles depuis la sphère du haut. Petit prix, et la photo de groupe la plus belge possible.",
+     "address": "Place de l'Atomium 1, 1020 Bruxelles",
+     "url": "https://www.atomium.be/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Atomium%2C_Bruselas%2C_B%C3%A9lgica%2C_2021-12-15%2C_DD_148-150_HDR.jpg/960px-Atomium%2C_Bruselas%2C_B%C3%A9lgica%2C_2021-12-15%2C_DD_148-150_HDR.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
     }
    ],
    "mode": "train"
@@ -510,6 +598,28 @@
      "url": "https://www.laciteduvin.com/fr",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Cit%C3%A9_du_Vin_Bordeaux_31.jpg/960px-Cit%C3%A9_du_Vin_Bordeaux_31.jpg",
      "credit": "Photo Wikimedia Commons · La Cité du Vin"
+    },
+    {
+     "id": "bdx-bassins",
+     "type": "activite",
+     "tier": 2,
+     "name": "Bassins des Lumières",
+     "desc": "Le plus grand centre d'art numérique du monde, dans l'ancienne base sous-marine : œuvres projetées sur les murs et reflétées dans l'eau. ≈ 16 €/pers.",
+     "address": "Impasse Brown de Colstoun, 33300 Bordeaux",
+     "url": "https://www.bassins-lumieres.com/",
+     "photo": "https://www.bassins-lumieres.com/themes/custom/ce_theme_immersive_bassins_lumieres/public/assets/images/opengraph.png",
+     "credit": "Photo : Bassins des Lumières"
+    },
+    {
+     "id": "bdx-smith",
+     "type": "fun",
+     "tier": 3,
+     "name": "Château Smith Haut Lafitte – visite et dégustation",
+     "desc": "Grand cru classé de Pessac-Léognan, juste à côté des villas de Martillac (et des Sources de Caudalie). Visite des chais et dégustation, formules plus poussées sur réservation. Le luxe, mais avec un verre à la main.",
+     "address": "4 chemin de Bourran, 33650 Martillac",
+     "url": "https://www.smith-haut-lafitte.com/",
+     "photo": "https://www.smith-haut-lafitte.com/wp-content/uploads/2021/05/smith-haut-lafitte.jpg",
+     "credit": "Photo : Château Smith Haut Lafitte"
     }
    ],
    "mode": "train"
@@ -621,6 +731,39 @@
      "url": "https://www.quizroom.fr/",
      "photo": "https://cdn.prod.website-files.com/5cc01dcb6a3b686cd53e9e64/62610a33307149a27d9c153f_Buzzez%20pour%20de%20vrai%20comme%20sur%20un%20plateau%20TV.png",
      "credit": "Photo : Quiz Room"
+    },
+    {
+     "id": "lyon-halles",
+     "type": "activite",
+     "tier": 2,
+     "name": "Halles Paul Bocuse – huîtres et vin blanc",
+     "desc": "Le rituel lyonnais du samedi matin : huîtres, charcuterie et petit blanc au comptoir des Halles. Parfait pour soigner la veille.",
+     "address": "102 cours Lafayette, 69003 Lyon",
+     "url": "https://www.halles-de-lyon-paulbocuse.com/",
+     "photo": "https://www.halles-de-lyon-paulbocuse.com/wp-content/uploads/2023/07/2004-jpg.webp",
+     "credit": "Photo : Halles de Lyon Paul Bocuse"
+    },
+    {
+     "id": "lyon-apero-bateau",
+     "type": "fun",
+     "tier": 2,
+     "name": "Croisière apéro sur la Saône",
+     "desc": "Apéritif à bord en glissant sous les ponts de Lyon, dès ≈ 38 €/pers. Bateau partagé avec d'autres passagers : on les convertira à la cause de Louise.",
+     "address": "Quais de Saône, Lyon",
+     "url": "https://www.cap-adrenaline.com/croisiere-apero-lyon.html",
+     "photo": "https://prdm2static.cap-adrenaline.com/media/catalog/product/cache/cf45802cd465083d13f645e2a66e0ee8/c/r/croisiere_apero_lyon-84190_1.jpg",
+     "credit": "Photo : Cap Adrénaline"
+    },
+    {
+     "id": "lyon-bateau-prive",
+     "type": "fun",
+     "tier": 3,
+     "name": "Bateau privé avec skipper (2 h)",
+     "desc": "Rien que nous sur le bateau, avec skipper, pour 2 h sur la Saône et le Rhône. Réservation par l'office de tourisme. On apporte le champagne, il apporte le gilet de sauvetage.",
+     "address": "Lyon (départ indiqué à la réservation)",
+     "url": "https://shop.visiterlyon.com/croisiere-promenade-privee-avec-skipper-2h.html",
+     "photo": "https://shop.visiterlyon.com/media/catalog/product/cache/943b32bc1b48323ae7f6e7433b0af69b/i/m/img_2641.jpg",
+     "credit": "Photo : OnlyLyon Tourisme"
     }
    ],
    "mode": "train"
@@ -707,6 +850,39 @@
      "url": "https://www.ministryofsound.com/",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Dolby_Atmos_at_Ministry_of_Sound.jpg/960px-Dolby_Atmos_at_Ministry_of_Sound.jpg",
      "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "ldn-flightclub",
+     "type": "fun",
+     "tier": 2,
+     "name": "Flight Club – fléchettes connectées",
+     "desc": "Fléchettes nouvelle génération avec jeux sur écran, cocktails et pizzas, dès ≈ 10 £/pers. Accessible à toutes les maladresses.",
+     "address": "2a Worship Street, London EC2A 2AH (Shoreditch)",
+     "url": "https://flightclubdarts.com/uk/london-shoreditch/",
+     "photo": "https://flightclubdarts.com/external/img/fc-social-share.png",
+     "credit": "Photo : Flight Club"
+    },
+    {
+     "id": "ldn-teabus",
+     "type": "fun",
+     "tier": 2,
+     "name": "Afternoon tea dans un bus à impériale",
+     "desc": "1 h 30 de tour de Londres dans un vieux Routemaster rouge, scones et petits gâteaux servis à bord. ≈ 70 £/pers. Le thé tangue un peu, c'est le jeu.",
+     "address": "Départ : 8 Northumberland Avenue, London WC2N 5BY",
+     "url": "https://www.visitlondon.com/things-to-do/place/39518007-brigit-s-bakery-afternoon-tea-bus-tour",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Routemaster_Bus_on_London_Bridge.jpg/960px-Routemaster_Bus_on_London_Bridge.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 2.0"
+    },
+    {
+     "id": "ldn-sketch",
+     "type": "fun",
+     "tier": 3,
+     "name": "Afternoon tea au sketch (la salle rose)",
+     "desc": "Le tea time le plus instagrammé de Londres, dans une salle entièrement rose à Mayfair. Réserver tôt. Les toilettes en forme d'œufs valent à elles seules le voyage.",
+     "address": "9 Conduit Street, London W1S 2XG",
+     "url": "https://sketch.london/",
+     "photo": "https://sketch.london/public/images/og-sketch-website-2400.jpg",
+     "credit": "Photo : sketch"
     }
    ]
   },
@@ -783,6 +959,39 @@
      "url": "https://www.marseille-tourisme.com/offres/bar-cafe-la-caravelle-marseille-2eme-fr-2796515/",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Vieux-Port_de_Marseille%2C_France.jpg/960px-Vieux-Port_de_Marseille%2C_France.jpg",
      "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "mrs-petanque",
+     "type": "fun",
+     "tier": 2,
+     "name": "Pétanque et pastis au Panier",
+     "desc": "2 h de pétanque avec un Marseillais pur jus, puis apéro pastis, rosé et amuse-bouches, pour un groupe de 1 à 8. Louise tire, on pointe, et on conteste chaque mesure.",
+     "address": "Place des 13 Cantons, 13002 Marseille",
+     "url": "https://www.winedering.com/fr/petanque-in-marseille_d7940_travel",
+     "photo": "https://cdn.winedering.com/uploads/travels/7940/big/hgxgxjc.png.webp?hash=badbba34b77ecbe011c78e00c492a54c",
+     "credit": "Photo : Winedering"
+    },
+    {
+     "id": "mrs-mucem",
+     "type": "activite",
+     "tier": 2,
+     "name": "Mucem et fort Saint-Jean",
+     "desc": "Le musée en dentelle de béton au bord de l'eau, relié au fort par une passerelle. Le toit-terrasse et les jardins du fort sont parfaits pour l'apéro au coucher du soleil.",
+     "address": "7 promenade Robert Laffont, 13002 Marseille",
+     "url": "https://www.mucem.org/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Marseille_-_MuCEM_Fort_Saint-Jean_%2816225557268%29.jpg/960px-Marseille_-_MuCEM_Fort_Saint-Jean_%2816225557268%29.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY 2.0"
+    },
+    {
+     "id": "mrs-catamaran",
+     "type": "fun",
+     "tier": 3,
+     "name": "Catamaran privatisé sur la Côte Bleue",
+     "desc": "Une après-midi en catamaran rien que pour nous, calanques de la Côte Bleue et baignade si on est courageux. ≈ 825 € le bateau pour 1 à 7 personnes, soit ≈ 120 €/pers.",
+     "address": "Côte Bleue (ouest de Marseille)",
+     "url": "https://www.funbooker.com/fr/annonce/apres-midi-en-catamaran-privatise-sur-la-cote-bleue-13/voir",
+     "photo": "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/v6e6o08fji28jxuxpgdy",
+     "credit": "Photo : Funbooker"
     }
    ]
   },
@@ -857,6 +1066,39 @@
      "url": "https://www.timeout.com/barcelona/clubs/opium-mar",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
      "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-cordobes",
+     "type": "fun",
+     "tier": 2,
+     "name": "Flamenco au Tablao Cordobés",
+     "desc": "L'un des tablaos les plus réputés d'Espagne, sur La Rambla. Spectacle + boisson dès ≈ 48 €, formules avec dîner. Prix variables selon l'heure : réserver tôt.",
+     "address": "La Rambla 35, 08002 Barcelone",
+     "url": "https://www.tablaocordobes.es/",
+     "photo": "https://tablaocordobes.es/wp-content/uploads/2020/03/irene-y-luis-adame-3.jpg",
+     "credit": "Photo : Tablao Cordobés"
+    },
+    {
+     "id": "bcn-paella",
+     "type": "fun",
+     "tier": 2,
+     "name": "Cours de paella (Cook & Taste)",
+     "desc": "On cuisine paella, tapas et crème catalane, puis on mange tout ce qu'on a raté. Possible en groupe privé. Sangria non négociable.",
+     "address": "Carrer del Paradís 3, 08002 Barcelone",
+     "url": "https://www.cookandtaste.net/",
+     "photo": "https://cookandtaste.net/wp-content/uploads/2019/12/cookandtaste-cookingclasses-home-0-2x.jpg",
+     "credit": "Photo : Cook & Taste"
+    },
+    {
+     "id": "bcn-sagrada",
+     "type": "activite",
+     "tier": 2,
+     "name": "Sagrada Família",
+     "desc": "Incontournable : la basilique de Gaudí et ses vitraux de toutes les couleurs. Billet à réserver en ligne avec créneau horaire.",
+     "address": "Carrer de Mallorca 401, 08013 Barcelone",
+     "url": "https://sagradafamilia.org/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
     }
    ]
   },
@@ -931,6 +1173,39 @@
      "url": "https://teatrokapital.com/",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Teatro_Kapital_Madrid.jpg/960px-Teatro_Kapital_Madrid.jpg",
      "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "mad-cooking",
+     "type": "fun",
+     "tier": 2,
+     "name": "Cours de paella et tapas (Cooking Point)",
+     "desc": "4 h de cuisine : marché, paella, tapas et sangria, puis repas tous ensemble. ≈ 70 à 90 €/pers.",
+     "address": "Calle de Moratín 11, 28014 Madrid",
+     "url": "https://cookingpoint.es/",
+     "photo": "https://cookingpoint.es/images/for-google-seo.jpg",
+     "credit": "Photo : Cooking Point"
+    },
+    {
+     "id": "mad-azotea",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Rooftop du Círculo de Bellas Artes",
+     "desc": "La plus belle vue sur Madrid, au-dessus de la Gran Vía. Petit droit d'entrée, puis cocktails au coucher du soleil avant d'aller danser.",
+     "address": "Calle de Alcalá 42, 28014 Madrid",
+     "url": "https://www.azoteadelcirculo.com/",
+     "photo": "https://azoteadelcirculo.azoteagrupo.com/wp-content/uploads/2024/12/circulo_slider_6.jpg",
+     "credit": "Photo : Azotea del Círculo"
+    },
+    {
+     "id": "mad-toledo",
+     "type": "fun",
+     "tier": 3,
+     "name": "Journée à Tolède avec chauffeur privé",
+     "desc": "Minivan privé avec chauffeur, aller-retour Madrid-Tolède (1 h de route) : ruelles médiévales, vue sur le Tage, massepain. Dès ≈ 120 €/pers., entrées en plus.",
+     "address": "Départ de notre logement à Madrid",
+     "url": "https://daytrip.com/fr/day-trips/from-madrid/toledo",
+     "photo": "https://images.daytrip.com/toledo4.jpg?fit=cover&w=1200&h=630&q=45&auto=enhance",
+     "credit": "Photo : Daytrip"
     }
    ]
   },
@@ -1005,6 +1280,39 @@
      "url": "https://www.timeout.com/budapest/bars-and-pubs/szimpla-kert",
      "photo": "https://media.timeout.com/images/106021449/image.jpg",
      "credit": "Photo : Time Out"
+    },
+    {
+     "id": "bud-croisiere",
+     "type": "fun",
+     "tier": 2,
+     "name": "Croisière-dîner sur le Danube",
+     "desc": "Dîner sur le bateau devant le Parlement illuminé, souvent avec musique. ≈ 30 à 110 €/pers. selon la formule : comparatif des compagnies sur le lien.",
+     "address": "Quais du Danube, Budapest",
+     "url": "https://hungaryunlocked.com/budapest-dinner-cruise/",
+     "photo": "https://hungaryunlocked.com/images/2026/07/danube-cruise-parliament.jpg",
+     "credit": "Photo : Hungary Unlocked"
+    },
+    {
+     "id": "bud-rudas",
+     "type": "fun",
+     "tier": 2,
+     "name": "Bain de nuit aux bains Rudas",
+     "desc": "Bains turcs du XVIe siècle au pied du mont Gellért. Le vendredi et le samedi, ouverts tard dans la nuit (≈ 12 600 HUF, soit ≈ 32 €, en ligne). Le rooftop avec vue sur le Danube demande le forfait Wellness.",
+     "address": "Döbrentei tér 9, 1013 Budapest",
+     "url": "https://en.rudasfurdo.hu/",
+     "photo": "https://budapestgyogyfurdoi.synergyfox.app/public/4/fooldal/rudas_og.jpg",
+     "credit": "Photo : Rudas Fürdő"
+    },
+    {
+     "id": "bud-yacht",
+     "type": "fun",
+     "tier": 3,
+     "name": "Bateau privé sur le Danube",
+     "desc": "Une heure rien que pour nous sur le Danube (jusqu'à 10 pers.), départ quand on veut. On ajoute le champagne et on passe devant le Parlement illuminé en reines du fleuve.",
+     "address": "Quais du Danube, Budapest",
+     "url": "https://aaa.com/tripcanvas/thing-to-do/budapest-private-danube-river-cruise-50946P2",
+     "photo": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-400x400/15/82/4c/aa.jpg",
+     "credit": "Photo : Tripadvisor"
     }
    ]
   },
@@ -1080,6 +1388,28 @@
      "url": "https://www.timeout.com/rome/bars-and-pubs/freni-e-frizioni",
      "photo": "https://media.timeout.com/images/106111178/image.jpg",
      "credit": "Photo : Time Out"
+    },
+    {
+     "id": "rom-vespa",
+     "type": "fun",
+     "tier": 3,
+     "name": "Tour de Rome en Vespa avec chauffeur",
+     "desc": "Chacun derrière son pilote, cheveux au vent, du Colisée à Trastevere : 3 h en mode « Vacances romaines ». ≈ 150 à 200 €/pers. selon la formule.",
+     "address": "Départ du centre de Rome",
+     "url": "https://www.walksinsiderome.com/tour/rome-vespa-tour/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Vespa_In_Rome.jpg/960px-Vespa_In_Rome.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "rom-colisee",
+     "type": "activite",
+     "tier": 2,
+     "name": "Colisée, Forum romain et Palatin",
+     "desc": "Un seul billet pour les trois, à réserver en ligne avec créneau. Gladiateurs en option.",
+     "address": "Piazza del Colosseo, 00184 Rome",
+     "url": "https://colosseo.it/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Colosseum_exterior_at_night%2C_Rome%2C_Italy_%28Ank_Kumar%29_03.jpg/960px-Colosseum_exterior_at_night%2C_Rome%2C_Italy_%28Ank_Kumar%29_03.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
     }
    ]
   },
@@ -1166,6 +1496,39 @@
      "url": "https://www.paradiso.nl/",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Paradiso%2C_Amsterdam_7239.jpg/960px-Paradiso%2C_Amsterdam_7239.jpg",
      "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-keukenhof",
+     "type": "activite",
+     "tier": 2,
+     "name": "Keukenhof – le jardin des tulipes",
+     "desc": "7 millions de fleurs, ouvert du 18 mars au 9 mai 2027 : pile pour nos dates. À 40 min d'Amsterdam, billet avec créneau à réserver en ligne. On avait dit qu'on irait voir les tulipes, et on ne mentait pas.",
+     "address": "Stationsweg 166A, 2161 AM Lisse",
+     "url": "https://keukenhof.nl/en/",
+     "photo": "https://api.keukenhof.nl/assets/2025-04-29-drone-foto-9.jpg",
+     "credit": "Photo : Keukenhof"
+    },
+    {
+     "id": "ams-lookout",
+     "type": "fun",
+     "tier": 2,
+     "name": "A'DAM Lookout – la balançoire au-dessus du vide",
+     "desc": "Tour panoramique face à la gare centrale, avec une balançoire au bord du toit, à 100 m de haut. Hurler est autorisé, et même conseillé.",
+     "address": "Overhoeksplein 5, 1031 KS Amsterdam",
+     "url": "https://www.adamlookout.com/",
+     "photo": "https://www.adamlookout.com/wp-content/uploads/2026/09/lookout-opengraph.jpg",
+     "credit": "Photo : A'DAM Lookout"
+    },
+    {
+     "id": "ams-champagne",
+     "type": "fun",
+     "tier": 3,
+     "name": "Croisière privée au champagne",
+     "desc": "1 h 30 sur un bateau-salon ancien rien que pour nous (Rederij De Jordaan), champagne à bord, au fil des canaux classés. ≈ 145 €/pers.",
+     "address": "Canaux du centre d'Amsterdam",
+     "url": "https://www.expedia.ie/things-to-do/private-champagne-cruise-in-amsterdam.a1192687.activity-details",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Canal_boats_in_Amsterdam_04.jpg/960px-Canal_boats_in_Amsterdam_04.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY 4.0"
     }
    ]
   }
