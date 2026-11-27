@@ -87,140 +87,6 @@ window.EVJF_DATA = {
  },
  "cities": [
   {
-   "joke": "Le seul endroit où boire du champagne au petit-déjeuner s'appelle « découvrir le patrimoine local ».",
-   "id": "reims",
-   "name": "Reims & la Champagne",
-   "emoji": "🥂",
-   "trip": "45 min en TGV (Paris-Est → Reims)",
-   "vibe": "Champagne à volonté, caves, vignes et spas nordiques. Soirées plus calmes : bars à cocktails et à champagne autour de la place d'Erlon.",
-   "scores": {
-    "spa": 5,
-    "soiree": 3,
-    "budget": 4
-   },
-   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Cathedral_of_Reims_%2817%29.jpg/960px-Cathedral_of_Reims_%2817%29.jpg",
-   "credit": "Photo Wikimedia Commons · Cathédrale de Reims, CC BY-SA 4.0",
-   "search": "Reims, France",
-   "items": [
-    {
-     "id": "reims-ospa",
-     "type": "logement",
-     "tier": 2,
-     "name": "Ô Spa Champenois",
-     "desc": "Maison d'hôtes 450 m² avec espace spa, 10 personnes, 3 chambres. Au cœur des vignes de la Montagne de Reims.",
-     "address": "Écueil, 51500 (15 min de Reims)",
-     "url": "https://www.gites-de-france.com/fr/grand-est/marne/o-spa-champenois-51g51218",
-     "ref": "Gîtes de France n° 51G51218",
-     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Hautvillers%2C_wineyards-1.JPG/960px-Hautvillers%2C_wineyards-1.JPG",
-     "credit": "Photo Wikimedia Commons · vignes de Champagne (photo d'ambiance), CC BY 4.0"
-    },
-    {
-     "id": "reims-prelude",
-     "type": "logement",
-     "tier": 2,
-     "name": "Prélude Hautvillers",
-     "desc": "Grande maison de 12 personnes, 4 chambres, au centre du village d'Hautvillers, berceau du champagne (Dom Pérignon).",
-     "address": "Hautvillers, 51160 (25 min de Reims)",
-     "url": "https://www.gites-de-france.com/fr/grand-est/marne/prelude-hautvillers-12-pers-51g723",
-     "ref": "Gîtes de France n° 51G723",
-     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Mo%C3%ABt_Chandon_Vineyards_Hautvillers.jpg/960px-Mo%C3%ABt_Chandon_Vineyards_Hautvillers.jpg",
-     "credit": "Photo Wikimedia Commons · Hautvillers, CC BY-SA 3.0"
-    },
-    {
-     "id": "reims-chanzy",
-     "type": "spa",
-     "tier": 2,
-     "name": "Spa Deep Nature – La Caserne Chanzy",
-     "desc": "Spa de l'hôtel 5★ en plein centre de Reims : piscine, hammam, sauna, soins. Ouvert aux personnes extérieures sur réservation.",
-     "address": "18 rue Tronsson-Ducoudray, 51100 Reims",
-     "phone": "+33 3 26 83 18 18",
-     "url": "https://www.marriott.com/hotels/travel/rheak/",
-     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Reims_-_place_Drouet-d%27Erlon_-_2023-06-04_-_01.jpg/960px-Reims_-_place_Drouet-d%27Erlon_-_2023-06-04_-_01.jpg",
-     "credit": "Photo Wikimedia Commons · centre de Reims, CC BY-SA 4.0"
-    },
-    {
-     "id": "reims-sacy",
-     "type": "spa",
-     "tier": 3,
-     "name": "Château de Sacy – spa nordique",
-     "desc": "Château-hôtel dans les vignes : sauna, bains nordiques en tonneau avec vue sur les coteaux, soins. Brunch ou déjeuner possible sur place.",
-     "address": "Rue des Croisettes, 51500 Sacy",
-     "phone": "+33 3 26 07 60 38",
-     "url": "https://chateaudesacy-reims.fr/",
-     "photo": "https://chateaudesacy-reims.fr/wp-content/uploads/2026/08/2.jpg",
-     "credit": "Photo : Château de Sacy"
-    },
-    {
-     "id": "reims-royal",
-     "type": "spa",
-     "tier": 3,
-     "name": "Royal Champagne Hôtel & Spa",
-     "desc": "Le palace des vignes (5★) : spa de 1 500 m², piscines intérieure et extérieure face aux coteaux. Ouvert de mars à décembre.",
-     "address": "9 rue de la République, 51160 Champillon",
-     "phone": "+33 3 26 52 41 14",
-     "url": "https://royalchampagne.com/",
-     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Champillon_01790.JPG/960px-Champillon_01790.JPG",
-     "credit": "Photo Wikimedia Commons · Champillon, CC BY-SA 3.0"
-    },
-    {
-     "id": "reims-pommery",
-     "type": "activite",
-     "tier": 2,
-     "name": "Visite des caves Pommery",
-     "desc": "Caves crayères classées UNESCO, 18 km de galeries, dégustation. Dès ≈ 30 €/pers. Réserver à l'avance, les créneaux partent vite.",
-     "address": "5 place du Général Gouraud, 51100 Reims",
-     "url": "https://www.champagnepommery.com/",
-     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Maison_Vrancken_-_Domaine_Pommery_-_Reims.jpg/960px-Maison_Vrancken_-_Domaine_Pommery_-_Reims.jpg",
-     "credit": "Photo Wikimedia Commons · Domaine Pommery, CC BY-SA 4.0"
-    },
-    {
-     "id": "reims-chef",
-     "type": "chef",
-     "tier": 2,
-     "name": "Chef à domicile à Reims (Take a Chef)",
-     "desc": "Une vingtaine de chefs à domicile autour de Reims. On décrit la soirée, plusieurs chefs envoient un menu. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
-     "address": "Reims et alentours",
-     "url": "https://www.takeachef.com/fr-fr/chef-a-domicile/reims",
-     "photo": "https://d1zzxdyvtq79bu.cloudfront.net/context/frontend/images/open-graph/chef_privado_take_a_chef.jpg",
-     "credit": "Photo : Take a Chef"
-    },
-    {
-     "id": "reims-bootlegger",
-     "type": "soiree",
-     "tier": 2,
-     "name": "Bootlegger",
-     "desc": "Bar à cocktails façon speakeasy, cosy et réservable pour un groupe.",
-     "address": "4 rue Gaston Boyer, 51100 Reims",
-     "url": "https://www.privateaser.com/lieu/51307-bootlegger",
-     "photo": "https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/51307/750x375/459393.jpg",
-     "credit": "Photo : Privateaser"
-    },
-    {
-     "id": "reims-lapaix",
-     "type": "soiree",
-     "tier": 2,
-     "name": "Bar La Paix",
-     "desc": "Bar à cocktails et à champagne de l'hôtel de la Paix, à deux pas de la place d'Erlon.",
-     "address": "9 rue Buirette, 51100 Reims",
-     "url": "https://www.privateaser.com/lieu/64638-bar-la-paix",
-     "photo": "https://privateaser-media.s3.eu-west-1.amazonaws.com/etab_photos/64638/750x375/617705.jpg",
-     "credit": "Photo : Privateaser"
-    },
-    {
-     "id": "reims-sabrage",
-     "type": "fun",
-     "tier": 2,
-     "name": "Cours de sabrage – Champagne Caroline Dufour",
-     "desc": "Ouvrir une bouteille de champagne au sabre, comme des hussards. Puis on la boit, évidemment. Dès 50 €/pers. (Grande Réserve), jusqu'à 25 personnes.",
-     "address": "10 rue Noël, 51100 Reims",
-     "url": "https://www.winedering.com/fr/introduction-to-sabrage-at-champagne-caroline-dufour-in-reims_d5577_travel",
-     "photo": "https://cdn.winedering.com/uploads/travels/5577/big/img1286.jpg.webp?hash=8e30a659c31b53017073692309ab0da1",
-     "credit": "Photo : Winedering"
-    }
-   ],
-   "mode": "train"
-  },
-  {
    "joke": "Ambiance Planches, casino et brushing. Mettez une veste : la mer du Nord ne fait pas de cadeau aux EVJF en avril.",
    "id": "deauville",
    "name": "Deauville & Trouville",
@@ -758,6 +624,91 @@ window.EVJF_DATA = {
     }
    ],
    "mode": "train"
+  },
+  {
+   "id": "londres",
+   "mode": "train",
+   "name": "Londres",
+   "emoji": "🇬🇧",
+   "trip": "🚄 2 h 20 en Eurostar (Paris-Nord → St Pancras). Passeport ou carte d'identité selon les règles en vigueur.",
+   "vibe": "Pubs, karaoké privé, crazy golf à cocktails, clubs mythiques. Spa romain à Covent Garden. Plus cher, mais la soirée la plus folle de la liste.",
+   "joke": "À Londres, les pubs ferment à 23 h. Heureusement, nous non.",
+   "scores": {
+    "spa": 5,
+    "soiree": 5,
+    "budget": 2
+   },
+   "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+   "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0",
+   "search": "Londres, Royaume-Uni",
+   "items": [
+    {
+     "id": "ldn-maisons",
+     "type": "logement",
+     "tier": 3,
+     "name": "Maisons victoriennes à Londres",
+     "desc": "Sélection Airbnb déjà filtrée : maisons entières pour 7, au moins 4 chambres. Viser Notting Hill, Islington ou Clapham : jolies maisons, métro proche.",
+     "address": "Londres (Notting Hill, Islington, Clapham)",
+     "url": "https://www.airbnb.fr/s/Londres--Royaume-Uni/homes?adults=7&min_bedrooms=4&room_types%5B%5D=Entire%20home%2Fapt",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/London%2C_Covent_Garden_--_2016_--_4878.jpg/960px-London%2C_Covent_Garden_--_2016_--_4878.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "ldn-aire",
+     "type": "spa",
+     "tier": 3,
+     "name": "AIRE Ancient Baths London",
+     "desc": "Bains thermaux à la romaine dans un bâtiment historique de Covent Garden : bassins chaud, froid, salé, à la lueur des bougies. Massages possibles.",
+     "address": "2-3 Robert Street, London WC2N 6BH",
+     "url": "https://www.visitlondon.com/things-to-do/place/49356557-aire-ancient-baths-london",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/London%2C_Covent_Garden_--_2016_--_4879.jpg/960px-London%2C_Covent_Garden_--_2016_--_4879.jpg",
+     "credit": "Photo Wikimedia Commons · Covent Garden, CC BY-SA 4.0"
+    },
+    {
+     "id": "ldn-chef",
+     "type": "chef",
+     "tier": 2,
+     "name": "Chef à domicile à Londres (Take a Chef)",
+     "desc": "Take a Chef fonctionne aussi ici : on décrit la soirée, plusieurs chefs proposent un menu. Prix souvent un peu plus doux qu'en France. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
+     "address": "Londres",
+     "url": "https://www.takeachef.com/en-gb/private-chef/london",
+     "photo": "https://d1zzxdyvtq79bu.cloudfront.net/context/frontend/images/open-graph/chef_privado_take_a_chef.jpg",
+     "credit": "Photo : Take a Chef"
+    },
+    {
+     "id": "ldn-swingers",
+     "type": "fun",
+     "tier": 2,
+     "name": "Swingers – crazy golf & cocktails",
+     "desc": "Mini-golf déjanté, fête foraine, street food et cocktails, à deux pas d'Oxford Circus. Privatisation possible. Le perdant porte le voile de mariée toute la soirée.",
+     "address": "15 John Prince's Street, London W1G 0AB",
+     "url": "https://www.timeout.com/london/things-to-do/swingers-west-end",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Soho_Street_in_London.jpg/960px-Soho_Street_in_London.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-luckyvoice",
+     "type": "fun",
+     "tier": 2,
+     "name": "Lucky Voice Soho – karaoké privé",
+     "desc": "Box de karaoké insonorisée rien que pour nous (2 à 15 pers.), dès ≈ 8 £/pers./heure, 2 h minimum. Attention : réservé aux plus de 21 ans.",
+     "address": "52 Poland Street, London W1F 7NQ",
+     "url": "https://www.luckyvoice.com/soho",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Night_near_Soho_London.JPG/960px-Night_near_Soho_London.JPG",
+     "credit": "Photo Wikimedia Commons · Soho, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-ministry",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Ministry of Sound",
+     "desc": "Le club le plus célèbre de Londres, son énorme, jusqu'au petit matin.",
+     "address": "103 Gaunt Street, London SE1 6DP",
+     "url": "https://www.ministryofsound.com/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Dolby_Atmos_at_Ministry_of_Sound.jpg/960px-Dolby_Atmos_at_Ministry_of_Sound.jpg",
+     "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    }
+   ]
   },
   {
    "id": "barcelone",

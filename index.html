@@ -167,14 +167,15 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 .tab{flex:1;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 6px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;text-align:center}
 .tab.on{background:var(--rose);border-color:var(--rose);color:#fff}
 .back{border:0;background:none;color:var(--rose);font-weight:700;font-size:15px;padding:6px 0;cursor:pointer}
-.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.cgrid{display:grid;grid-template-columns:1fr;gap:18px}
+@media (min-width:760px){.cgrid{grid-template-columns:1fr 1fr}}
 .ccard{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(194,24,91,.06)}
 .ccard:active{transform:scale(.99)}
-.ccard .img{position:relative;aspect-ratio:16/10;background:#eee}
+.ccard .img{position:relative;aspect-ratio:16/9;background:#eee}
 .ccard .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ccard .img .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,0) 60%)}
 .ccard .img .nm{position:absolute;left:12px;bottom:10px;right:12px;color:#fff}
-.ccard .img .nm b{display:block;font-size:22px}
+.ccard .img .nm b{display:block;font-size:28px}
 .ccard .img .nm span{font-size:13px;opacity:.95}
 .ccard .bd{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px}
 .avg{font-size:14px;color:var(--muted)}
@@ -184,7 +185,8 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 .star.on{color:#ffb300;text-shadow:0 0 6px rgba(255,179,0,.5)}
 .star:active{transform:scale(1.25)}
 .rate{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-.disc{margin-left:auto;font-weight:700;color:var(--rose);font-size:14px;white-space:nowrap}
+.disc{display:block;text-align:center;background:linear-gradient(90deg,#c2185b,#ec407a);color:#fff;font-weight:800;font-size:17px;border-radius:14px;padding:13px;margin-top:4px;box-shadow:0 3px 10px rgba(194,24,91,.3)}
+.ccard .img .go{position:absolute;right:12px;top:12px;background:rgba(255,255,255,.92);color:var(--rose);font-weight:800;border-radius:999px;padding:6px 12px;font-size:14px}
 .raters{font-size:12px;color:var(--muted)}
 .cityrate{background:#fff;border:1px solid var(--line);border-radius:16px;padding:10px 12px;margin:12px 0}
 .cityrate .star{font-size:34px}
@@ -242,7 +244,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   <section id="v-villes">
     <h2>🏙️ Choisis ta ville</h2>
     <p class="muted">Note chaque ville de 1 à 5 étoiles, puis touche-la pour découvrir les logements, spas, activités marrantes et soirées.</p>
-    <p class="sect">🚄 En train, à moins de 2 h 15 de Paris</p>
+    <p class="sect">🚄 En train (2 h 30 max depuis Paris)</p>
     <div class="cgrid" id="gTrain"></div>
     <p class="sect" style="margin-top:22px">✈️ En avion (week-end de reine)</p>
     <div class="cgrid" id="gAvion"></div>
@@ -301,7 +303,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="toast" id="toast"></div>
 
 <script src="config.js?v=3"></script>
-<script src="data/embedded_data.js?v=10"></script>
+<script src="data/embedded_data.js?v=11"></script>
 <script>
 (function(){
 "use strict";
@@ -449,11 +451,12 @@ function refresh(){
 function cityCard(c){
   const s = cityStats(c.id);
   return `<article class="ccard" data-go="${c.id}">
-    <div class="img"><img loading="lazy" referrerpolicy="no-referrer" src="${esc(c.photo)}" alt="${esc(c.name)}" onerror="this.style.display='none'"><div class="shade"></div>
+    <div class="img"><img loading="lazy" referrerpolicy="no-referrer" src="${esc(c.photo)}" alt="${esc(c.name)}" onerror="this.style.display='none'"><div class="shade"></div><span class="go">👆 Touche-moi</span>
       <div class="nm"><b>${c.emoji} ${esc(c.name)}</b><span>${esc(c.trip)}</span></div></div>
     <div class="bd">
       <div class="avg">${avgTxt(s)}</div>
-      <div class="rate">Ta note ${starsHtml(c.id, s.mine)}<span class="disc">Découvrir ›</span></div>
+      <div class="rate">Ta note ${starsHtml(c.id, s.mine)}</div>
+      <span class="disc">👉 Découvrir ${esc(c.name.split(" ")[0])} : logements, spa, activités ›</span>
     </div></article>`;
 }
 function renderHome(){

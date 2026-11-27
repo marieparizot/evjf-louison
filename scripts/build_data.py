@@ -588,6 +588,42 @@ DATA["cities"] += [
     "photo": WC + "0/00/Paradiso%2C_Amsterdam_7239.jpg/960px-Paradiso%2C_Amsterdam_7239.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"}]},
 ]
 
+
+# ---------------------------------------------------------------- 27/11/2026 : Reims retirée, Londres ajoutée
+DATA["cities"] = [c for c in DATA["cities"] if c["id"] != "reims"]
+LONDRES = {"id": "londres", "mode": "train", "name": "Londres", "emoji": "🇬🇧",
+  "trip": "🚄 2 h 20 en Eurostar (Paris-Nord → St Pancras). Passeport ou carte d'identité selon les règles en vigueur.",
+  "vibe": "Pubs, karaoké privé, crazy golf à cocktails, clubs mythiques. Spa romain à Covent Garden. Plus cher, mais la soirée la plus folle de la liste.",
+  "joke": "À Londres, les pubs ferment à 23 h. Heureusement, nous non.",
+  "scores": {"spa": 5, "soiree": 5, "budget": 2},
+  "photo": WC + "5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+  "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0", "search": "Londres, Royaume-Uni",
+  "items": [
+   {"id": "ldn-maisons", "type": "logement", "tier": 3, "name": "Maisons victoriennes à Londres",
+    "desc": "Sélection Airbnb déjà filtrée : maisons entières pour 7, au moins 4 chambres. Viser Notting Hill, Islington ou Clapham : jolies maisons, métro proche.",
+    "address": "Londres (Notting Hill, Islington, Clapham)", "url": airbnb("Londres--Royaume-Uni"),
+    "photo": WC + "7/77/London%2C_Covent_Garden_--_2016_--_4878.jpg/960px-London%2C_Covent_Garden_--_2016_--_4878.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"},
+   {"id": "ldn-aire", "type": "spa", "tier": 3, "name": "AIRE Ancient Baths London",
+    "desc": "Bains thermaux à la romaine dans un bâtiment historique de Covent Garden : bassins chaud, froid, salé, à la lueur des bougies. Massages possibles.",
+    "address": "2-3 Robert Street, London WC2N 6BH", "url": "https://www.visitlondon.com/things-to-do/place/49356557-aire-ancient-baths-london",
+    "photo": WC + "0/05/London%2C_Covent_Garden_--_2016_--_4879.jpg/960px-London%2C_Covent_Garden_--_2016_--_4879.jpg", "credit": "Photo Wikimedia Commons · Covent Garden, CC BY-SA 4.0"},
+   chef("ldn-chef", "Londres", "https://www.takeachef.com/en-gb/private-chef/london"),
+   {"id": "ldn-swingers", "type": "fun", "tier": 2, "name": "Swingers – crazy golf & cocktails",
+    "desc": "Mini-golf déjanté, fête foraine, street food et cocktails, à deux pas d'Oxford Circus. Privatisation possible. Le perdant porte le voile de mariée toute la soirée.",
+    "address": "15 John Prince's Street, London W1G 0AB", "url": "https://www.timeout.com/london/things-to-do/swingers-west-end",
+    "photo": WC + "9/98/Soho_Street_in_London.jpg/960px-Soho_Street_in_London.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 3.0"},
+   {"id": "ldn-luckyvoice", "type": "fun", "tier": 2, "name": "Lucky Voice Soho – karaoké privé",
+    "desc": "Box de karaoké insonorisée rien que pour nous (2 à 15 pers.), dès ≈ 8 £/pers./heure, 2 h minimum. Attention : réservé aux plus de 21 ans.",
+    "address": "52 Poland Street, London W1F 7NQ", "url": "https://www.luckyvoice.com/soho",
+    "photo": WC + "a/a6/Night_near_Soho_London.JPG/960px-Night_near_Soho_London.JPG", "credit": "Photo Wikimedia Commons · Soho, CC BY-SA 3.0"},
+   {"id": "ldn-ministry", "type": "soiree", "tier": 2, "name": "Ministry of Sound",
+    "desc": "Le club le plus célèbre de Londres, son énorme, jusqu'au petit matin.",
+    "address": "103 Gaunt Street, London SE1 6DP", "url": "https://www.ministryofsound.com/",
+    "photo": WC + "8/8c/Dolby_Atmos_at_Ministry_of_Sound.jpg/960px-Dolby_Atmos_at_Ministry_of_Sound.jpg", "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"}]}
+_i = max(i for i, c in enumerate(DATA["cities"]) if c.get("mode") == "train") + 1
+DATA["cities"].insert(_i, LONDRES)
+DATA["ticker"] = [t for t in DATA["ticker"] if "champagne" not in t.lower()]
+
 root = pathlib.Path(__file__).resolve().parent.parent
 (root / "data").mkdir(exist_ok=True)
 # Photos de Louise : toutes les images déposées dans assets/louise/
