@@ -809,6 +809,193 @@ for c in DATA["cities"]:
         it.setdefault("photo", c["photo"]); it.setdefault("credit", c["credit"])
         c["items"].append(it)
 
+# ---------------------------------------------------------------- 27/11/2026 (bis) : au moins 5 choix par catégorie
+# Lieux connus, adresses vérifiées autant que possible ; prix indicatifs. Le lien ouvre la fiche Google du lieu
+# quand le site officiel n'est pas sûr.
+import urllib.parse as _up
+def _g(q): return "https://www.google.com/search?q=" + _up.quote(q)
+L, A, R, S = "logement", "fun", "restauration", "soiree"
+MORE2 = {
+ "deauville": [
+  (L,3,"Hôtel Barrière Le Normandy","Le palace à colombages face à la mer, avec chambres communicantes et suites familiales. On descend au spa Guerlain en peignoir. ≈ 350 à 600 €/chambre la nuit.","38 rue Jean Mermoz, 14800 Deauville","https://www.hotelsbarriere.com"),
+  (R,2,"Les Vapeurs","La brasserie mythique de Trouville depuis 1927 : moules-frites, crevettes grises et muscadet. Ne prend pas toujours les réservations, venir tôt. ≈ 35 à 50 €/pers.","160 boulevard Fernand Moureaux, 14360 Trouville-sur-Mer","https://www.lesvapeurs.fr"),
+  (R,3,"Le Ciro's","Le restaurant chic les pieds sur les Planches : plateaux de fruits de mer et vue sur la plage. ≈ 70 à 100 €/pers.","Boulevard de la Mer (Promenade des Planches), 14800 Deauville",_g("Le Ciro's Deauville")),
+  (R,2,"Le Drakkar","Brasserie animée en plein centre, ouverte tard : idéale avant le casino. ≈ 40 à 55 €/pers.","77 rue Eugène Colas, 14800 Deauville",_g("Le Drakkar Deauville")),
+  (R,2,"La Flambée","Grillades au feu de bois et cuisine normande dans une salle chaleureuse. Parfait si le vent de la Manche nous a gelés. ≈ 40 à 60 €/pers.","81 rue du Général Leclerc, 14800 Deauville",_g("La Flambée Deauville")),
+  (S,2,"Le Brummell – discothèque du Casino","La boîte de nuit du Casino Barrière, ouverte le week-end jusqu'au bout de la nuit. Tenue correcte exigée (paillettes recommandées).","2 rue Edmond Blanc, 14800 Deauville",_g("Brummell discothèque casino Deauville")),
+  (S,2,"Casino Barrière de Trouville","Casino au bord de la plage avec bar et soirées à thème. On mise 10 €, on repart avec une histoire.","Place du Maréchal Foch, 14360 Trouville-sur-Mer","https://www.casinosbarriere.com"),
+  (S,2,"Le Bar de la Mer","Le bar en terrasse sur les Planches pour l'apéro au coucher du soleil. Rosé, huîtres, et photos de groupe obligatoires.","Boulevard de la Mer, 14800 Deauville",_g("Bar de la Mer Deauville")),
+  (A,2,"CERZA – parc zoologique","Safari en petit train et à pied au milieu des girafes, rhinocéros et lémuriens, à 40 min de Deauville. ≈ 30 €/pers.","Hermival-les-Vaux, 14100 (près de Lisieux)","https://www.cerza.com"),
+ ],
+ "lille": [
+  (L,3,"L'Hermitage Gantois","Hôtel 5★ dans un hospice du XVe siècle, avec spa sur place. Grandes chambres et suites. ≈ 250 à 450 €/chambre la nuit.","224 rue de Paris, 59000 Lille",_g("Hermitage Gantois Lille")),
+  (L,2,"Couvent des Minimes – Alliance Lille","Ancien couvent du XVIIe avec cloître et verrière, à deux pas du Vieux-Lille. ≈ 130 à 200 €/chambre.","17 quai du Wault, 59000 Lille",_g("Alliance Lille Couvent des Minimes")),
+  (L,2,"Mama Shelter Lille","Hôtel déco et festif à côté des gares, chambres pour 4, rooftop et baby-foot. ≈ 110 à 180 €/chambre.","97 place Saint-Hubert, 59000 Lille","https://mamashelter.com"),
+  (R,2,"Estaminet Au Vieux de la Vieille","Le vrai estaminet flamand : carbonade, welsh et potjevleesch. On repart roulé·es. ≈ 25 à 40 €/pers.","2-4 rue des Vieux Murs, 59800 Lille",_g("Au Vieux de la Vieille Lille")),
+  (R,3,"Méert","Salon de thé et restaurant de la maison des gaufres fourrées à la vanille, dans un décor de 1839. ≈ 60 à 90 €/pers.","27 rue Esquermoise, 59000 Lille","https://www.meert.fr"),
+  (R,2,"La Chicorée","Brasserie ouverte très tard sur la place Rihour : le rendez-vous après la tournée des bars. ≈ 30 à 45 €/pers.","15 place Rihour, 59000 Lille",_g("La Chicorée Lille")),
+  (S,2,"La Capsule","Bar à bières artisanales dans une cave voûtée du Vieux-Lille, une vingtaine de bières à la pression.","25 rue des Trois Mollettes, 59800 Lille",_g("La Capsule Lille bar")),
+  (S,2,"Network Café","Boîte de nuit dans un décor de théâtre baroque, au cœur du Vieux-Lille. Musique généraliste, on danse jusqu'à l'aube.","Rue du Faisan, 59800 Lille",_g("Network Café Lille")),
+  (S,2,"Le Magazine Club","Club électro et house parmi les plus courus de Lille, soirées le vendredi et le samedi.","84 rue de Trévise, 59000 Lille",_g("Magazine Club Lille")),
+  (A,2,"Pairi Daiza","Élu plusieurs fois meilleur zoo d'Europe : pandas, éléphants et jardins du monde, à 1 h de Lille. ≈ 45 €/pers.","Domaine de Cambron, 7940 Brugelette (Belgique)","https://www.pairidaiza.eu"),
+ ],
+ "bruxelles": [
+  (L,3,"Hôtel Amigo","Le palace des Rocco Forte à deux pas de la Grand-Place, suites familiales. ≈ 300 à 550 €/chambre la nuit.","Rue de l'Amigo 1-3, 1000 Bruxelles",_g("Hotel Amigo Brussels")),
+  (L,2,"The Dominican","Hôtel design installé dans un ancien couvent, derrière la Monnaie. ≈ 160 à 250 €/chambre.","Rue Léopold 9, 1000 Bruxelles",_g("The Dominican Brussels")),
+  (L,2,"Hôtel Le Plaza","Grand hôtel Belle Époque des années 1930, chambres spacieuses en plein centre. ≈ 150 à 240 €/chambre.","Boulevard Adolphe Max 118-126, 1000 Bruxelles",_g("Hotel Le Plaza Brussels")),
+  (L,2,"Appart'hôtels près de la Grand-Place","Plusieurs résidences proposent des appartements de 2 à 3 chambres pour 6 à 8 : pratique pour rester ensemble. ≈ 250 à 400 €/nuit l'appartement.","Centre de Bruxelles",_g("aparthotel 3 chambres Bruxelles Grand-Place")),
+  (R,2,"Chez Léon","L'institution des moules-frites depuis 1893, dans l'Îlot Sacré. ≈ 30 à 45 €/pers.","Rue des Bouchers 18, 1000 Bruxelles","https://www.chezleon.be"),
+  (R,3,"Belga Queen","Brasserie spectaculaire dans une ancienne banque : cuisine belge revisitée, bar à huîtres, et des toilettes qui font parler. ≈ 60 à 80 €/pers.","Rue du Fossé aux Loups 32, 1000 Bruxelles","https://www.belgaqueen.be"),
+  (R,2,"Fin de Siècle","Cuisine belge généreuse (stoemp, carbonnades), pas de réservation, ambiance bruyante et joyeuse. ≈ 30 à 40 €/pers.","Rue des Chartreux 9, 1000 Bruxelles",_g("Fin de Siècle Bruxelles")),
+  (R,2,"Nüetnigenough","Petit bistrot belge cuisine à la bière, réputé pour ses carbonnades. ≈ 35 à 50 €/pers.","Rue du Lombard 25, 1000 Bruxelles",_g("Nuetnigenough Bruxelles")),
+  (S,2,"À la Mort Subite","Le café Art nouveau de 1928 où l'on boit la bière du même nom. Parfait pour le premier verre.","Rue Montagne-aux-Herbes-Potagères 7, 1000 Bruxelles","https://www.alamortsubite.com"),
+  (S,2,"Mirano","Boîte de nuit mythique de Bruxelles dans un ancien cinéma, soirées le samedi.","Chaussée de Louvain 38, 1210 Saint-Josse-ten-Noode",_g("Mirano Bruxelles")),
+  (S,2,"Spirito","Club installé dans une ancienne église anglicane : on danse sous les vitraux. Tenue soignée exigée.","Rue de Stassart 18, 1050 Ixelles",_g("Spirito Brussels")),
+  (A,2,"Pairi Daiza","Le zoo-jardin le plus spectaculaire de Belgique : pandas, éléphants, grande volière, à 50 min de Bruxelles. ≈ 45 €/pers.","Domaine de Cambron, 7940 Brugelette","https://www.pairidaiza.eu"),
+ ],
+ "bordeaux": [
+  (L,3,"InterContinental Bordeaux – Le Grand Hôtel","Le palace face à l'Opéra, spa et rooftop. ≈ 400 à 700 €/chambre la nuit.","2-5 place de la Comédie, 33000 Bordeaux",_g("InterContinental Bordeaux Le Grand Hotel")),
+  (L,3,"Les Sources de Caudalie","Hôtel au milieu des vignes de Smith Haut Lafitte, spa de vinothérapie inclus. ≈ 350 à 600 €/chambre.","Chemin de Smith Haut Lafitte, 33650 Martillac (20 min)","https://www.sources-caudalie.com"),
+  (L,2,"Mama Shelter Bordeaux","Hôtel festif en plein centre, chambres pour 3 ou 4. ≈ 110 à 180 €/chambre.","19 rue Poquelin-Molière, 33000 Bordeaux","https://mamashelter.com"),
+  (L,2,"Seeko'o Hôtel","Hôtel design tout blanc sur les quais des Chartrons. ≈ 140 à 220 €/chambre.","54 quai de Bacalan, 33300 Bordeaux",_g("Seeko'o Hotel Bordeaux")),
+  (R,2,"La Brasserie Bordelaise","Entrecôte, cave à vin immense et jambons suspendus : la brasserie qui fait l'unanimité. ≈ 40 à 60 €/pers.","50 rue Saint-Rémi, 33000 Bordeaux",_g("La Brasserie Bordelaise")),
+  (R,3,"Le Gabriel","Restaurant gastronomique dans un hôtel particulier de la place de la Bourse, vue sur le miroir d'eau. ≈ 90 à 150 €/pers.","10 place de la Bourse, 33000 Bordeaux",_g("Le Gabriel Bordeaux")),
+  (R,2,"Le Bouchon Bordelais","Bistrot du Sud-Ouest réputé, cuisine du marché. ≈ 40 à 55 €/pers.","2 rue Courbin, 33000 Bordeaux",_g("Le Bouchon Bordelais")),
+  (R,2,"Les Halles de Bacalan","Halles gourmandes à côté de la Cité du Vin : huîtres, tapas, fromages, chacun choisit son stand. ≈ 25 à 40 €/pers.","10 quai de Bacalan, 33300 Bordeaux",_g("Halles de Bacalan")),
+  (S,2,"Bar à vin du CIVB","Le bar du Conseil des vins de Bordeaux : 30 vins au verre servis par des sommeliers, à petits prix.","3 cours du XXX-Juillet, 33000 Bordeaux",_g("Bar à vin CIVB Bordeaux")),
+  (S,2,"Calle Ocho","Bar cubain mythique, mojitos et salsa jusqu'à 2 h. On apprend à danser en 10 minutes (ou pas).","24 rue des Piliers de Tutelle, 33000 Bordeaux",_g("Calle Ocho Bordeaux")),
+  (S,3,"Rooftop du Grand Hôtel","Le toit du palace avec vue à 360° sur Bordeaux : champagne au coucher du soleil, ouvert aux beaux jours.","2-5 place de la Comédie, 33000 Bordeaux",_g("rooftop InterContinental Bordeaux")),
+  (S,2,"Quai de Paludate – la rue des boîtes","Le quartier des boîtes de nuit de Bordeaux : une dizaine de clubs côte à côte, on choisit sur place.","Quai de Paludate, 33800 Bordeaux",_g("boîtes de nuit quai de Paludate Bordeaux")),
+  (A,2,"Zoo de Bordeaux-Pessac","Zoo dans un parc boisé à 20 min : grands félins, lémuriens, rhinocéros, nourrissages commentés. ≈ 25 €/pers.","3 chemin du Transvaal, 33600 Pessac",_g("Zoo de Bordeaux Pessac")),
+ ],
+ "lyon": [
+  (L,3,"InterContinental Lyon – Hôtel-Dieu","Le palace dans l'ancien Hôtel-Dieu, sous le grand dôme, au bord du Rhône. ≈ 350 à 600 €/chambre la nuit.","20 quai Jules Courmont, 69002 Lyon",_g("InterContinental Lyon Hotel Dieu")),
+  (L,3,"Villa Florentine","Hôtel de charme sur la colline de Fourvière, piscine et vue sur tout Lyon. ≈ 300 à 500 €/chambre.","25 montée Saint-Barthélemy, 69005 Lyon",_g("Villa Florentine Lyon")),
+  (L,2,"Mama Shelter Lyon","Hôtel déco et festif, chambres pour 3 ou 4. ≈ 100 à 160 €/chambre.","13 rue Domer, 69007 Lyon","https://mamashelter.com"),
+  (R,2,"Daniel et Denise","Le bouchon lyonnais de Joseph Viola, MOF : pâté en croûte, quenelles, tarte aux pralines. ≈ 40 à 55 €/pers.","156 rue de Créqui, 69003 Lyon",_g("Daniel et Denise Créqui")),
+  (R,2,"Brasserie Le Sud","Brasserie Paul Bocuse aux saveurs méditerranéennes, place Bellecour. ≈ 40 à 60 €/pers.","11 place Antonin Poncet, 69002 Lyon",_g("Brasserie Le Sud Bocuse Lyon")),
+  (R,2,"Le Bouchon des Filles","Bouchon tenu par une équipe de filles, menu unique généreux, ambiance de copains. ≈ 35 à 45 €/pers.","20 rue Sergent Blandan, 69001 Lyon",_g("Le Bouchon des Filles Lyon")),
+  (S,2,"L'Antiquaire","Speakeasy caché derrière une façade de brocante, cocktails parmi les meilleurs de France.","20 rue Hippolyte Flandrin, 69001 Lyon",_g("L'Antiquaire Lyon bar")),
+  (S,2,"Les péniches du Rhône","Bars et clubs flottants amarrés le long du Rhône : apéro au soleil puis on danse à bord.","Quai Victor Augagneur, 69003 Lyon",_g("péniches bar Lyon quai Victor Augagneur")),
+  (S,2,"Le Petit Salon","Club électro et techno de référence à Lyon, ouvert le vendredi et le samedi jusqu'au matin.","3 rue de Cronstadt, 69007 Lyon",_g("Le Petit Salon Lyon")),
+  (S,2,"Ninkasi Gerland","La grande brasserie-salle de concert lyonnaise : bières maison, concerts et DJ le week-end.","267 rue Marcel Mérieux, 69007 Lyon",_g("Ninkasi Gerland")),
+  (A,2,"Safari de Peaugres","Safari en voiture au milieu des zèbres, ours et girafes, puis visite à pied. À 1 h au sud de Lyon. ≈ 30 €/pers.","07340 Peaugres (Ardèche)","https://www.safari-peaugres.com"),
+ ],
+ "londres": [
+  (L,2,"The Hoxton Holborn","Hôtel branché et abordable pour Londres, chambres simples et bar animé. ≈ 220 à 320 €/chambre la nuit.","199-206 High Holborn, London WC1V 7BD","https://thehoxton.com"),
+  (L,2,"Citadines Holborn-Covent Garden","Appart'hôtel avec appartements familiaux et kitchenette, à pied de Covent Garden. ≈ 250 à 400 €/nuit.","94-99 High Holborn, London WC1V 6LF",_g("Citadines Holborn Covent Garden")),
+  (L,3,"The Ned","Palace dans une ancienne banque de la City, piscine sur le toit et coffres-forts transformés en bar. ≈ 450 à 700 €/chambre.","27 Poultry, London EC2R 8AJ","https://www.thened.com"),
+  (L,3,"Sea Containers London","Hôtel design au bord de la Tamise, vue sur Saint-Paul, spa et rooftop. ≈ 350 à 550 €/chambre.","20 Upper Ground, London SE1 9PD",_g("Sea Containers London")),
+  (R,2,"Dishoom Covent Garden","Cuisine des cafés de Bombay dans un décor des années 1960 : une adresse que tout Londres adore. ≈ 35 à 50 €/pers.","12 Upper St Martin's Lane, London WC2H 9FB","https://www.dishoom.com"),
+  (R,3,"Duck & Waffle","Restaurant au 40e étage d'une tour de la City, ouvert 24 h/24. La vue vaut le gaufre-canard. ≈ 70 à 100 €/pers.","110 Bishopsgate, London EC2N 4AY","https://duckandwaffle.com"),
+  (S,3,"Nightjar","Speakeasy jazz classé parmi les meilleurs bars du monde. Réservation conseillée.","129 City Road, London EC1V 1JB",_g("Nightjar London")),
+  (S,2,"Cahoots","Bar caché dans une fausse station de métro des années 1940, ambiance swing et costumes d'époque.","13 Kingly Court, London W1B 5PW",_g("Cahoots London")),
+  (S,2,"Fabric","Le club électro le plus célèbre de Londres, dans d'anciennes chambres froides. Soirées du vendredi et samedi jusqu'au matin.","77a Charterhouse Street, London EC1M 6HJ","https://www.fabriclondon.com"),
+  (S,2,"Heaven","Boîte mythique sous les arches de Charing Cross, pop et tubes qu'on connaît tous par cœur.","Villiers Street, London WC2N 6NG",_g("Heaven nightclub London")),
+  (A,2,"ZSL London Zoo","Le plus vieux zoo scientifique du monde, en plein Regent's Park : gorilles, pingouins, lions. ≈ 40 €/pers.","Outer Circle, Regent's Park, London NW1 4RY","https://www.londonzoo.org"),
+ ],
+ "marseille": [
+  (L,3,"InterContinental Marseille – Hôtel-Dieu","Le palace qui domine le Vieux-Port, spa Clarins sur place. ≈ 350 à 600 €/chambre la nuit.","1 place Daviel, 13002 Marseille",_g("InterContinental Marseille Hotel Dieu")),
+  (L,3,"Les Bords de Mer","Hôtel face à la mer sur la Corniche, piscine sur le toit. ≈ 250 à 450 €/chambre.","52 corniche Kennedy, 13007 Marseille",_g("Les Bords de Mer Marseille")),
+  (L,2,"Mama Shelter Marseille","Hôtel festif et coloré près du cours Julien, chambres pour 4. ≈ 100 à 170 €/chambre.","64 rue de la Loubière, 13006 Marseille","https://mamashelter.com"),
+  (L,3,"C2 Hotel","Hôtel particulier du XIXe avec spa, et accès à une plage privée sur l'île de Pomègues en saison. ≈ 250 à 450 €/chambre.","48 rue Roux de Brignoles, 13006 Marseille",_g("C2 Hotel Marseille")),
+  (R,2,"Chez Fonfon","La bouillabaisse dans le petit port du Vallon des Auffes, carte postale garantie. ≈ 60 à 80 €/pers.","140 rue du Vallon des Auffes, 13007 Marseille",_g("Chez Fonfon Marseille")),
+  (R,3,"Chez Michel","Une des bouillabaisses de référence depuis 1946, face à la plage des Catalans. ≈ 80 à 100 €/pers.","6 rue des Catalans, 13007 Marseille",_g("Chez Michel Marseille bouillabaisse")),
+  (R,3,"Le Môle Passédat","Le restaurant sur le toit du Mucem, vue sur la mer et le fort Saint-Jean. ≈ 80 à 130 €/pers.","Mucem, 1 esplanade J4, 13002 Marseille",_g("Le Môle Passédat Mucem")),
+  (R,2,"La Boîte à Sardine","Poissonnerie-restaurant déjantée : poisson du jour et coquillages, déco de bord de mer. ≈ 40 à 55 €/pers.","2 boulevard de la Libération, 13001 Marseille",_g("La Boîte à Sardine Marseille")),
+  (S,2,"Bar de la Marine","Le bar de Marcel Pagnol sur le Vieux-Port, pour le pastis de 19 h.","15 quai de Rive-Neuve, 13007 Marseille",_g("Bar de la Marine Marseille")),
+  (S,2,"Toit-terrasse de la Friche la Belle de Mai","Immense toit-terrasse sur une ancienne usine : DJ, food trucks et coucher de soleil sur la ville.","41 rue Jobin, 13003 Marseille",_g("Friche Belle de Mai toit terrasse")),
+  (S,2,"Le Baby Club","Petit club électro incontournable de la nuit marseillaise, ouvert jusqu'à l'aube.","2 rue André Poggioli, 13006 Marseille",_g("Baby Club Marseille")),
+  (S,2,"Le Trolley Bus","Boîte de nuit dans les anciens entrepôts voûtés de Colbert, sur le Vieux-Port : plusieurs salles, plusieurs ambiances.","24 quai de Rive-Neuve, 13007 Marseille",_g("Trolleybus Marseille")),
+  (A,2,"Zoo de la Barben","Zoo autour d'un château médiéval, à 45 min : girafes, éléphants, panthères. ≈ 25 €/pers.","Route du Château, 13330 La Barben",_g("Zoo de la Barben")),
+ ],
+ "barcelone": [
+  (L,3,"W Barcelona","L'hôtel-voile au bout de la plage de la Barceloneta, rooftop et piscine. ≈ 350 à 650 €/chambre la nuit.","Plaça de la Rosa dels Vents 1, 08039 Barcelona",_g("W Barcelona")),
+  (L,3,"Hotel Arts Barcelona","Tour de luxe face à la mer et au port olympique, spa au 43e étage. ≈ 400 à 700 €/chambre.","Carrer de la Marina 19-21, 08005 Barcelona",_g("Hotel Arts Barcelona")),
+  (L,3,"Cotton House Hotel","Palais du XIXe (ancienne maison du coton) avec piscine sur le toit. ≈ 300 à 500 €/chambre.","Gran Via de les Corts Catalanes 670, 08010 Barcelona",_g("Cotton House Hotel Barcelona")),
+  (L,2,"Casa Bonay","Hôtel branché de l'Eixample avec rooftop et bars. ≈ 180 à 280 €/chambre.","Gran Via de les Corts Catalanes 700, 08010 Barcelona",_g("Casa Bonay Barcelona")),
+  (R,2,"Cervecería Catalana","Tapas parmi les meilleures de la ville, toujours pleine (venir tôt). ≈ 30 à 45 €/pers.","Carrer de Mallorca 236, 08008 Barcelona",_g("Cervecería Catalana Barcelona")),
+  (R,2,"7 Portes","Restaurant historique de 1836 réputé pour ses paellas et son riz noir. ≈ 45 à 60 €/pers.","Passeig d'Isabel II 14, 08003 Barcelona","https://7portes.com"),
+  (R,2,"El Nacional","Ancien garage transformé en halle gourmande : 4 restaurants et 4 bars sous la même verrière. ≈ 35 à 60 €/pers.","Passeig de Gràcia 24 bis, 08007 Barcelona",_g("El Nacional Barcelona")),
+  (R,2,"Can Solé","Fruits de mer et riz à la Barceloneta depuis 1903. ≈ 45 à 60 €/pers.","Carrer de Sant Carles 4, 08003 Barcelona",_g("Can Solé Barcelona")),
+  (S,3,"Paradiso","Bar à cocktails caché derrière la porte d'un frigo de snack à pastrami, élu meilleur bar du monde en 2022.","Carrer de Rera Palau 4, 08003 Barcelona",_g("Paradiso Barcelona")),
+  (S,2,"Sala Apolo","Salle de bal de 1940 devenue club : soirées pop « Nasty Mondays », électro le week-end.","Carrer Nou de la Rambla 113, 08004 Barcelona",_g("Sala Apolo Barcelona")),
+  (S,2,"Razzmatazz","Le méga-club de Barcelone : 5 salles, 5 styles de musique, une seule entrée.","Carrer dels Almogàvers 122, 08018 Barcelona",_g("Razzmatazz Barcelona")),
+  (S,3,"Pacha Barcelona","Le club en bord de plage du port olympique, ouvert jusqu'à 6 h.","Passeig Marítim de la Barceloneta 38, 08003 Barcelona",_g("Pacha Barcelona")),
+  (A,2,"Zoo de Barcelona","Le zoo en plein parc de la Ciutadella : gorilles, éléphants, lions de mer et un grand espace pour les primates. ≈ 25 €/pers.","Parc de la Ciutadella, 08003 Barcelona","https://www.zoobarcelona.cat"),
+ ],
+ "madrid": [
+  (L,3,"Four Seasons Madrid","Le palace installé dans sept immeubles historiques près de la Puerta del Sol, spa sur 3 étages. ≈ 600 à 900 €/chambre la nuit.","Calle de Sevilla 3, 28014 Madrid",_g("Four Seasons Madrid")),
+  (L,3,"Hotel Urban","Hôtel design avec piscine sur le toit et bar terrasse, près du Prado. ≈ 250 à 400 €/chambre.","Carrera de San Jerónimo 34, 28014 Madrid",_g("Hotel Urban Madrid")),
+  (L,2,"Only YOU Boutique Hotel","Palais du XIXe à Chueca, décor léché et brunch réputé. ≈ 180 à 280 €/chambre.","Calle del Barquillo 21, 28004 Madrid",_g("Only YOU Boutique Hotel Madrid")),
+  (L,2,"Room Mate Óscar","Hôtel coloré en plein Chueca avec piscine sur le toit. ≈ 150 à 250 €/chambre.","Plaza de Pedro Zerolo 12, 28004 Madrid",_g("Room Mate Oscar Madrid")),
+  (R,2,"Sobrino de Botín","Le plus vieux restaurant du monde (1725, Guinness) : cochon de lait rôti au four à bois. ≈ 50 à 65 €/pers.","Calle de Cuchilleros 17, 28005 Madrid","https://botin.es"),
+  (R,2,"Mercado de San Miguel","Halle en fer forgé de 1916 avec une trentaine de comptoirs à tapas : chacun picore ce qu'il veut. ≈ 30 à 45 €/pers.","Plaza de San Miguel, 28005 Madrid","https://mercadodesanmiguel.es"),
+  (R,2,"Casa Lucio","Institution madrilène pour ses huevos rotos (œufs cassés sur frites), fréquentée par le roi. ≈ 45 à 60 €/pers.","Calle de la Cava Baja 35, 28005 Madrid",_g("Casa Lucio Madrid")),
+  (R,2,"Sala de Despiece","Bar à tapas créatif façon boucherie, on mange au comptoir. ≈ 35 à 50 €/pers.","Calle de Ponzano 11, 28010 Madrid",_g("Sala de Despiece Madrid")),
+  (S,2,"1862 Dry Bar","Bar à cocktails rétro parmi les meilleurs de Madrid, quartier Malasaña.","Calle del Pez 27, 28004 Madrid",_g("1862 Dry Bar Madrid")),
+  (S,2,"Joy Eslava","Boîte de nuit dans un théâtre du XIXe, ouverte 365 nuits par an. Ambiance fête garantie.","Calle del Arenal 11, 28013 Madrid",_g("Joy Eslava Madrid")),
+  (S,2,"Medias Puri","Club festif façon théâtre avec danseurs et shows, sur la place Tirso de Molina.","Plaza de Tirso de Molina 1, 28012 Madrid",_g("Medias Puri Madrid")),
+  (A,2,"Zoo Aquarium de Madrid","Zoo et aquarium dans la Casa de Campo : pandas, otaries, requins. ≈ 30 €/pers.","Casa de Campo, 28011 Madrid",_g("Zoo Aquarium de Madrid")),
+ ],
+ "budapest": [
+  (L,3,"Four Seasons Gresham Palace","Palais Art nouveau face au pont des Chaînes. ≈ 500 à 800 €/chambre la nuit.","Széchenyi István tér 5-6, 1051 Budapest",_g("Four Seasons Gresham Palace")),
+  (L,3,"Aria Hotel Budapest","Hôtel sur le thème de la musique, spa et le rooftop High Note. ≈ 300 à 500 €/chambre.","Hercegprímás utca 5, 1051 Budapest",_g("Aria Hotel Budapest")),
+  (L,3,"Kempinski Hotel Corvinus","Grand hôtel en plein centre, spa et grandes suites. ≈ 250 à 450 €/chambre.","Erzsébet tér 7-8, 1051 Budapest",_g("Kempinski Corvinus Budapest")),
+  (L,2,"Brody House","Maison d'hôtes arty dans un ancien appartement de Premier ministre, chambres décorées par des artistes. ≈ 120 à 200 €/chambre.","Bródy Sándor utca 10, 1088 Budapest",_g("Brody House Budapest")),
+  (R,2,"New York Café","« Le plus beau café du monde » : dorures, fresques et pâtisseries. Pour un brunch de reine. ≈ 30 à 50 €/pers.","Erzsébet körút 9-11, 1073 Budapest","https://newyorkcafe.hu"),
+  (R,2,"Mazel Tov","Cuisine israélienne dans une cour végétalisée du quartier juif, ambiance très festive. ≈ 25 à 40 €/pers.","Akácfa utca 47, 1072 Budapest",_g("Mazel Tov Budapest")),
+  (R,2,"Halles centrales (Központi Vásárcsarnok)","Le grand marché couvert : lángos, goulash et paprika à l'étage. ≈ 15 à 25 €/pers.","Vámház körút 1-3, 1093 Budapest",_g("Great Market Hall Budapest")),
+  (S,2,"Instant-Fogas","Le plus grand complexe de « ruin bars » : 7 clubs et 18 bars sous un même toit.","Akácfa utca 49-51, 1073 Budapest",_g("Instant Fogas Budapest")),
+  (S,3,"High Note SkyBar","Rooftop chic avec vue sur la basilique Saint-Étienne, cocktails au coucher du soleil.","Hercegprímás utca 5, 1051 Budapest",_g("High Note SkyBar Budapest")),
+  (S,2,"Akvárium Klub","Club et salle de concert sous le bassin de la place Erzsébet, en plein centre.","Erzsébet tér 12, 1051 Budapest",_g("Akvárium Klub Budapest")),
+  (S,2,"A38","Bateau-club amarré sur le Danube, concerts et DJ, vue sur la ville illuminée.","Pázmány Péter sétány (pont Petőfi, côté Buda), 1117 Budapest",_g("A38 ship Budapest")),
+  (A,2,"Zoo de Budapest","Un des plus vieux zoos du monde, avec ses pavillons Art nouveau, à côté des bains Széchenyi. ≈ 15 €/pers.","Állatkerti körút 6-12, 1146 Budapest",_g("Budapest Zoo")),
+ ],
+ "rome": [
+  (L,3,"Hotel Hassler Roma","Le palace en haut des marches de la Trinité-des-Monts, vue sur toute la ville. ≈ 700 à 1 200 €/chambre la nuit.","Piazza della Trinità dei Monti 6, 00187 Roma",_g("Hotel Hassler Roma")),
+  (L,2,"Hotel Artemide","Hôtel 4★ Art nouveau avec terrasse sur le toit, très central. ≈ 180 à 280 €/chambre.","Via Nazionale 22, 00184 Roma",_g("Hotel Artemide Roma")),
+  (L,2,"The Hoxton Rome","Hôtel branché du quartier Parioli, chambres design et bar animé. ≈ 180 à 280 €/chambre.","Largo Benedetto Marcello 220, 00198 Roma","https://thehoxton.com"),
+  (L,2,"Chapter Roma","Hôtel urbain avec rooftop, entre le Campo de' Fiori et le Ghetto. ≈ 200 à 320 €/chambre.","Via di Santa Maria de' Calderari 47, 00186 Roma",_g("Chapter Roma")),
+  (R,2,"Da Enzo al 29","Trattoria familiale du Trastevere : carbonara et artichauts à la juive. File d'attente, mais ça vaut le coup. ≈ 30 à 45 €/pers.","Via dei Vascellari 29, 00153 Roma",_g("Da Enzo al 29 Roma")),
+  (R,2,"Roscioli Salumeria con Cucina","Épicerie fine et restaurant célèbre pour sa carbonara et sa burrata. ≈ 45 à 65 €/pers.","Via dei Giubbonari 21, 00186 Roma",_g("Roscioli Salumeria Roma")),
+  (R,2,"Felice a Testaccio","Le temple des cacio e pepe mélangées à table. ≈ 35 à 50 €/pers.","Via Mastro Giorgio 29, 00153 Roma",_g("Felice a Testaccio")),
+  (R,3,"Imàgo – Hotel Hassler","Restaurant étoilé au 6e étage du Hassler, vue sur les coupoles de Rome. ≈ 180 à 250 €/pers.","Piazza della Trinità dei Monti 6, 00187 Roma",_g("Imàgo Hassler Roma")),
+  (S,3,"Drink Kong","Bar à cocktails néon façon film japonais, classé parmi les 50 meilleurs bars du monde.","Piazza di San Martino ai Monti 8, 00184 Roma",_g("Drink Kong Roma")),
+  (S,2,"Terrazza Borromini","Rooftop avec vue sur la place Navone et les coupoles, pour l'apéritivo.","Via di Santa Maria dell'Anima 30, 00186 Roma",_g("Terrazza Borromini")),
+  (S,2,"Goa Club","Club électro de référence à Rome, ouvert le vendredi et le samedi.","Via Giuseppe Libetta 13, 00154 Roma",_g("Goa Club Roma")),
+  (S,2,"Shari Vari Playhouse","Discothèque en plein centre historique, plusieurs salles et tubes à la chaîne.","Via di Torre Argentina 78, 00186 Roma",_g("Shari Vari Playhouse Roma")),
+  (A,2,"Bioparco di Roma","Le zoo de Rome dans les jardins de la Villa Borghèse : girafes, lémuriens, grands singes. ≈ 20 €/pers.","Viale del Giardino Zoologico 20, 00197 Roma","https://www.bioparco.it"),
+ ],
+ "amsterdam": [
+  (L,3,"Pulitzer Amsterdam","25 maisons de canal du XVIIe reliées entre elles, en plein Jordaan. ≈ 400 à 700 €/chambre la nuit.","Prinsengracht 315-331, 1016 GZ Amsterdam",_g("Pulitzer Amsterdam")),
+  (L,3,"Conservatorium Hotel","Ancien conservatoire de musique transformé en palace, spa et piscine, à côté du Rijksmuseum. ≈ 500 à 800 €/chambre.","Van Baerlestraat 27, 1071 AN Amsterdam",_g("Conservatorium Hotel Amsterdam")),
+  (L,2,"Zoku Amsterdam","Lofts avec cuisine et un grand rooftop pour se retrouver tous ensemble. ≈ 200 à 300 €/loft.","Weesperstraat 105, 1018 VN Amsterdam",_g("Zoku Amsterdam")),
+  (L,2,"Sir Albert Hotel","Hôtel design dans une ancienne fabrique de diamants, quartier De Pijp. ≈ 200 à 300 €/chambre.","Albert Cuypstraat 2-6, 1072 CT Amsterdam",_g("Sir Albert Hotel Amsterdam")),
+  (R,2,"Foodhallen","Halle gourmande dans un ancien dépôt de tramways : une vingtaine de stands. ≈ 25 à 40 €/pers.","Bellamyplein 51, 1053 AT Amsterdam","https://foodhallen.nl"),
+  (R,3,"Restaurant De Kas","Restaurant dans une immense serre de 1926, légumes du potager. ≈ 90 à 120 €/pers.","Kamerlingh Onneslaan 3, 1097 DE Amsterdam","https://restaurantdekas.com"),
+  (R,2,"Moeders","Cuisine hollandaise maison, murs couverts de photos de mamans. Attendrissant. ≈ 35 à 50 €/pers.","Rozengracht 251, 1016 SX Amsterdam",_g("Moeders Amsterdam")),
+  (R,2,"The Pancake Bakery","Les crêpes hollandaises sucrées et salées, dans une maison de canal. ≈ 20 à 30 €/pers.","Prinsengracht 191, 1015 DS Amsterdam",_g("The Pancake Bakery Amsterdam")),
+  (S,2,"Tales & Spirits","Petit bar à cocktails primé, caché près du Spui.","Lijnbaanssteeg 5-7, 1012 TE Amsterdam",_g("Tales & Spirits Amsterdam")),
+  (S,3,"SkyLounge Amsterdam","Rooftop au 11e étage du DoubleTree, vue à 360° sur la ville et le port.","Oosterdoksstraat 4, 1011 DK Amsterdam",_g("SkyLounge Amsterdam")),
+  (S,2,"Shelter","Club techno au sous-sol de la tour A'DAM, ouvert jusqu'au matin.","Overhoeksplein 3, 1031 KS Amsterdam",_g("Shelter Amsterdam club")),
+  (S,2,"Melkweg","Ancienne laiterie devenue salle de concert et club, soirées le week-end.","Lijnbaansgracht 234a, 1017 PH Amsterdam",_g("Melkweg Amsterdam")),
+  (A,2,"Artis – zoo royal","Le plus vieux zoo des Pays-Bas, en plein centre : éléphants, flamants roses, aquarium et planétarium. ≈ 30 €/pers.","Plantage Kerklaan 38-40, 1018 CZ Amsterdam","https://www.artis.nl"),
+ ],
+}
+import re as _re
+for c in DATA["cities"]:
+    pre = c["items"][0]["id"].split("-")[0]
+    used = {i["id"] for i in c["items"]}
+    for (typ, tier, name, desc, addr, url) in MORE2.get(c["id"], []):
+        slug = _re.sub(r"[^a-z0-9]+", "", name.lower().encode("ascii", "ignore").decode())[:14]
+        iid = f"{pre}-{slug}"
+        n = 2
+        while iid in used: iid = f"{pre}-{slug}{n}"; n += 1
+        used.add(iid)
+        c["items"].append({"id": iid, "type": typ, "tier": tier, "name": name, "desc": desc, "address": addr, "url": url,
+                           "photo": c["photo"], "credit": c["credit"]})
+
 # --- 4 catégories par ville (demande de Marie, 27/11/2026) : spas et dégustations -> Activités
 DATA["types"] = {
     "logement": {"label": "Logement", "emoji": "🏡"},

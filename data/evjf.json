@@ -241,6 +241,105 @@
      "url": "https://www.sport-decouverte.com/vol-montgolfiere-basse-normandie.html",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
      "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-htelbarrirelen",
+     "type": "logement",
+     "tier": 3,
+     "name": "Hôtel Barrière Le Normandy",
+     "desc": "Le palace à colombages face à la mer, avec chambres communicantes et suites familiales. On descend au spa Guerlain en peignoir. ≈ 350 à 600 €/chambre la nuit.",
+     "address": "38 rue Jean Mermoz, 14800 Deauville",
+     "url": "https://www.hotelsbarriere.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-lesvapeurs",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Les Vapeurs",
+     "desc": "La brasserie mythique de Trouville depuis 1927 : moules-frites, crevettes grises et muscadet. Ne prend pas toujours les réservations, venir tôt. ≈ 35 à 50 €/pers.",
+     "address": "160 boulevard Fernand Moureaux, 14360 Trouville-sur-Mer",
+     "url": "https://www.lesvapeurs.fr",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-leciros",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Le Ciro's",
+     "desc": "Le restaurant chic les pieds sur les Planches : plateaux de fruits de mer et vue sur la plage. ≈ 70 à 100 €/pers.",
+     "address": "Boulevard de la Mer (Promenade des Planches), 14800 Deauville",
+     "url": "https://www.google.com/search?q=Le%20Ciro%27s%20Deauville",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-ledrakkar",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Le Drakkar",
+     "desc": "Brasserie animée en plein centre, ouverte tard : idéale avant le casino. ≈ 40 à 55 €/pers.",
+     "address": "77 rue Eugène Colas, 14800 Deauville",
+     "url": "https://www.google.com/search?q=Le%20Drakkar%20Deauville",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-laflambe",
+     "type": "restauration",
+     "tier": 2,
+     "name": "La Flambée",
+     "desc": "Grillades au feu de bois et cuisine normande dans une salle chaleureuse. Parfait si le vent de la Manche nous a gelés. ≈ 40 à 60 €/pers.",
+     "address": "81 rue du Général Leclerc, 14800 Deauville",
+     "url": "https://www.google.com/search?q=La%20Flamb%C3%A9e%20Deauville",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-lebrummelldisc",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Le Brummell – discothèque du Casino",
+     "desc": "La boîte de nuit du Casino Barrière, ouverte le week-end jusqu'au bout de la nuit. Tenue correcte exigée (paillettes recommandées).",
+     "address": "2 rue Edmond Blanc, 14800 Deauville",
+     "url": "https://www.google.com/search?q=Brummell%20discoth%C3%A8que%20casino%20Deauville",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-casinobarrired",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Casino Barrière de Trouville",
+     "desc": "Casino au bord de la plage avec bar et soirées à thème. On mise 10 €, on repart avec une histoire.",
+     "address": "Place du Maréchal Foch, 14360 Trouville-sur-Mer",
+     "url": "https://www.casinosbarriere.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-lebardelamer",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Le Bar de la Mer",
+     "desc": "Le bar en terrasse sur les Planches pour l'apéro au coucher du soleil. Rosé, huîtres, et photos de groupe obligatoires.",
+     "address": "Boulevard de la Mer, 14800 Deauville",
+     "url": "https://www.google.com/search?q=Bar%20de%20la%20Mer%20Deauville",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
+    },
+    {
+     "id": "deau-cerzaparczoolo",
+     "type": "activite",
+     "tier": 2,
+     "name": "CERZA – parc zoologique",
+     "desc": "Safari en petit train et à pied au milieu des girafes, rhinocéros et lémuriens, à 40 min de Deauville. ≈ 30 €/pers.",
+     "address": "Hermival-les-Vaux, 14100 (près de Lisieux)",
+     "url": "https://www.cerza.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg",
+     "credit": "Photo Wikimedia Commons · Les Planches de Deauville, CC BY-SA 3.0"
     }
    ],
    "mode": "train"
@@ -384,6 +483,116 @@
      "url": "https://booking.lilletourism.com/lille-tables-toques-gourmet-cruises.html",
      "photo": "https://reservation.lilletourism.com/medias/images/prestations/tables-toques-895075.jpg",
      "credit": "Photo : Lille Tourisme"
+    },
+    {
+     "id": "lille-lhermitagegant",
+     "type": "logement",
+     "tier": 3,
+     "name": "L'Hermitage Gantois",
+     "desc": "Hôtel 5★ dans un hospice du XVe siècle, avec spa sur place. Grandes chambres et suites. ≈ 250 à 450 €/chambre la nuit.",
+     "address": "224 rue de Paris, 59000 Lille",
+     "url": "https://www.google.com/search?q=Hermitage%20Gantois%20Lille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-couventdesmini",
+     "type": "logement",
+     "tier": 2,
+     "name": "Couvent des Minimes – Alliance Lille",
+     "desc": "Ancien couvent du XVIIe avec cloître et verrière, à deux pas du Vieux-Lille. ≈ 130 à 200 €/chambre.",
+     "address": "17 quai du Wault, 59000 Lille",
+     "url": "https://www.google.com/search?q=Alliance%20Lille%20Couvent%20des%20Minimes",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-mamashelterlil",
+     "type": "logement",
+     "tier": 2,
+     "name": "Mama Shelter Lille",
+     "desc": "Hôtel déco et festif à côté des gares, chambres pour 4, rooftop et baby-foot. ≈ 110 à 180 €/chambre.",
+     "address": "97 place Saint-Hubert, 59000 Lille",
+     "url": "https://mamashelter.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-estaminetauvie",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Estaminet Au Vieux de la Vieille",
+     "desc": "Le vrai estaminet flamand : carbonade, welsh et potjevleesch. On repart roulé·es. ≈ 25 à 40 €/pers.",
+     "address": "2-4 rue des Vieux Murs, 59800 Lille",
+     "url": "https://www.google.com/search?q=Au%20Vieux%20de%20la%20Vieille%20Lille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-mert",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Méert",
+     "desc": "Salon de thé et restaurant de la maison des gaufres fourrées à la vanille, dans un décor de 1839. ≈ 60 à 90 €/pers.",
+     "address": "27 rue Esquermoise, 59000 Lille",
+     "url": "https://www.meert.fr",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-lachicore",
+     "type": "restauration",
+     "tier": 2,
+     "name": "La Chicorée",
+     "desc": "Brasserie ouverte très tard sur la place Rihour : le rendez-vous après la tournée des bars. ≈ 30 à 45 €/pers.",
+     "address": "15 place Rihour, 59000 Lille",
+     "url": "https://www.google.com/search?q=La%20Chicor%C3%A9e%20Lille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-lacapsule",
+     "type": "soiree",
+     "tier": 2,
+     "name": "La Capsule",
+     "desc": "Bar à bières artisanales dans une cave voûtée du Vieux-Lille, une vingtaine de bières à la pression.",
+     "address": "25 rue des Trois Mollettes, 59800 Lille",
+     "url": "https://www.google.com/search?q=La%20Capsule%20Lille%20bar",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-networkcaf",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Network Café",
+     "desc": "Boîte de nuit dans un décor de théâtre baroque, au cœur du Vieux-Lille. Musique généraliste, on danse jusqu'à l'aube.",
+     "address": "Rue du Faisan, 59800 Lille",
+     "url": "https://www.google.com/search?q=Network%20Caf%C3%A9%20Lille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-lemagazineclub",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Le Magazine Club",
+     "desc": "Club électro et house parmi les plus courus de Lille, soirées le vendredi et le samedi.",
+     "address": "84 rue de Trévise, 59000 Lille",
+     "url": "https://www.google.com/search?q=Magazine%20Club%20Lille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
+    },
+    {
+     "id": "lille-pairidaiza",
+     "type": "activite",
+     "tier": 2,
+     "name": "Pairi Daiza",
+     "desc": "Élu plusieurs fois meilleur zoo d'Europe : pandas, éléphants et jardins du monde, à 1 h de Lille. ≈ 45 €/pers.",
+     "address": "Domaine de Cambron, 7940 Brugelette (Belgique)",
+     "url": "https://www.pairidaiza.eu",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Lille_gd_place_arc_en_ciel.jpg/960px-Lille_gd_place_arc_en_ciel.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Lille, CC BY-SA 4.0"
     }
    ],
    "mode": "train"
@@ -503,6 +712,138 @@
      "url": "https://www.atomium.be/",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Atomium%2C_Bruselas%2C_B%C3%A9lgica%2C_2021-12-15%2C_DD_148-150_HDR.jpg/960px-Atomium%2C_Bruselas%2C_B%C3%A9lgica%2C_2021-12-15%2C_DD_148-150_HDR.jpg",
      "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-htelamigo",
+     "type": "logement",
+     "tier": 3,
+     "name": "Hôtel Amigo",
+     "desc": "Le palace des Rocco Forte à deux pas de la Grand-Place, suites familiales. ≈ 300 à 550 €/chambre la nuit.",
+     "address": "Rue de l'Amigo 1-3, 1000 Bruxelles",
+     "url": "https://www.google.com/search?q=Hotel%20Amigo%20Brussels",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-thedominican",
+     "type": "logement",
+     "tier": 2,
+     "name": "The Dominican",
+     "desc": "Hôtel design installé dans un ancien couvent, derrière la Monnaie. ≈ 160 à 250 €/chambre.",
+     "address": "Rue Léopold 9, 1000 Bruxelles",
+     "url": "https://www.google.com/search?q=The%20Dominican%20Brussels",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-htelleplaza",
+     "type": "logement",
+     "tier": 2,
+     "name": "Hôtel Le Plaza",
+     "desc": "Grand hôtel Belle Époque des années 1930, chambres spacieuses en plein centre. ≈ 150 à 240 €/chambre.",
+     "address": "Boulevard Adolphe Max 118-126, 1000 Bruxelles",
+     "url": "https://www.google.com/search?q=Hotel%20Le%20Plaza%20Brussels",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-apparthtelsprs",
+     "type": "logement",
+     "tier": 2,
+     "name": "Appart'hôtels près de la Grand-Place",
+     "desc": "Plusieurs résidences proposent des appartements de 2 à 3 chambres pour 6 à 8 : pratique pour rester ensemble. ≈ 250 à 400 €/nuit l'appartement.",
+     "address": "Centre de Bruxelles",
+     "url": "https://www.google.com/search?q=aparthotel%203%20chambres%20Bruxelles%20Grand-Place",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-chezlon",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Chez Léon",
+     "desc": "L'institution des moules-frites depuis 1893, dans l'Îlot Sacré. ≈ 30 à 45 €/pers.",
+     "address": "Rue des Bouchers 18, 1000 Bruxelles",
+     "url": "https://www.chezleon.be",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-belgaqueen",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Belga Queen",
+     "desc": "Brasserie spectaculaire dans une ancienne banque : cuisine belge revisitée, bar à huîtres, et des toilettes qui font parler. ≈ 60 à 80 €/pers.",
+     "address": "Rue du Fossé aux Loups 32, 1000 Bruxelles",
+     "url": "https://www.belgaqueen.be",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-findesicle",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Fin de Siècle",
+     "desc": "Cuisine belge généreuse (stoemp, carbonnades), pas de réservation, ambiance bruyante et joyeuse. ≈ 30 à 40 €/pers.",
+     "address": "Rue des Chartreux 9, 1000 Bruxelles",
+     "url": "https://www.google.com/search?q=Fin%20de%20Si%C3%A8cle%20Bruxelles",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-netnigenough",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Nüetnigenough",
+     "desc": "Petit bistrot belge cuisine à la bière, réputé pour ses carbonnades. ≈ 35 à 50 €/pers.",
+     "address": "Rue du Lombard 25, 1000 Bruxelles",
+     "url": "https://www.google.com/search?q=Nuetnigenough%20Bruxelles",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-lamortsubite",
+     "type": "soiree",
+     "tier": 2,
+     "name": "À la Mort Subite",
+     "desc": "Le café Art nouveau de 1928 où l'on boit la bière du même nom. Parfait pour le premier verre.",
+     "address": "Rue Montagne-aux-Herbes-Potagères 7, 1000 Bruxelles",
+     "url": "https://www.alamortsubite.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-mirano",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Mirano",
+     "desc": "Boîte de nuit mythique de Bruxelles dans un ancien cinéma, soirées le samedi.",
+     "address": "Chaussée de Louvain 38, 1210 Saint-Josse-ten-Noode",
+     "url": "https://www.google.com/search?q=Mirano%20Bruxelles",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-spirito",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Spirito",
+     "desc": "Club installé dans une ancienne église anglicane : on danse sous les vitraux. Tenue soignée exigée.",
+     "address": "Rue de Stassart 18, 1050 Ixelles",
+     "url": "https://www.google.com/search?q=Spirito%20Brussels",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
+    },
+    {
+     "id": "bxl-pairidaiza",
+     "type": "activite",
+     "tier": 2,
+     "name": "Pairi Daiza",
+     "desc": "Le zoo-jardin le plus spectaculaire de Belgique : pandas, éléphants, grande volière, à 50 min de Bruxelles. ≈ 45 €/pers.",
+     "address": "Domaine de Cambron, 7940 Brugelette",
+     "url": "https://www.pairidaiza.eu",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg/960px-Grand-Place%2C_Brussels_-_panorama%2C_June_2018.jpg",
+     "credit": "Photo Wikimedia Commons · Grand-Place de Bruxelles, CC BY-SA 4.0"
     }
    ],
    "mode": "train"
@@ -612,6 +953,149 @@
      "url": "https://www.smith-haut-lafitte.com/",
      "photo": "https://www.smith-haut-lafitte.com/wp-content/uploads/2021/05/smith-haut-lafitte.jpg",
      "credit": "Photo : Château Smith Haut Lafitte"
+    },
+    {
+     "id": "bdx-intercontinent",
+     "type": "logement",
+     "tier": 3,
+     "name": "InterContinental Bordeaux – Le Grand Hôtel",
+     "desc": "Le palace face à l'Opéra, spa et rooftop. ≈ 400 à 700 €/chambre la nuit.",
+     "address": "2-5 place de la Comédie, 33000 Bordeaux",
+     "url": "https://www.google.com/search?q=InterContinental%20Bordeaux%20Le%20Grand%20Hotel",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-lessourcesdeca",
+     "type": "logement",
+     "tier": 3,
+     "name": "Les Sources de Caudalie",
+     "desc": "Hôtel au milieu des vignes de Smith Haut Lafitte, spa de vinothérapie inclus. ≈ 350 à 600 €/chambre.",
+     "address": "Chemin de Smith Haut Lafitte, 33650 Martillac (20 min)",
+     "url": "https://www.sources-caudalie.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-mamashelterbor",
+     "type": "logement",
+     "tier": 2,
+     "name": "Mama Shelter Bordeaux",
+     "desc": "Hôtel festif en plein centre, chambres pour 3 ou 4. ≈ 110 à 180 €/chambre.",
+     "address": "19 rue Poquelin-Molière, 33000 Bordeaux",
+     "url": "https://mamashelter.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-seekoohtel",
+     "type": "logement",
+     "tier": 2,
+     "name": "Seeko'o Hôtel",
+     "desc": "Hôtel design tout blanc sur les quais des Chartrons. ≈ 140 à 220 €/chambre.",
+     "address": "54 quai de Bacalan, 33300 Bordeaux",
+     "url": "https://www.google.com/search?q=Seeko%27o%20Hotel%20Bordeaux",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-labrasseriebor",
+     "type": "restauration",
+     "tier": 2,
+     "name": "La Brasserie Bordelaise",
+     "desc": "Entrecôte, cave à vin immense et jambons suspendus : la brasserie qui fait l'unanimité. ≈ 40 à 60 €/pers.",
+     "address": "50 rue Saint-Rémi, 33000 Bordeaux",
+     "url": "https://www.google.com/search?q=La%20Brasserie%20Bordelaise",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-legabriel",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Le Gabriel",
+     "desc": "Restaurant gastronomique dans un hôtel particulier de la place de la Bourse, vue sur le miroir d'eau. ≈ 90 à 150 €/pers.",
+     "address": "10 place de la Bourse, 33000 Bordeaux",
+     "url": "https://www.google.com/search?q=Le%20Gabriel%20Bordeaux",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-lebouchonborde",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Le Bouchon Bordelais",
+     "desc": "Bistrot du Sud-Ouest réputé, cuisine du marché. ≈ 40 à 55 €/pers.",
+     "address": "2 rue Courbin, 33000 Bordeaux",
+     "url": "https://www.google.com/search?q=Le%20Bouchon%20Bordelais",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-leshallesdebac",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Les Halles de Bacalan",
+     "desc": "Halles gourmandes à côté de la Cité du Vin : huîtres, tapas, fromages, chacun choisit son stand. ≈ 25 à 40 €/pers.",
+     "address": "10 quai de Bacalan, 33300 Bordeaux",
+     "url": "https://www.google.com/search?q=Halles%20de%20Bacalan",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-barvinducivb",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Bar à vin du CIVB",
+     "desc": "Le bar du Conseil des vins de Bordeaux : 30 vins au verre servis par des sommeliers, à petits prix.",
+     "address": "3 cours du XXX-Juillet, 33000 Bordeaux",
+     "url": "https://www.google.com/search?q=Bar%20%C3%A0%20vin%20CIVB%20Bordeaux",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-calleocho",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Calle Ocho",
+     "desc": "Bar cubain mythique, mojitos et salsa jusqu'à 2 h. On apprend à danser en 10 minutes (ou pas).",
+     "address": "24 rue des Piliers de Tutelle, 33000 Bordeaux",
+     "url": "https://www.google.com/search?q=Calle%20Ocho%20Bordeaux",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-rooftopdugrand",
+     "type": "soiree",
+     "tier": 3,
+     "name": "Rooftop du Grand Hôtel",
+     "desc": "Le toit du palace avec vue à 360° sur Bordeaux : champagne au coucher du soleil, ouvert aux beaux jours.",
+     "address": "2-5 place de la Comédie, 33000 Bordeaux",
+     "url": "https://www.google.com/search?q=rooftop%20InterContinental%20Bordeaux",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-quaidepaludate",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Quai de Paludate – la rue des boîtes",
+     "desc": "Le quartier des boîtes de nuit de Bordeaux : une dizaine de clubs côte à côte, on choisit sur place.",
+     "address": "Quai de Paludate, 33800 Bordeaux",
+     "url": "https://www.google.com/search?q=bo%C3%AEtes%20de%20nuit%20quai%20de%20Paludate%20Bordeaux",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
+    },
+    {
+     "id": "bdx-zoodebordeauxp",
+     "type": "activite",
+     "tier": 2,
+     "name": "Zoo de Bordeaux-Pessac",
+     "desc": "Zoo dans un parc boisé à 20 min : grands félins, lémuriens, rhinocéros, nourrissages commentés. ≈ 25 €/pers.",
+     "address": "3 chemin du Transvaal, 33600 Pessac",
+     "url": "https://www.google.com/search?q=Zoo%20de%20Bordeaux%20Pessac",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Miroir_d%27eau_Bordeaux_3.jpg/960px-Miroir_d%27eau_Bordeaux_3.jpg",
+     "credit": "Photo Wikimedia Commons · Miroir d'eau de Bordeaux, CC BY 3.0"
     }
    ],
    "mode": "train"
@@ -756,6 +1240,127 @@
      "url": "https://shop.visiterlyon.com/croisiere-promenade-privee-avec-skipper-2h.html",
      "photo": "https://shop.visiterlyon.com/media/catalog/product/cache/943b32bc1b48323ae7f6e7433b0af69b/i/m/img_2641.jpg",
      "credit": "Photo : OnlyLyon Tourisme"
+    },
+    {
+     "id": "lyon-intercontinent",
+     "type": "logement",
+     "tier": 3,
+     "name": "InterContinental Lyon – Hôtel-Dieu",
+     "desc": "Le palace dans l'ancien Hôtel-Dieu, sous le grand dôme, au bord du Rhône. ≈ 350 à 600 €/chambre la nuit.",
+     "address": "20 quai Jules Courmont, 69002 Lyon",
+     "url": "https://www.google.com/search?q=InterContinental%20Lyon%20Hotel%20Dieu",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-villaflorentin",
+     "type": "logement",
+     "tier": 3,
+     "name": "Villa Florentine",
+     "desc": "Hôtel de charme sur la colline de Fourvière, piscine et vue sur tout Lyon. ≈ 300 à 500 €/chambre.",
+     "address": "25 montée Saint-Barthélemy, 69005 Lyon",
+     "url": "https://www.google.com/search?q=Villa%20Florentine%20Lyon",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-mamashelterlyo",
+     "type": "logement",
+     "tier": 2,
+     "name": "Mama Shelter Lyon",
+     "desc": "Hôtel déco et festif, chambres pour 3 ou 4. ≈ 100 à 160 €/chambre.",
+     "address": "13 rue Domer, 69007 Lyon",
+     "url": "https://mamashelter.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-danieletdenise",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Daniel et Denise",
+     "desc": "Le bouchon lyonnais de Joseph Viola, MOF : pâté en croûte, quenelles, tarte aux pralines. ≈ 40 à 55 €/pers.",
+     "address": "156 rue de Créqui, 69003 Lyon",
+     "url": "https://www.google.com/search?q=Daniel%20et%20Denise%20Cr%C3%A9qui",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-brasserielesud",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Brasserie Le Sud",
+     "desc": "Brasserie Paul Bocuse aux saveurs méditerranéennes, place Bellecour. ≈ 40 à 60 €/pers.",
+     "address": "11 place Antonin Poncet, 69002 Lyon",
+     "url": "https://www.google.com/search?q=Brasserie%20Le%20Sud%20Bocuse%20Lyon",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-lebouchondesfi",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Le Bouchon des Filles",
+     "desc": "Bouchon tenu par une équipe de filles, menu unique généreux, ambiance de copains. ≈ 35 à 45 €/pers.",
+     "address": "20 rue Sergent Blandan, 69001 Lyon",
+     "url": "https://www.google.com/search?q=Le%20Bouchon%20des%20Filles%20Lyon",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-lantiquaire",
+     "type": "soiree",
+     "tier": 2,
+     "name": "L'Antiquaire",
+     "desc": "Speakeasy caché derrière une façade de brocante, cocktails parmi les meilleurs de France.",
+     "address": "20 rue Hippolyte Flandrin, 69001 Lyon",
+     "url": "https://www.google.com/search?q=L%27Antiquaire%20Lyon%20bar",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-lespnichesdurh",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Les péniches du Rhône",
+     "desc": "Bars et clubs flottants amarrés le long du Rhône : apéro au soleil puis on danse à bord.",
+     "address": "Quai Victor Augagneur, 69003 Lyon",
+     "url": "https://www.google.com/search?q=p%C3%A9niches%20bar%20Lyon%20quai%20Victor%20Augagneur",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-lepetitsalon",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Le Petit Salon",
+     "desc": "Club électro et techno de référence à Lyon, ouvert le vendredi et le samedi jusqu'au matin.",
+     "address": "3 rue de Cronstadt, 69007 Lyon",
+     "url": "https://www.google.com/search?q=Le%20Petit%20Salon%20Lyon",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-ninkasigerland",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Ninkasi Gerland",
+     "desc": "La grande brasserie-salle de concert lyonnaise : bières maison, concerts et DJ le week-end.",
+     "address": "267 rue Marcel Mérieux, 69007 Lyon",
+     "url": "https://www.google.com/search?q=Ninkasi%20Gerland",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
+    },
+    {
+     "id": "lyon-safaridepeaugr",
+     "type": "activite",
+     "tier": 2,
+     "name": "Safari de Peaugres",
+     "desc": "Safari en voiture au milieu des zèbres, ours et girafes, puis visite à pied. À 1 h au sud de Lyon. ≈ 30 €/pers.",
+     "address": "07340 Peaugres (Ardèche)",
+     "url": "https://www.safari-peaugres.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Vieuxlyon_saintjean_toits.jpg/960px-Vieuxlyon_saintjean_toits.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux Lyon, CC BY-SA 3.0"
     }
    ],
    "mode": "train"
@@ -875,6 +1480,127 @@
      "url": "https://sketch.london/",
      "photo": "https://sketch.london/public/images/og-sketch-website-2400.jpg",
      "credit": "Photo : sketch"
+    },
+    {
+     "id": "ldn-thehoxtonholbo",
+     "type": "logement",
+     "tier": 2,
+     "name": "The Hoxton Holborn",
+     "desc": "Hôtel branché et abordable pour Londres, chambres simples et bar animé. ≈ 220 à 320 €/chambre la nuit.",
+     "address": "199-206 High Holborn, London WC1V 7BD",
+     "url": "https://thehoxton.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-citadinesholbo",
+     "type": "logement",
+     "tier": 2,
+     "name": "Citadines Holborn-Covent Garden",
+     "desc": "Appart'hôtel avec appartements familiaux et kitchenette, à pied de Covent Garden. ≈ 250 à 400 €/nuit.",
+     "address": "94-99 High Holborn, London WC1V 6LF",
+     "url": "https://www.google.com/search?q=Citadines%20Holborn%20Covent%20Garden",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-thened",
+     "type": "logement",
+     "tier": 3,
+     "name": "The Ned",
+     "desc": "Palace dans une ancienne banque de la City, piscine sur le toit et coffres-forts transformés en bar. ≈ 450 à 700 €/chambre.",
+     "address": "27 Poultry, London EC2R 8AJ",
+     "url": "https://www.thened.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-seacontainersl",
+     "type": "logement",
+     "tier": 3,
+     "name": "Sea Containers London",
+     "desc": "Hôtel design au bord de la Tamise, vue sur Saint-Paul, spa et rooftop. ≈ 350 à 550 €/chambre.",
+     "address": "20 Upper Ground, London SE1 9PD",
+     "url": "https://www.google.com/search?q=Sea%20Containers%20London",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-dishoomcoventg",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Dishoom Covent Garden",
+     "desc": "Cuisine des cafés de Bombay dans un décor des années 1960 : une adresse que tout Londres adore. ≈ 35 à 50 €/pers.",
+     "address": "12 Upper St Martin's Lane, London WC2H 9FB",
+     "url": "https://www.dishoom.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-duckwaffle",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Duck & Waffle",
+     "desc": "Restaurant au 40e étage d'une tour de la City, ouvert 24 h/24. La vue vaut le gaufre-canard. ≈ 70 à 100 €/pers.",
+     "address": "110 Bishopsgate, London EC2N 4AY",
+     "url": "https://duckandwaffle.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-nightjar",
+     "type": "soiree",
+     "tier": 3,
+     "name": "Nightjar",
+     "desc": "Speakeasy jazz classé parmi les meilleurs bars du monde. Réservation conseillée.",
+     "address": "129 City Road, London EC1V 1JB",
+     "url": "https://www.google.com/search?q=Nightjar%20London",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-cahoots",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Cahoots",
+     "desc": "Bar caché dans une fausse station de métro des années 1940, ambiance swing et costumes d'époque.",
+     "address": "13 Kingly Court, London W1B 5PW",
+     "url": "https://www.google.com/search?q=Cahoots%20London",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-fabric",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Fabric",
+     "desc": "Le club électro le plus célèbre de Londres, dans d'anciennes chambres froides. Soirées du vendredi et samedi jusqu'au matin.",
+     "address": "77a Charterhouse Street, London EC1M 6HJ",
+     "url": "https://www.fabriclondon.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-heaven",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Heaven",
+     "desc": "Boîte mythique sous les arches de Charing Cross, pop et tubes qu'on connaît tous par cœur.",
+     "address": "Villiers Street, London WC2N 6NG",
+     "url": "https://www.google.com/search?q=Heaven%20nightclub%20London",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
+    },
+    {
+     "id": "ldn-zsllondonzoo",
+     "type": "activite",
+     "tier": 2,
+     "name": "ZSL London Zoo",
+     "desc": "Le plus vieux zoo scientifique du monde, en plein Regent's Park : gorilles, pingouins, lions. ≈ 40 €/pers.",
+     "address": "Outer Circle, Regent's Park, London NW1 4RY",
+     "url": "https://www.londonzoo.org",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Tower_Bridge_London_Dusk_Feb_2006.jpg/960px-Tower_Bridge_London_Dusk_Feb_2006.jpg",
+     "credit": "Photo Wikimedia Commons · Tower Bridge, CC BY-SA 3.0"
     }
    ]
   },
@@ -984,6 +1710,149 @@
      "url": "https://www.funbooker.com/fr/annonce/apres-midi-en-catamaran-privatise-sur-la-cote-bleue-13/voir",
      "photo": "https://res.cloudinary.com/funbooker/image/upload/ar_1:1,f_auto,q_auto,t_lr-medium,w_400/v1/marketplace-listing/v6e6o08fji28jxuxpgdy",
      "credit": "Photo : Funbooker"
+    },
+    {
+     "id": "mrs-intercontinent",
+     "type": "logement",
+     "tier": 3,
+     "name": "InterContinental Marseille – Hôtel-Dieu",
+     "desc": "Le palace qui domine le Vieux-Port, spa Clarins sur place. ≈ 350 à 600 €/chambre la nuit.",
+     "address": "1 place Daviel, 13002 Marseille",
+     "url": "https://www.google.com/search?q=InterContinental%20Marseille%20Hotel%20Dieu",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-lesbordsdemer",
+     "type": "logement",
+     "tier": 3,
+     "name": "Les Bords de Mer",
+     "desc": "Hôtel face à la mer sur la Corniche, piscine sur le toit. ≈ 250 à 450 €/chambre.",
+     "address": "52 corniche Kennedy, 13007 Marseille",
+     "url": "https://www.google.com/search?q=Les%20Bords%20de%20Mer%20Marseille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-mamasheltermar",
+     "type": "logement",
+     "tier": 2,
+     "name": "Mama Shelter Marseille",
+     "desc": "Hôtel festif et coloré près du cours Julien, chambres pour 4. ≈ 100 à 170 €/chambre.",
+     "address": "64 rue de la Loubière, 13006 Marseille",
+     "url": "https://mamashelter.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-c2hotel",
+     "type": "logement",
+     "tier": 3,
+     "name": "C2 Hotel",
+     "desc": "Hôtel particulier du XIXe avec spa, et accès à une plage privée sur l'île de Pomègues en saison. ≈ 250 à 450 €/chambre.",
+     "address": "48 rue Roux de Brignoles, 13006 Marseille",
+     "url": "https://www.google.com/search?q=C2%20Hotel%20Marseille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-chezfonfon",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Chez Fonfon",
+     "desc": "La bouillabaisse dans le petit port du Vallon des Auffes, carte postale garantie. ≈ 60 à 80 €/pers.",
+     "address": "140 rue du Vallon des Auffes, 13007 Marseille",
+     "url": "https://www.google.com/search?q=Chez%20Fonfon%20Marseille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-chezmichel",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Chez Michel",
+     "desc": "Une des bouillabaisses de référence depuis 1946, face à la plage des Catalans. ≈ 80 à 100 €/pers.",
+     "address": "6 rue des Catalans, 13007 Marseille",
+     "url": "https://www.google.com/search?q=Chez%20Michel%20Marseille%20bouillabaisse",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-lemlepassdat",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Le Môle Passédat",
+     "desc": "Le restaurant sur le toit du Mucem, vue sur la mer et le fort Saint-Jean. ≈ 80 à 130 €/pers.",
+     "address": "Mucem, 1 esplanade J4, 13002 Marseille",
+     "url": "https://www.google.com/search?q=Le%20M%C3%B4le%20Pass%C3%A9dat%20Mucem",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-labotesardine",
+     "type": "restauration",
+     "tier": 2,
+     "name": "La Boîte à Sardine",
+     "desc": "Poissonnerie-restaurant déjantée : poisson du jour et coquillages, déco de bord de mer. ≈ 40 à 55 €/pers.",
+     "address": "2 boulevard de la Libération, 13001 Marseille",
+     "url": "https://www.google.com/search?q=La%20Bo%C3%AEte%20%C3%A0%20Sardine%20Marseille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-bardelamarine",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Bar de la Marine",
+     "desc": "Le bar de Marcel Pagnol sur le Vieux-Port, pour le pastis de 19 h.",
+     "address": "15 quai de Rive-Neuve, 13007 Marseille",
+     "url": "https://www.google.com/search?q=Bar%20de%20la%20Marine%20Marseille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-toitterrassede",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Toit-terrasse de la Friche la Belle de Mai",
+     "desc": "Immense toit-terrasse sur une ancienne usine : DJ, food trucks et coucher de soleil sur la ville.",
+     "address": "41 rue Jobin, 13003 Marseille",
+     "url": "https://www.google.com/search?q=Friche%20Belle%20de%20Mai%20toit%20terrasse",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-lebabyclub",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Le Baby Club",
+     "desc": "Petit club électro incontournable de la nuit marseillaise, ouvert jusqu'à l'aube.",
+     "address": "2 rue André Poggioli, 13006 Marseille",
+     "url": "https://www.google.com/search?q=Baby%20Club%20Marseille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-letrolleybus",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Le Trolley Bus",
+     "desc": "Boîte de nuit dans les anciens entrepôts voûtés de Colbert, sur le Vieux-Port : plusieurs salles, plusieurs ambiances.",
+     "address": "24 quai de Rive-Neuve, 13007 Marseille",
+     "url": "https://www.google.com/search?q=Trolleybus%20Marseille",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
+    },
+    {
+     "id": "mrs-zoodelabarben",
+     "type": "activite",
+     "tier": 2,
+     "name": "Zoo de la Barben",
+     "desc": "Zoo autour d'un château médiéval, à 45 min : girafes, éléphants, panthères. ≈ 25 €/pers.",
+     "address": "Route du Château, 13330 La Barben",
+     "url": "https://www.google.com/search?q=Zoo%20de%20la%20Barben",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Marseille_Vieux_Port_Night.jpg/960px-Marseille_Vieux_Port_Night.jpg",
+     "credit": "Photo Wikimedia Commons · Vieux-Port, CC BY-SA 3.0"
     }
    ]
   },
@@ -1089,6 +1958,149 @@
      "desc": "Incontournable : la basilique de Gaudí et ses vitraux de toutes les couleurs. Billet à réserver en ligne avec créneau horaire.",
      "address": "Carrer de Mallorca 401, 08013 Barcelone",
      "url": "https://sagradafamilia.org/",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-wbarcelona",
+     "type": "logement",
+     "tier": 3,
+     "name": "W Barcelona",
+     "desc": "L'hôtel-voile au bout de la plage de la Barceloneta, rooftop et piscine. ≈ 350 à 650 €/chambre la nuit.",
+     "address": "Plaça de la Rosa dels Vents 1, 08039 Barcelona",
+     "url": "https://www.google.com/search?q=W%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-hotelartsbarce",
+     "type": "logement",
+     "tier": 3,
+     "name": "Hotel Arts Barcelona",
+     "desc": "Tour de luxe face à la mer et au port olympique, spa au 43e étage. ≈ 400 à 700 €/chambre.",
+     "address": "Carrer de la Marina 19-21, 08005 Barcelona",
+     "url": "https://www.google.com/search?q=Hotel%20Arts%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-cottonhousehot",
+     "type": "logement",
+     "tier": 3,
+     "name": "Cotton House Hotel",
+     "desc": "Palais du XIXe (ancienne maison du coton) avec piscine sur le toit. ≈ 300 à 500 €/chambre.",
+     "address": "Gran Via de les Corts Catalanes 670, 08010 Barcelona",
+     "url": "https://www.google.com/search?q=Cotton%20House%20Hotel%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-casabonay",
+     "type": "logement",
+     "tier": 2,
+     "name": "Casa Bonay",
+     "desc": "Hôtel branché de l'Eixample avec rooftop et bars. ≈ 180 à 280 €/chambre.",
+     "address": "Gran Via de les Corts Catalanes 700, 08010 Barcelona",
+     "url": "https://www.google.com/search?q=Casa%20Bonay%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-cerveceracatal",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Cervecería Catalana",
+     "desc": "Tapas parmi les meilleures de la ville, toujours pleine (venir tôt). ≈ 30 à 45 €/pers.",
+     "address": "Carrer de Mallorca 236, 08008 Barcelona",
+     "url": "https://www.google.com/search?q=Cervecer%C3%ADa%20Catalana%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-7portes",
+     "type": "restauration",
+     "tier": 2,
+     "name": "7 Portes",
+     "desc": "Restaurant historique de 1836 réputé pour ses paellas et son riz noir. ≈ 45 à 60 €/pers.",
+     "address": "Passeig d'Isabel II 14, 08003 Barcelona",
+     "url": "https://7portes.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-elnacional",
+     "type": "restauration",
+     "tier": 2,
+     "name": "El Nacional",
+     "desc": "Ancien garage transformé en halle gourmande : 4 restaurants et 4 bars sous la même verrière. ≈ 35 à 60 €/pers.",
+     "address": "Passeig de Gràcia 24 bis, 08007 Barcelona",
+     "url": "https://www.google.com/search?q=El%20Nacional%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-cansol",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Can Solé",
+     "desc": "Fruits de mer et riz à la Barceloneta depuis 1903. ≈ 45 à 60 €/pers.",
+     "address": "Carrer de Sant Carles 4, 08003 Barcelona",
+     "url": "https://www.google.com/search?q=Can%20Sol%C3%A9%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-paradiso",
+     "type": "soiree",
+     "tier": 3,
+     "name": "Paradiso",
+     "desc": "Bar à cocktails caché derrière la porte d'un frigo de snack à pastrami, élu meilleur bar du monde en 2022.",
+     "address": "Carrer de Rera Palau 4, 08003 Barcelona",
+     "url": "https://www.google.com/search?q=Paradiso%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-salaapolo",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Sala Apolo",
+     "desc": "Salle de bal de 1940 devenue club : soirées pop « Nasty Mondays », électro le week-end.",
+     "address": "Carrer Nou de la Rambla 113, 08004 Barcelona",
+     "url": "https://www.google.com/search?q=Sala%20Apolo%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-razzmatazz",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Razzmatazz",
+     "desc": "Le méga-club de Barcelone : 5 salles, 5 styles de musique, une seule entrée.",
+     "address": "Carrer dels Almogàvers 122, 08018 Barcelona",
+     "url": "https://www.google.com/search?q=Razzmatazz%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-pachabarcelona",
+     "type": "soiree",
+     "tier": 3,
+     "name": "Pacha Barcelona",
+     "desc": "Le club en bord de plage du port olympique, ouvert jusqu'à 6 h.",
+     "address": "Passeig Marítim de la Barceloneta 38, 08003 Barcelona",
+     "url": "https://www.google.com/search?q=Pacha%20Barcelona",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
+     "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
+    },
+    {
+     "id": "bcn-zoodebarcelona",
+     "type": "activite",
+     "tier": 2,
+     "name": "Zoo de Barcelona",
+     "desc": "Le zoo en plein parc de la Ciutadella : gorilles, éléphants, lions de mer et un grand espace pour les primates. ≈ 25 €/pers.",
+     "address": "Parc de la Ciutadella, 08003 Barcelona",
+     "url": "https://www.zoobarcelona.cat",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Beach%2C_Barcelona_%28P1170713%29.jpg/960px-Beach%2C_Barcelona_%28P1170713%29.jpg",
      "credit": "Photo Wikimedia Commons · plage de Barcelone, CC BY-SA 4.0"
     }
@@ -1198,6 +2210,138 @@
      "url": "https://daytrip.com/fr/day-trips/from-madrid/toledo",
      "photo": "https://images.daytrip.com/toledo4.jpg?fit=cover&w=1200&h=630&q=45&auto=enhance",
      "credit": "Photo : Daytrip"
+    },
+    {
+     "id": "mad-fourseasonsmad",
+     "type": "logement",
+     "tier": 3,
+     "name": "Four Seasons Madrid",
+     "desc": "Le palace installé dans sept immeubles historiques près de la Puerta del Sol, spa sur 3 étages. ≈ 600 à 900 €/chambre la nuit.",
+     "address": "Calle de Sevilla 3, 28014 Madrid",
+     "url": "https://www.google.com/search?q=Four%20Seasons%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-hotelurban",
+     "type": "logement",
+     "tier": 3,
+     "name": "Hotel Urban",
+     "desc": "Hôtel design avec piscine sur le toit et bar terrasse, près du Prado. ≈ 250 à 400 €/chambre.",
+     "address": "Carrera de San Jerónimo 34, 28014 Madrid",
+     "url": "https://www.google.com/search?q=Hotel%20Urban%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-onlyyouboutiqu",
+     "type": "logement",
+     "tier": 2,
+     "name": "Only YOU Boutique Hotel",
+     "desc": "Palais du XIXe à Chueca, décor léché et brunch réputé. ≈ 180 à 280 €/chambre.",
+     "address": "Calle del Barquillo 21, 28004 Madrid",
+     "url": "https://www.google.com/search?q=Only%20YOU%20Boutique%20Hotel%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-roommatescar",
+     "type": "logement",
+     "tier": 2,
+     "name": "Room Mate Óscar",
+     "desc": "Hôtel coloré en plein Chueca avec piscine sur le toit. ≈ 150 à 250 €/chambre.",
+     "address": "Plaza de Pedro Zerolo 12, 28004 Madrid",
+     "url": "https://www.google.com/search?q=Room%20Mate%20Oscar%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-sobrinodebotn",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Sobrino de Botín",
+     "desc": "Le plus vieux restaurant du monde (1725, Guinness) : cochon de lait rôti au four à bois. ≈ 50 à 65 €/pers.",
+     "address": "Calle de Cuchilleros 17, 28005 Madrid",
+     "url": "https://botin.es",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-mercadodesanmi",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Mercado de San Miguel",
+     "desc": "Halle en fer forgé de 1916 avec une trentaine de comptoirs à tapas : chacun picore ce qu'il veut. ≈ 30 à 45 €/pers.",
+     "address": "Plaza de San Miguel, 28005 Madrid",
+     "url": "https://mercadodesanmiguel.es",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-casalucio",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Casa Lucio",
+     "desc": "Institution madrilène pour ses huevos rotos (œufs cassés sur frites), fréquentée par le roi. ≈ 45 à 60 €/pers.",
+     "address": "Calle de la Cava Baja 35, 28005 Madrid",
+     "url": "https://www.google.com/search?q=Casa%20Lucio%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-saladedespiece",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Sala de Despiece",
+     "desc": "Bar à tapas créatif façon boucherie, on mange au comptoir. ≈ 35 à 50 €/pers.",
+     "address": "Calle de Ponzano 11, 28010 Madrid",
+     "url": "https://www.google.com/search?q=Sala%20de%20Despiece%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-1862drybar",
+     "type": "soiree",
+     "tier": 2,
+     "name": "1862 Dry Bar",
+     "desc": "Bar à cocktails rétro parmi les meilleurs de Madrid, quartier Malasaña.",
+     "address": "Calle del Pez 27, 28004 Madrid",
+     "url": "https://www.google.com/search?q=1862%20Dry%20Bar%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-joyeslava",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Joy Eslava",
+     "desc": "Boîte de nuit dans un théâtre du XIXe, ouverte 365 nuits par an. Ambiance fête garantie.",
+     "address": "Calle del Arenal 11, 28013 Madrid",
+     "url": "https://www.google.com/search?q=Joy%20Eslava%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-mediaspuri",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Medias Puri",
+     "desc": "Club festif façon théâtre avec danseurs et shows, sur la place Tirso de Molina.",
+     "address": "Plaza de Tirso de Molina 1, 28012 Madrid",
+     "url": "https://www.google.com/search?q=Medias%20Puri%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
+    },
+    {
+     "id": "mad-zooaquariumdem",
+     "type": "activite",
+     "tier": 2,
+     "name": "Zoo Aquarium de Madrid",
+     "desc": "Zoo et aquarium dans la Casa de Campo : pandas, otaries, requins. ≈ 30 €/pers.",
+     "address": "Casa de Campo, 28011 Madrid",
+     "url": "https://www.google.com/search?q=Zoo%20Aquarium%20de%20Madrid",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Gran_Via%2C_Madrid%2C_at_night_II.jpg/960px-Gran_Via%2C_Madrid%2C_at_night_II.jpg",
+     "credit": "Photo Wikimedia Commons · Gran Vía, CC BY 2.0"
     }
    ]
   },
@@ -1305,6 +2449,138 @@
      "url": "https://aaa.com/tripcanvas/thing-to-do/budapest-private-danube-river-cruise-50946P2",
      "photo": "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-400x400/15/82/4c/aa.jpg",
      "credit": "Photo : Tripadvisor"
+    },
+    {
+     "id": "bud-fourseasonsgre",
+     "type": "logement",
+     "tier": 3,
+     "name": "Four Seasons Gresham Palace",
+     "desc": "Palais Art nouveau face au pont des Chaînes. ≈ 500 à 800 €/chambre la nuit.",
+     "address": "Széchenyi István tér 5-6, 1051 Budapest",
+     "url": "https://www.google.com/search?q=Four%20Seasons%20Gresham%20Palace",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-ariahotelbudap",
+     "type": "logement",
+     "tier": 3,
+     "name": "Aria Hotel Budapest",
+     "desc": "Hôtel sur le thème de la musique, spa et le rooftop High Note. ≈ 300 à 500 €/chambre.",
+     "address": "Hercegprímás utca 5, 1051 Budapest",
+     "url": "https://www.google.com/search?q=Aria%20Hotel%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-kempinskihotel",
+     "type": "logement",
+     "tier": 3,
+     "name": "Kempinski Hotel Corvinus",
+     "desc": "Grand hôtel en plein centre, spa et grandes suites. ≈ 250 à 450 €/chambre.",
+     "address": "Erzsébet tér 7-8, 1051 Budapest",
+     "url": "https://www.google.com/search?q=Kempinski%20Corvinus%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-brodyhouse",
+     "type": "logement",
+     "tier": 2,
+     "name": "Brody House",
+     "desc": "Maison d'hôtes arty dans un ancien appartement de Premier ministre, chambres décorées par des artistes. ≈ 120 à 200 €/chambre.",
+     "address": "Bródy Sándor utca 10, 1088 Budapest",
+     "url": "https://www.google.com/search?q=Brody%20House%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-newyorkcaf",
+     "type": "restauration",
+     "tier": 2,
+     "name": "New York Café",
+     "desc": "« Le plus beau café du monde » : dorures, fresques et pâtisseries. Pour un brunch de reine. ≈ 30 à 50 €/pers.",
+     "address": "Erzsébet körút 9-11, 1073 Budapest",
+     "url": "https://newyorkcafe.hu",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-mazeltov",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Mazel Tov",
+     "desc": "Cuisine israélienne dans une cour végétalisée du quartier juif, ambiance très festive. ≈ 25 à 40 €/pers.",
+     "address": "Akácfa utca 47, 1072 Budapest",
+     "url": "https://www.google.com/search?q=Mazel%20Tov%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-hallescentrale",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Halles centrales (Központi Vásárcsarnok)",
+     "desc": "Le grand marché couvert : lángos, goulash et paprika à l'étage. ≈ 15 à 25 €/pers.",
+     "address": "Vámház körút 1-3, 1093 Budapest",
+     "url": "https://www.google.com/search?q=Great%20Market%20Hall%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-instantfogas",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Instant-Fogas",
+     "desc": "Le plus grand complexe de « ruin bars » : 7 clubs et 18 bars sous un même toit.",
+     "address": "Akácfa utca 49-51, 1073 Budapest",
+     "url": "https://www.google.com/search?q=Instant%20Fogas%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-highnoteskybar",
+     "type": "soiree",
+     "tier": 3,
+     "name": "High Note SkyBar",
+     "desc": "Rooftop chic avec vue sur la basilique Saint-Étienne, cocktails au coucher du soleil.",
+     "address": "Hercegprímás utca 5, 1051 Budapest",
+     "url": "https://www.google.com/search?q=High%20Note%20SkyBar%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-akvriumklub",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Akvárium Klub",
+     "desc": "Club et salle de concert sous le bassin de la place Erzsébet, en plein centre.",
+     "address": "Erzsébet tér 12, 1051 Budapest",
+     "url": "https://www.google.com/search?q=Akv%C3%A1rium%20Klub%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-a38",
+     "type": "soiree",
+     "tier": 2,
+     "name": "A38",
+     "desc": "Bateau-club amarré sur le Danube, concerts et DJ, vue sur la ville illuminée.",
+     "address": "Pázmány Péter sétány (pont Petőfi, côté Buda), 1117 Budapest",
+     "url": "https://www.google.com/search?q=A38%20ship%20Budapest",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
+    },
+    {
+     "id": "bud-zoodebudapest",
+     "type": "activite",
+     "tier": 2,
+     "name": "Zoo de Budapest",
+     "desc": "Un des plus vieux zoos du monde, avec ses pavillons Art nouveau, à côté des bains Széchenyi. ≈ 15 €/pers.",
+     "address": "Állatkerti körút 6-12, 1146 Budapest",
+     "url": "https://www.google.com/search?q=Budapest%20Zoo",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg/960px-Sz%C3%A9chenyi_Chain_Bridge_in_Budapest_at_night.jpg",
+     "credit": "Photo Wikimedia Commons · Pont des Chaînes, CC0"
     }
    ]
   },
@@ -1402,6 +2678,149 @@
      "url": "https://colosseo.it/",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Colosseum_exterior_at_night%2C_Rome%2C_Italy_%28Ank_Kumar%29_03.jpg/960px-Colosseum_exterior_at_night%2C_Rome%2C_Italy_%28Ank_Kumar%29_03.jpg",
      "credit": "Photo Wikimedia Commons · CC BY-SA 4.0"
+    },
+    {
+     "id": "rom-hotelhasslerro",
+     "type": "logement",
+     "tier": 3,
+     "name": "Hotel Hassler Roma",
+     "desc": "Le palace en haut des marches de la Trinité-des-Monts, vue sur toute la ville. ≈ 700 à 1 200 €/chambre la nuit.",
+     "address": "Piazza della Trinità dei Monti 6, 00187 Roma",
+     "url": "https://www.google.com/search?q=Hotel%20Hassler%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-hotelartemide",
+     "type": "logement",
+     "tier": 2,
+     "name": "Hotel Artemide",
+     "desc": "Hôtel 4★ Art nouveau avec terrasse sur le toit, très central. ≈ 180 à 280 €/chambre.",
+     "address": "Via Nazionale 22, 00184 Roma",
+     "url": "https://www.google.com/search?q=Hotel%20Artemide%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-thehoxtonrome",
+     "type": "logement",
+     "tier": 2,
+     "name": "The Hoxton Rome",
+     "desc": "Hôtel branché du quartier Parioli, chambres design et bar animé. ≈ 180 à 280 €/chambre.",
+     "address": "Largo Benedetto Marcello 220, 00198 Roma",
+     "url": "https://thehoxton.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-chapterroma",
+     "type": "logement",
+     "tier": 2,
+     "name": "Chapter Roma",
+     "desc": "Hôtel urbain avec rooftop, entre le Campo de' Fiori et le Ghetto. ≈ 200 à 320 €/chambre.",
+     "address": "Via di Santa Maria de' Calderari 47, 00186 Roma",
+     "url": "https://www.google.com/search?q=Chapter%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-daenzoal29",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Da Enzo al 29",
+     "desc": "Trattoria familiale du Trastevere : carbonara et artichauts à la juive. File d'attente, mais ça vaut le coup. ≈ 30 à 45 €/pers.",
+     "address": "Via dei Vascellari 29, 00153 Roma",
+     "url": "https://www.google.com/search?q=Da%20Enzo%20al%2029%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-rosciolisalume",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Roscioli Salumeria con Cucina",
+     "desc": "Épicerie fine et restaurant célèbre pour sa carbonara et sa burrata. ≈ 45 à 65 €/pers.",
+     "address": "Via dei Giubbonari 21, 00186 Roma",
+     "url": "https://www.google.com/search?q=Roscioli%20Salumeria%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-feliceatestacc",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Felice a Testaccio",
+     "desc": "Le temple des cacio e pepe mélangées à table. ≈ 35 à 50 €/pers.",
+     "address": "Via Mastro Giorgio 29, 00153 Roma",
+     "url": "https://www.google.com/search?q=Felice%20a%20Testaccio",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-imgohotelhassl",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Imàgo – Hotel Hassler",
+     "desc": "Restaurant étoilé au 6e étage du Hassler, vue sur les coupoles de Rome. ≈ 180 à 250 €/pers.",
+     "address": "Piazza della Trinità dei Monti 6, 00187 Roma",
+     "url": "https://www.google.com/search?q=Im%C3%A0go%20Hassler%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-drinkkong",
+     "type": "soiree",
+     "tier": 3,
+     "name": "Drink Kong",
+     "desc": "Bar à cocktails néon façon film japonais, classé parmi les 50 meilleurs bars du monde.",
+     "address": "Piazza di San Martino ai Monti 8, 00184 Roma",
+     "url": "https://www.google.com/search?q=Drink%20Kong%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-terrazzaborrom",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Terrazza Borromini",
+     "desc": "Rooftop avec vue sur la place Navone et les coupoles, pour l'apéritivo.",
+     "address": "Via di Santa Maria dell'Anima 30, 00186 Roma",
+     "url": "https://www.google.com/search?q=Terrazza%20Borromini",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-goaclub",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Goa Club",
+     "desc": "Club électro de référence à Rome, ouvert le vendredi et le samedi.",
+     "address": "Via Giuseppe Libetta 13, 00154 Roma",
+     "url": "https://www.google.com/search?q=Goa%20Club%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-sharivariplayh",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Shari Vari Playhouse",
+     "desc": "Discothèque en plein centre historique, plusieurs salles et tubes à la chaîne.",
+     "address": "Via di Torre Argentina 78, 00186 Roma",
+     "url": "https://www.google.com/search?q=Shari%20Vari%20Playhouse%20Roma",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
+    },
+    {
+     "id": "rom-bioparcodiroma",
+     "type": "activite",
+     "tier": 2,
+     "name": "Bioparco di Roma",
+     "desc": "Le zoo de Rome dans les jardins de la Villa Borghèse : girafes, lémuriens, grands singes. ≈ 20 €/pers.",
+     "address": "Viale del Giardino Zoologico 20, 00197 Roma",
+     "url": "https://www.bioparco.it",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Colosseum_in_Rome-April_2007-1-_copie_2B.jpg/960px-Colosseum_in_Rome-April_2007-1-_copie_2B.jpg",
+     "credit": "Photo Wikimedia Commons · Colisée, CC BY-SA 2.5"
     }
    ]
   },
@@ -1521,6 +2940,149 @@
      "url": "https://www.expedia.ie/things-to-do/private-champagne-cruise-in-amsterdam.a1192687.activity-details",
      "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Canal_boats_in_Amsterdam_04.jpg/960px-Canal_boats_in_Amsterdam_04.jpg",
      "credit": "Photo Wikimedia Commons · CC BY 4.0"
+    },
+    {
+     "id": "ams-pulitzeramster",
+     "type": "logement",
+     "tier": 3,
+     "name": "Pulitzer Amsterdam",
+     "desc": "25 maisons de canal du XVIIe reliées entre elles, en plein Jordaan. ≈ 400 à 700 €/chambre la nuit.",
+     "address": "Prinsengracht 315-331, 1016 GZ Amsterdam",
+     "url": "https://www.google.com/search?q=Pulitzer%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-conservatorium",
+     "type": "logement",
+     "tier": 3,
+     "name": "Conservatorium Hotel",
+     "desc": "Ancien conservatoire de musique transformé en palace, spa et piscine, à côté du Rijksmuseum. ≈ 500 à 800 €/chambre.",
+     "address": "Van Baerlestraat 27, 1071 AN Amsterdam",
+     "url": "https://www.google.com/search?q=Conservatorium%20Hotel%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-zokuamsterdam",
+     "type": "logement",
+     "tier": 2,
+     "name": "Zoku Amsterdam",
+     "desc": "Lofts avec cuisine et un grand rooftop pour se retrouver tous ensemble. ≈ 200 à 300 €/loft.",
+     "address": "Weesperstraat 105, 1018 VN Amsterdam",
+     "url": "https://www.google.com/search?q=Zoku%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-siralberthotel",
+     "type": "logement",
+     "tier": 2,
+     "name": "Sir Albert Hotel",
+     "desc": "Hôtel design dans une ancienne fabrique de diamants, quartier De Pijp. ≈ 200 à 300 €/chambre.",
+     "address": "Albert Cuypstraat 2-6, 1072 CT Amsterdam",
+     "url": "https://www.google.com/search?q=Sir%20Albert%20Hotel%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-foodhallen",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Foodhallen",
+     "desc": "Halle gourmande dans un ancien dépôt de tramways : une vingtaine de stands. ≈ 25 à 40 €/pers.",
+     "address": "Bellamyplein 51, 1053 AT Amsterdam",
+     "url": "https://foodhallen.nl",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-restaurantdeka",
+     "type": "restauration",
+     "tier": 3,
+     "name": "Restaurant De Kas",
+     "desc": "Restaurant dans une immense serre de 1926, légumes du potager. ≈ 90 à 120 €/pers.",
+     "address": "Kamerlingh Onneslaan 3, 1097 DE Amsterdam",
+     "url": "https://restaurantdekas.com",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-moeders",
+     "type": "restauration",
+     "tier": 2,
+     "name": "Moeders",
+     "desc": "Cuisine hollandaise maison, murs couverts de photos de mamans. Attendrissant. ≈ 35 à 50 €/pers.",
+     "address": "Rozengracht 251, 1016 SX Amsterdam",
+     "url": "https://www.google.com/search?q=Moeders%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-thepancakebake",
+     "type": "restauration",
+     "tier": 2,
+     "name": "The Pancake Bakery",
+     "desc": "Les crêpes hollandaises sucrées et salées, dans une maison de canal. ≈ 20 à 30 €/pers.",
+     "address": "Prinsengracht 191, 1015 DS Amsterdam",
+     "url": "https://www.google.com/search?q=The%20Pancake%20Bakery%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-talesspirits",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Tales & Spirits",
+     "desc": "Petit bar à cocktails primé, caché près du Spui.",
+     "address": "Lijnbaanssteeg 5-7, 1012 TE Amsterdam",
+     "url": "https://www.google.com/search?q=Tales%20%26%20Spirits%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-skyloungeamste",
+     "type": "soiree",
+     "tier": 3,
+     "name": "SkyLounge Amsterdam",
+     "desc": "Rooftop au 11e étage du DoubleTree, vue à 360° sur la ville et le port.",
+     "address": "Oosterdoksstraat 4, 1011 DK Amsterdam",
+     "url": "https://www.google.com/search?q=SkyLounge%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-shelter",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Shelter",
+     "desc": "Club techno au sous-sol de la tour A'DAM, ouvert jusqu'au matin.",
+     "address": "Overhoeksplein 3, 1031 KS Amsterdam",
+     "url": "https://www.google.com/search?q=Shelter%20Amsterdam%20club",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-melkweg",
+     "type": "soiree",
+     "tier": 2,
+     "name": "Melkweg",
+     "desc": "Ancienne laiterie devenue salle de concert et club, soirées le week-end.",
+     "address": "Lijnbaansgracht 234a, 1017 PH Amsterdam",
+     "url": "https://www.google.com/search?q=Melkweg%20Amsterdam",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
+    },
+    {
+     "id": "ams-artiszooroyal",
+     "type": "activite",
+     "tier": 2,
+     "name": "Artis – zoo royal",
+     "desc": "Le plus vieux zoo des Pays-Bas, en plein centre : éléphants, flamants roses, aquarium et planétarium. ≈ 30 €/pers.",
+     "address": "Plantage Kerklaan 38-40, 1018 CZ Amsterdam",
+     "url": "https://www.artis.nl",
+     "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg/960px-Water_reflection_of_canal_houses_at_blue_hour_in_Damrak_Amsterdam_the_Netherlands.jpg",
+     "credit": "Photo Wikimedia Commons · Damrak, CC BY-SA 4.0"
     }
    ]
   }
