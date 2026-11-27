@@ -56,15 +56,19 @@ img{max-width:100%;display:block}
 .chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:6px 12px;font-size:14px;cursor:pointer;white-space:nowrap}
 .chip.on{background:var(--rose);border-color:var(--rose);color:#fff}
 .row+.row{margin-top:6px}
-.cats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 4px}
-.cat{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 8px 12px;border:2px solid var(--line);border-radius:16px;background:#fff;color:var(--ink);cursor:pointer;touch-action:manipulation;font:inherit;min-width:0}
-.cat .em{font-size:30px;line-height:1.1}
-.cat b{font-size:15px;text-align:center}
-.cat small{font-size:12px;color:var(--muted)}
-.cat .box{position:absolute;top:8px;left:8px;width:22px;height:22px;border:2px solid var(--line);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#fff;background:#fff}
-.cat.on{border-color:var(--rose);background:#fff0f5}
-.cat.on .box{background:var(--rose);border-color:var(--rose)}
-.cat.on small{color:var(--rose)}
+.folders{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 8px}
+.folder{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:128px;padding:22px 8px 14px;margin-top:12px;border:0;border-radius:4px 16px 16px 16px;background:linear-gradient(160deg,#ffd9e6,#ffb3cc);color:var(--ink);cursor:pointer;touch-action:manipulation;font:inherit;min-width:0;box-shadow:0 4px 12px rgba(194,24,91,.18)}
+.folder::before{content:"";position:absolute;top:-12px;left:0;width:46%;height:16px;border-radius:10px 12px 0 0;background:#ffc6d9}
+.folder .em{font-size:38px;line-height:1.1}
+.folder b{font-size:17px;text-align:center}
+.folder small{font-size:13px;color:#8a2a4d;font-weight:600}
+.folder .open{position:absolute;right:10px;bottom:8px;font-size:18px;color:var(--rose)}
+.folder:active{transform:scale(.97)}
+.fhead{display:flex;align-items:center;gap:10px;margin:16px 0 6px}
+.fhead .em{font-size:34px}
+.fhead h2{margin:0}
+.fnav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:4px 0 8px}
+.fnav::-webkit-scrollbar{display:none}
 .lbl{flex:0 0 auto;font-size:12px;color:var(--muted);align-self:center;padding-right:2px}
 
 /* sections */
@@ -253,7 +257,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
       <button class="tab" data-nav="#classement">🏆 Classement</button>
     </div>
     <div id="cityBar" class="hidden">
-      <div class="row" style="margin-top:6px"><button class="back" data-nav="#villes">‹ Toutes les villes</button></div>
+      <div class="row" style="margin-top:6px" id="backRow"><button class="back" data-nav="#villes">‹ Toutes les villes</button></div>
       <div class="row" id="filters"></div>
     </div>
   </div>
@@ -324,7 +328,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="toast" id="toast"></div>
 
 <script src="config.js?v=3"></script>
-<script src="data/embedded_data.js?v=13"></script>
+<script src="data/embedded_data.js?v=14"></script>
 <script>
 (function(){
 "use strict";
@@ -339,7 +343,7 @@ const LS = {
 };
 const state = {
   me: LS.get("me", ""), date: LS.get("date", "we1"), nights: 2,
-  tier: "all", type: "all", cats: new Set(), catCity: null,
+  tier: "all", type: "all", folder: null,
   likes: LS.get("likes", {}), ratings: LS.get("ratings", {}), photos: {}, comments: LS.get("comments", {}), openCm: new Set(), drafts: {}
 };
 const keyOf = n => n.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"") || "invite";
@@ -456,13 +460,13 @@ function floaties(){
 /* ---------- vues ---------- */
 function route(){
   const h = location.hash || "#villes";
-  const m = h.match(/^#ville\/([a-z]+)/);
+  const m = h.match(/^#ville\/([a-z]+)(?:\/([a-z]+))?/);
   const view = m ? "ville" : (["#photos","#classement"].includes(h) ? h.slice(1) : "villes");
   ["villes","ville","photos","classement"].forEach(v => $("#v-" + v).classList.toggle("hidden", v !== view));
   document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.nav === "#" + view || (view === "ville" && t.dataset.nav === "#villes")));
   $("#tabs").classList.toggle("hidden", view === "ville");
   $("#cityBar").classList.toggle("hidden", view !== "ville");
-  state.city = m ? m[1] : null;
+  state.city = m ? m[1] : null; state.folder = m && m[2] && D.types[m[2]] ? m[2] : null;
   if(view === "photos") renderPhotos();
   refresh();
 }
@@ -518,34 +522,43 @@ function renderCity(){
   const c = state.city && cityById(state.city);
   if(!c){ $("#v-ville").innerHTML = ""; return; }
   const s = cityStats(c.id);
-  if(state.catCity !== c.id){ state.catCity = c.id; state.cats = new Set(); }
   const items = c.items.filter(i => state.tier==="all" || String(i.tier)===state.tier);
-  const tiles = `<h3 class="cathead">👇 Coche ce que tu veux voir</h3><div class="cats">${Object.entries(D.types).map(([k,t]) => {
-    const n = items.filter(i => i.type === k).length, on = state.cats.has(k);
-    return `<button class="cat ${on?"on":""}" data-cat="${k}" aria-pressed="${on}"><span class="box">${on?"✓":""}</span><span class="em">${t.emoji}</span><b>${esc(t.label)}</b><small>${n} proposition${n>1?"s":""}</small></button>`;
+  const short = esc(c.name.split(" ")[0]);
+  const f = state.folder;
+  $("#backRow").innerHTML = f
+    ? `<button class="back" data-nav="#ville/${c.id}">‹ Les 4 dossiers de ${short}</button>`
+    : `<button class="back" data-nav="#villes">‹ Toutes les villes</button>`;
+  if(f){
+    const t = D.types[f], list = items.filter(i => i.type === f);
+    const extra = f === "logement" ? `<div class="search">${searchLinks(c).map(([n,u]) => `<a class="btn" target="_blank" rel="noopener" href="${u}">🔎 ${n} · 7 pers.</a>`).join("")}</div>` : "";
+    $("#v-ville").innerHTML = `
+      <div class="fhead"><span class="em">📂</span><div><h2>${t.emoji} ${esc(t.label)}</h2><div class="muted">${c.emoji} ${esc(c.name)} · ${list.length} proposition${list.length>1?"s":""}</div></div></div>
+      <div class="fnav">${Object.entries(D.types).map(([k,x]) => `<button class="chip ${k===f?"on":""}" data-nav="#ville/${c.id}/${k}">${x.emoji} ${esc(x.label)}</button>`).join("")}</div>
+      ${extra}
+      ${list.length ? `<div class="grid">${list.map(card).join("")}</div>` : '<p class="empty">Rien à ce prix-là : change le filtre de prix.</p>'}
+      <p style="text-align:center;margin:22px 0"><button class="back" data-nav="#ville/${c.id}">‹ Revenir aux 4 dossiers</button></p>`;
+    return;
+  }
+  const folders = `<h3 class="cathead">📂 Ouvre un dossier</h3><div class="folders">${Object.entries(D.types).map(([k,t]) => {
+    const n = items.filter(i => i.type === k).length;
+    return `<button class="folder" data-nav="#ville/${c.id}/${k}"><span class="em">${t.emoji}</span><b>${esc(t.label)}</b><small>${n} proposition${n>1?"s":""}</small><span class="open">›</span></button>`;
   }).join("")}</div>`;
-  const groups = Object.keys(D.types).filter(tp => state.cats.has(tp)).map(tp => {
-    const list = items.filter(i => i.type === tp); if(!list.length) return `<h3>${D.types[tp].emoji} ${esc(D.types[tp].label)}</h3><p class="empty">Rien à ce prix-là : change le filtre de prix.</p>`;
-    const extra = tp === "logement" ? `<div class="search">${searchLinks(c).map(([n,u]) => `<a class="btn" target="_blank" rel="noopener" href="${u}">🔎 ${n} · 7 pers.</a>`).join("")}</div>` : "";
-    return `<h3 data-sec="${tp}" style="scroll-margin-top:120px">${D.types[tp].emoji} ${esc(D.types[tp].label)}</h3>${extra}<div class="grid">${list.map(card).join("")}</div>`;
-  }).join("");
   const dots = n => "●".repeat(n) + "○".repeat(5-n);
   const idx = D.cities.indexOf(c);
   $("#v-ville").innerHTML = `
-    <div class="cityheart">${heart(idx, 96, idx % 2 ? 9 : -9, (idx*.3).toFixed(1), false)}</div>
     <div class="cityhead" style="margin-top:14px">
       <img referrerpolicy="no-referrer" src="${esc(c.photo)}" alt="${esc(c.name)}" onerror="this.style.display='none'">
       <div class="shade"></div><span class="credit">${esc(c.credit)}</span>
       <div class="txt"><h2>${c.emoji} ${esc(c.name)}</h2><div>${esc(c.trip)}</div></div>
     </div>
+    ${folders}
     <div class="cityrate"><div class="rate" style="font-size:15px">Ta note ${starsHtml(c.id, s.mine)}</div>
       <div class="avg" style="margin-top:4px">Moyenne du groupe : ${avgTxt(s)}</div>
       ${s.names.length ? `<div class="raters">${esc(s.names.join(" · "))}</div>` : ""}</div>
+    <div class="cityheart">${heart(idx, 96, idx % 2 ? 9 : -9, (idx*.3).toFixed(1), false)}</div>
     <p>${esc(c.vibe)}</p>
     ${c.joke ? `<div class="joke">😏 ${esc(c.joke)}</div>` : ""}
-    <div class="meta"><span>Spa <span class="score">${dots(c.scores.spa)}</span></span><span>Soirée <span class="score">${dots(c.scores.soiree)}</span></span><span>Petit budget <span class="score">${dots(c.scores.budget)}</span></span></div>
-    ${tiles}
-    ${groups || '<p class="empty">Touche une ou plusieurs cases pour afficher les propositions 💖</p>'}`;
+    <div class="meta"><span>Spa <span class="score">${dots(c.scores.spa)}</span></span><span>Soirée <span class="score">${dots(c.scores.soiree)}</span></span><span>Petit budget <span class="score">${dots(c.scores.budget)}</span></span></div>`;
 }
 function cmList(id){ return Object.entries(state.comments[id] || {}).map(([k, v]) => v).filter(v => v && v.text).sort((a,b) => a.at - b.at); }
 function renderComments(){
@@ -669,8 +682,6 @@ document.addEventListener("click", e => {
   if(b.dataset.pid){ const src = photoCache[b.dataset.pid]; if(src){ $("#lbImg").src = src; $("#lbCap").textContent = "par " + b.dataset.by; $("#lb").classList.add("open"); } return; }
   if(b.dataset.date){ state.date = b.dataset.date; LS.set("date", state.date); renderCity(); renderLikes(); return; }
   if(b.dataset.tier){ state.tier = b.dataset.tier; renderCity(); renderLikes(); return; }
-  if(b.dataset.cat){ const k = b.dataset.cat, add = !state.cats.has(k); add ? state.cats.add(k) : state.cats.delete(k); renderCity(); renderLikes();
-    if(add){ const h = [...document.querySelectorAll("#v-ville h3")].find(x => x.dataset.sec === k); if(h) h.scrollIntoView({behavior:"smooth", block:"start"}); } return; }
   if(b.dataset.type){ state.type = b.dataset.type; renderCity(); renderLikes(); return; }
 });
 window.addEventListener("hashchange", () => { route(); const c = $("#controls"); window.scrollTo({top: c.offsetTop - 2}); });
