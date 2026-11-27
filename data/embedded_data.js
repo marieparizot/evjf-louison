@@ -61,27 +61,19 @@ window.EVJF_DATA = {
  },
  "types": {
   "logement": {
-   "label": "Logements",
+   "label": "Logement",
    "emoji": "🏡"
   },
-  "spa": {
-   "label": "Spa de la journée",
-   "emoji": "🧖‍♀️"
-  },
-  "fun": {
-   "label": "Activités marrantes",
+  "activite": {
+   "label": "Activités",
    "emoji": "🎉"
   },
-  "activite": {
-   "label": "Visite",
-   "emoji": "🥂"
-  },
-  "chef": {
-   "label": "Chef à domicile",
-   "emoji": "👩‍🍳"
+  "restauration": {
+   "label": "Restauration",
+   "emoji": "🍽️"
   },
   "soiree": {
-   "label": "Sortir le soir",
+   "label": "Bars et boîtes",
    "emoji": "🪩"
   }
  },
@@ -151,7 +143,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "deau-cures",
-     "type": "spa",
+     "type": "activite",
      "tier": 2,
      "name": "Les Cures Marines – Trouville (MGallery 5★)",
      "desc": "Thalasso face à la mer : piscine d'eau de mer intérieure, bain bouillonnant, hammam, sauna. Formules demi-journée spa + déjeuner (aussi sur Staycation).",
@@ -163,7 +155,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "deau-guerlain",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "Spa Guerlain – Hôtel Barrière Le Normandy",
      "desc": "Le spa du mythique Normandy (piscine, sauna, hammam, soins Guerlain), ouvert aux personnes extérieures à l'hôtel.",
@@ -174,7 +166,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "deau-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Deauville (Take a Chef)",
      "desc": "Une quarantaine de chefs sur Deauville-Trouville ; menus réservés en moyenne ≈ 83 €/pers. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -208,7 +200,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "deau-cheval",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Balade à cheval spéciale EVJF",
      "desc": "Randonnée « spéciale EVG/EVJF » d'1 h avec une monitrice diplômée d'État, à 15 min de Deauville. 75 €/pers., par groupes de 4 cavaliers (on fait 2 tours).",
@@ -219,7 +211,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "deau-zodiac",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Balade en zodiac depuis le port de Deauville",
      "desc": "Sortie en mer rapide avec pilote, par groupes de 4 à 8 : on tient tous dans un bateau. Proposée d'avril à août, sur réservation. Prévoir un K-way, le brushing ne survivra pas.",
@@ -241,7 +233,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "deau-montgolfiere",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Vol en montgolfière au-dessus du Pays d'Auge",
      "desc": "Lever ou coucher de soleil en ballon : 45 min à 1 h de vol (2 h en tout), dès ≈ 130 €/pers. Réserver plusieurs semaines avant, et accepter que la météo décide. Photo de groupe dans la nacelle obligatoire.",
@@ -295,7 +287,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lille-labna",
-     "type": "spa",
+     "type": "activite",
      "tier": 2,
      "name": "Labna Spa",
      "desc": "Hammam oriental dans une cave voûtée du XVIIIe siècle, en plein Vieux-Lille. Sauna, hammam et jacuzzi privatisables pour un groupe.",
@@ -306,7 +298,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lille-hermitage",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "Spa by Hermitage Gantois",
      "desc": "Spa de l'hôtel 5★ (ancien hospice du XVe) : piscine chauffée, hammam, soins haut de gamme. Entre Grand'Place et Hôtel de Ville.",
@@ -318,7 +310,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lille-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Lille (Take a Chef)",
      "desc": "Nombreux chefs sur la métropole lilloise, ils se déplacent aussi dans les gîtes de la campagne. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -351,7 +343,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lille-karafun",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "KaraFun Lille – karaoké en salle privée",
      "desc": "Salles de karaoké et de quiz privatisées, rien que pour nous. Personne ne saura qui a chanté du Lara Fabian. Sauf tout le monde.",
@@ -362,7 +354,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lille-gin",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Atelier cocktails dans une distillerie de gin",
      "desc": "2 h dans une distillerie lilloise, salle de dégustation privatisée rien que pour nous : on crée et on boit nos cocktails. Dès ≈ 60 €/pers.",
@@ -373,7 +365,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lille-ceramique",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Atelier céramique privatisé",
      "desc": "Atelier de modelage rien que pour le groupe : chacun repart avec sa création. Défi : fabriquer la tasse officielle de Louise, version « petit-déj du lendemain ».",
@@ -384,7 +376,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lille-tablestoques",
-     "type": "fun",
+     "type": "restauration",
      "tier": 3,
      "name": "Croisière gastronomique sur la Deûle",
      "desc": "Déjeuner de chef à bord de la péniche L'Eldorado (Lille Tables & Toques), en glissant sur la Deûle. Dès ≈ 130 €/pers., sur réservation (calendrier 2027 à vérifier).",
@@ -425,7 +417,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bxl-thehotel",
-     "type": "spa",
+     "type": "activite",
      "tier": 2,
      "name": "The Hotel Brussels – spa panoramique",
      "desc": "Spa au 23e étage avec vue sur tout Bruxelles ; formules journée spa + sauna guidé (aussi sur Staycation).",
@@ -437,7 +429,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bxl-aspria",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "Aspria Royal La Rasante (David Lloyd)",
      "desc": "Grand club bien-être : piscines, saunas, hammam. Les soins du spa sont ouverts aux non-membres.",
@@ -448,7 +440,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bxl-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Bruxelles (Take a Chef)",
      "desc": "Take a Chef fonctionne aussi en Belgique. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -470,7 +462,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bxl-gerbaud",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Chocolaterie Laurent Gerbaud",
      "desc": "Atelier vitré où l'on voit fabriquer les chocolats, puis salon de dégustation près du Mont des Arts. Pour se donner bonne conscience avant les bières.",
@@ -481,7 +473,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bxl-bbp",
-     "type": "fun",
+     "type": "soiree",
      "tier": 2,
      "name": "Brussels Beer Project – taproom Dansaert",
      "desc": "Brasserie artisanale culte : dégustation des bières maison en plein centre. Plus classe que le Delirium, on peut le dire à nos parents.",
@@ -492,7 +484,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bxl-chocostory",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Atelier chocolat au Choco-Story",
      "desc": "1 h à fabriquer ses propres pralines avec un maître chocolatier, musée compris, à deux pas du Manneken-Pis. ≈ 45 €/pers. Pour un groupe, réserver directement auprès du musée.",
@@ -544,7 +536,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bdx-caudalie",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "Les Sources de Caudalie – Spa Vinothérapie",
      "desc": "Le spa mythique au milieu des vignes de Smith Haut Lafitte. Rituels demi-journée 290 à 455 € (brochure 2025) ; le week-end, minimum 3 soins réservés.",
@@ -556,7 +548,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bdx-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Bordeaux (Take a Chef)",
      "desc": "Beaucoup de chefs sur Bordeaux et les vignobles ; on peut demander un accord mets-vins. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -579,7 +571,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bdx-creevin",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Atelier « Créez votre propre vin »",
      "desc": "On assemble sa propre cuvée avec un œnologue, puis visite du Musée du Vin et du Négoce. 75 €/pers., privatisable. Nom de la cuvée suggéré : « Château Louison 2027 ».",
@@ -612,7 +604,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bdx-smith",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Château Smith Haut Lafitte – visite et dégustation",
      "desc": "Grand cru classé de Pessac-Léognan, juste à côté des villas de Martillac (et des Sources de Caudalie). Visite des chais et dégustation, formules plus poussées sur réservation. Le luxe, mais avec un verre à la main.",
@@ -666,7 +658,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lyon-canuts",
-     "type": "spa",
+     "type": "activite",
      "tier": 2,
      "name": "Spa des Canuts",
      "desc": "Hammam traditionnel et soins à la Croix-Rousse, séances de 2 h, formules groupes.",
@@ -678,7 +670,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lyon-carlton",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "Spa du Carlton Lyon (MGallery)",
      "desc": "Spa chic de l'hôtel Carlton, près de Bellecour : hammam sur demande, soins. Accès avec un soin réservé.",
@@ -690,7 +682,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lyon-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Lyon (Take a Chef)",
      "desc": "Le plus grand choix de chefs hors Paris, cuisine lyonnaise ou gastronomique. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -712,7 +704,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lyon-karaoke",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Karaoké Box Guillotière",
      "desc": "Box de karaoké privée pour 7 à 18 personnes, 2 h de micro. Noté 4,8/5. Le chef à domicile n'est pas invité à chanter.",
@@ -723,7 +715,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lyon-quizroom",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Quiz Room – plateau télé",
      "desc": "Jeu télé grandeur nature avec de vrais buzzers. Dès 50 €/pers. Idéal pour savoir enfin qui connaît le mieux Louise.",
@@ -734,7 +726,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lyon-halles",
-     "type": "activite",
+     "type": "restauration",
      "tier": 2,
      "name": "Halles Paul Bocuse – huîtres et vin blanc",
      "desc": "Le rituel lyonnais du samedi matin : huîtres, charcuterie et petit blanc au comptoir des Halles. Parfait pour soigner la veille.",
@@ -745,7 +737,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lyon-apero-bateau",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Croisière apéro sur la Saône",
      "desc": "Apéritif à bord en glissant sous les ponts de Lyon, dès ≈ 38 €/pers. Bateau partagé avec d'autres passagers : on les convertira à la cause de Louise.",
@@ -756,7 +748,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "lyon-bateau-prive",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Bateau privé avec skipper (2 h)",
      "desc": "Rien que nous sur le bateau, avec skipper, pour 2 h sur la Saône et le Rhône. Réservation par l'office de tourisme. On apporte le champagne, il apporte le gilet de sauvetage.",
@@ -798,7 +790,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ldn-aire",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "AIRE Ancient Baths London",
      "desc": "Bains thermaux à la romaine dans un bâtiment historique de Covent Garden : bassins chaud, froid, salé, à la lueur des bougies. Massages possibles.",
@@ -809,7 +801,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ldn-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Londres (Take a Chef)",
      "desc": "Take a Chef fonctionne aussi ici : on décrit la soirée, plusieurs chefs proposent un menu. Prix souvent un peu plus doux qu'en France. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -820,7 +812,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ldn-swingers",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Swingers – crazy golf & cocktails",
      "desc": "Mini-golf déjanté, fête foraine, street food et cocktails, à deux pas d'Oxford Circus. Privatisation possible. Le perdant porte le voile de mariée toute la soirée.",
@@ -831,7 +823,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ldn-luckyvoice",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Lucky Voice Soho – karaoké privé",
      "desc": "Box de karaoké insonorisée rien que pour nous (2 à 15 pers.), dès ≈ 8 £/pers./heure, 2 h minimum. Attention : réservé aux plus de 21 ans.",
@@ -853,7 +845,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ldn-flightclub",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Flight Club – fléchettes connectées",
      "desc": "Fléchettes nouvelle génération avec jeux sur écran, cocktails et pizzas, dès ≈ 10 £/pers. Accessible à toutes les maladresses.",
@@ -864,7 +856,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ldn-teabus",
-     "type": "fun",
+     "type": "restauration",
      "tier": 2,
      "name": "Afternoon tea dans un bus à impériale",
      "desc": "1 h 30 de tour de Londres dans un vieux Routemaster rouge, scones et petits gâteaux servis à bord. ≈ 70 £/pers. Le thé tangue un peu, c'est le jeu.",
@@ -875,7 +867,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ldn-sketch",
-     "type": "fun",
+     "type": "restauration",
      "tier": 3,
      "name": "Afternoon tea au sketch (la salle rose)",
      "desc": "Le tea time le plus instagrammé de Londres, dans une salle entièrement rose à Mayfair. Réserver tôt. Les toilettes en forme d'œufs valent à elles seules le voyage.",
@@ -916,7 +908,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mrs-clarins",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "Spa Clarins – InterContinental Hôtel-Dieu",
      "desc": "Le spa du palace installé dans l'ancien Hôtel-Dieu, au-dessus du Vieux-Port : soins Clarins, piscine intérieure, sauna.",
@@ -928,7 +920,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mrs-calanques",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Bateau privatisé dans les Calanques",
      "desc": "Semi-rigide rien que pour nous (11 places), skipper et carburant inclus, départ du Vieux-Port. ≈ 580 € la matinée pour le groupe (tarif 2024, à vérifier). Cheveux au vent garantis, brushing non.",
@@ -939,7 +931,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mrs-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Marseille (Take a Chef)",
      "desc": "Plein de chefs à Marseille et autour : on peut demander une bouillabaisse revisitée. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -962,7 +954,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mrs-petanque",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Pétanque et pastis au Panier",
      "desc": "2 h de pétanque avec un Marseillais pur jus, puis apéro pastis, rosé et amuse-bouches, pour un groupe de 1 à 8. Louise tire, on pointe, et on conteste chaque mesure.",
@@ -984,7 +976,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mrs-catamaran",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Catamaran privatisé sur la Côte Bleue",
      "desc": "Une après-midi en catamaran rien que pour nous, calanques de la Côte Bleue et baignade si on est courageux. ≈ 825 € le bateau pour 1 à 7 personnes, soit ≈ 120 €/pers.",
@@ -1025,7 +1017,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bcn-aire",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "AIRE Ancient Baths",
      "desc": "Bains thermaux à la romaine dans une ancienne bâtisse du Born : bassins chaud, froid, salé, à la lueur des bougies. Massages possibles.",
@@ -1036,7 +1028,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bcn-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Barcelone (Take a Chef)",
      "desc": "Take a Chef fonctionne aussi ici : on décrit la soirée, plusieurs chefs proposent un menu. Prix souvent un peu plus doux qu'en France. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -1047,7 +1039,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bcn-cata",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Catamaran privé au coucher du soleil",
      "desc": "2 h en mer rien que pour nous, skipper inclus, départ du Port Olímpic environ 2 h avant le coucher du soleil. Cava, musique, et photos de groupe qui feront des jalouses.",
@@ -1069,7 +1061,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bcn-cordobes",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Flamenco au Tablao Cordobés",
      "desc": "L'un des tablaos les plus réputés d'Espagne, sur La Rambla. Spectacle + boisson dès ≈ 48 €, formules avec dîner. Prix variables selon l'heure : réserver tôt.",
@@ -1080,7 +1072,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bcn-paella",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Cours de paella (Cook & Taste)",
      "desc": "On cuisine paella, tapas et crème catalane, puis on mange tout ce qu'on a raté. Possible en groupe privé. Sangria non négociable.",
@@ -1132,7 +1124,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mad-hammam",
-     "type": "spa",
+     "type": "activite",
      "tier": 2,
      "name": "Hammam Al Ándalus",
      "desc": "Bains arabes à la lumière tamisée : bassins chaud, tiède, froid, hammam et massages, à deux pas de la Puerta del Sol.",
@@ -1143,7 +1135,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mad-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Madrid (Take a Chef)",
      "desc": "Take a Chef fonctionne aussi ici : on décrit la soirée, plusieurs chefs proposent un menu. Prix souvent un peu plus doux qu'en France. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -1154,7 +1146,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mad-corral",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Flamenco au Corral de la Morería",
      "desc": "Le tablao flamenco le plus célèbre du monde (depuis 1956). Spectacle avec dîner ou boisson. Défi : Louise doit apprendre un pas avant la fin du week-end.",
@@ -1176,7 +1168,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mad-cooking",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Cours de paella et tapas (Cooking Point)",
      "desc": "4 h de cuisine : marché, paella, tapas et sangria, puis repas tous ensemble. ≈ 70 à 90 €/pers.",
@@ -1198,7 +1190,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "mad-toledo",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Journée à Tolède avec chauffeur privé",
      "desc": "Minivan privé avec chauffeur, aller-retour Madrid-Tolède (1 h de route) : ruelles médiévales, vue sur le Tage, massepain. Dès ≈ 120 €/pers., entrées en plus.",
@@ -1239,7 +1231,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bud-szechenyi",
-     "type": "spa",
+     "type": "activite",
      "tier": 2,
      "name": "Bains Széchenyi",
      "desc": "Les bains thermaux mythiques : 18 bassins dont des extérieurs à 38 °C, saunas, massages. Une journée entière pour quelques dizaines d'euros.",
@@ -1250,7 +1242,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bud-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Budapest (Take a Chef)",
      "desc": "Take a Chef fonctionne aussi ici : on décrit la soirée, plusieurs chefs proposent un menu. Prix souvent un peu plus doux qu'en France. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -1261,7 +1253,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bud-sparty",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Sparty – la fête dans les bains Széchenyi",
      "desc": "Le samedi soir : DJ, lasers et danseurs dans les bassins à 34-38 °C. Dès ≈ 30 €/pers. Le spa et la soirée en un seul ticket. Réservé aux majeurs.",
@@ -1283,7 +1275,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bud-croisiere",
-     "type": "fun",
+     "type": "restauration",
      "tier": 2,
      "name": "Croisière-dîner sur le Danube",
      "desc": "Dîner sur le bateau devant le Parlement illuminé, souvent avec musique. ≈ 30 à 110 €/pers. selon la formule : comparatif des compagnies sur le lien.",
@@ -1294,7 +1286,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bud-rudas",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Bain de nuit aux bains Rudas",
      "desc": "Bains turcs du XVIe siècle au pied du mont Gellért. Le vendredi et le samedi, ouverts tard dans la nuit (≈ 12 600 HUF, soit ≈ 32 €, en ligne). Le rooftop avec vue sur le Danube demande le forfait Wellness.",
@@ -1305,7 +1297,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "bud-yacht",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Bateau privé sur le Danube",
      "desc": "Une heure rien que pour nous sur le Danube (jusqu'à 10 pers.), départ quand on veut. On ajoute le champagne et on passe devant le Parlement illuminé en reines du fleuve.",
@@ -1346,7 +1338,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "rom-acqua",
-     "type": "spa",
+     "type": "activite",
      "tier": 3,
      "name": "AcquaMadre Hammam",
      "desc": "Hammam élégant dans le Ghetto, près de Piazza Argentina : bains chaud, tiède, froid, gommage. Réservation nécessaire.",
@@ -1357,7 +1349,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "rom-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Rome (Take a Chef)",
      "desc": "Take a Chef fonctionne aussi ici : on décrit la soirée, plusieurs chefs proposent un menu. Prix souvent un peu plus doux qu'en France. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -1368,7 +1360,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "rom-pasta",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Cours de pâtes fraîches à la maison",
      "desc": "On demande au chef à domicile de commencer par un cours de pâtes : chacun fait ses tagliatelles, puis on les mange. Celui qui rate ses pâtes paie le limoncello.",
@@ -1391,7 +1383,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "rom-vespa",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Tour de Rome en Vespa avec chauffeur",
      "desc": "Chacun derrière son pilote, cheveux au vent, du Colisée à Trastevere : 3 h en mode « Vacances romaines ». ≈ 150 à 200 €/pers. selon la formule.",
@@ -1443,7 +1435,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ams-zuiver",
-     "type": "spa",
+     "type": "activite",
      "tier": 2,
      "name": "Spa Zuiver",
      "desc": "Grand spa dans les bois d'Amsterdam : 8 saunas, bains, salles de repos et piscine de 40 m en partie couverte.",
@@ -1455,7 +1447,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ams-chef",
-     "type": "chef",
+     "type": "restauration",
      "tier": 2,
      "name": "Chef à domicile à Amsterdam (Take a Chef)",
      "desc": "Take a Chef fonctionne aussi ici : on décrit la soirée, plusieurs chefs proposent un menu. Prix souvent un peu plus doux qu'en France. Take a Chef : chefs notés, menu sur devis gratuit. Indicatif 2026 pour 7 à 12 convives : ≈ 55 à 130 €/pers selon le menu (courses et service compris, boissons en plus).",
@@ -1466,7 +1458,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ams-heineken",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Heineken Experience",
      "desc": "Visite interactive de l'ancienne brasserie, avec dégustation et rooftop en option. Espaces privatisables pour les groupes. Pédagogique, on vous jure.",
@@ -1477,7 +1469,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ams-bateau",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "Bateau privé sur les canaux",
      "desc": "Petit bateau privatisé pour 7 avec skipper, boissons à bord, 1 à 2 h sur les canaux. Plusieurs compagnies partent du centre : comparer sur le site officiel de la ville.",
@@ -1510,7 +1502,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ams-lookout",
-     "type": "fun",
+     "type": "activite",
      "tier": 2,
      "name": "A'DAM Lookout – la balançoire au-dessus du vide",
      "desc": "Tour panoramique face à la gare centrale, avec une balançoire au bord du toit, à 100 m de haut. Hurler est autorisé, et même conseillé.",
@@ -1521,7 +1513,7 @@ window.EVJF_DATA = {
     },
     {
      "id": "ams-champagne",
-     "type": "fun",
+     "type": "activite",
      "tier": 3,
      "name": "Croisière privée au champagne",
      "desc": "1 h 30 sur un bateau-salon ancien rien que pour nous (Rederij De Jordaan), champagne à bord, au fil des canaux classés. ≈ 145 €/pers.",

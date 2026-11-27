@@ -809,6 +809,25 @@ for c in DATA["cities"]:
         it.setdefault("photo", c["photo"]); it.setdefault("credit", c["credit"])
         c["items"].append(it)
 
+# --- 4 catégories par ville (demande de Marie, 27/11/2026) : spas et dégustations -> Activités
+DATA["types"] = {
+    "logement": {"label": "Logement", "emoji": "🏡"},
+    "activite": {"label": "Activités", "emoji": "🎉"},
+    "restauration": {"label": "Restauration", "emoji": "🍽️"},
+    "soiree": {"label": "Bars et boîtes", "emoji": "🪩"},
+}
+RESTO = {"ldn-sketch", "ldn-bus", "bud-dinner", "lille-tablestoques", "lyon-halles"}
+for c in DATA["cities"]:
+    for it in c["items"]:
+        n = it["name"].lower()
+        if it["type"] == "chef" or it["id"] in RESTO or "afternoon tea" in n or "croisière-dîner" in n \
+           or "gastronomique" in n or "halles paul bocuse" in n:
+            it["type"] = "restauration"
+        elif "taproom" in n:
+            it["type"] = "soiree"
+        elif it["type"] in ("spa", "fun", "activite"):
+            it["type"] = "activite"
+
 root = pathlib.Path(__file__).resolve().parent.parent
 (root / "data").mkdir(exist_ok=True)
 # Photos de Louise : toutes les images déposées dans assets/louise/
