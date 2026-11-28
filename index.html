@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Louison la reine et ses 6 gueux 👑</title>
-<meta name="description" content="12 villes : logements, activités, restaurants, bars et boîtes — à noter et à liker !">
+<meta name="description" content="18 villes : logements, activités, restaurants, bars et boîtes — à noter et à liker !">
 <meta property="og:title" content="Louison la reine et ses 6 gueux 👑">
-<meta property="og:description" content="11 villes en train ou en avion : note-les, like tes coups de cœur et balance tes photos dossiers.">
+<meta property="og:description" content="18 villes, à la mer, en train ou en avion : note-les, like tes coups de cœur et balance tes photos dossiers.">
 <meta property="og:image" content="https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Deauville-planches.jpg/960px-Deauville-planches.jpg">
 <meta name="theme-color" content="#c2185b">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -268,7 +268,9 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
   <section id="v-villes">
     <h2>🏙️ Choisis ta ville</h2>
     <p class="muted">Note chaque ville de 1 à 5 étoiles, puis touche-la pour découvrir les logements, spas, activités marrantes et soirées.</p>
-    <p class="sect">🚄 En train</p>
+    <p class="sect">🌊 Au bord de la mer en France</p>
+    <div class="cgrid" id="gMer"></div>
+    <p class="sect" style="margin-top:22px">🚄 Villes en train</p>
     <div class="cgrid" id="gTrain"></div>
     <p class="sect" style="margin-top:22px">✈️ En avion (week-end de reine)</p>
     <div class="cgrid" id="gAvion"></div>
@@ -328,7 +330,7 @@ body{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.or
 <div class="toast" id="toast"></div>
 
 <script src="config.js?v=3"></script>
-<script src="data/embedded_data.js?v=14"></script>
+<script src="data/embedded_data.js?v=15"></script>
 <script>
 (function(){
 "use strict";
@@ -486,7 +488,8 @@ function cityCard(c){
     </div></article>`;
 }
 function renderHome(){
-  $("#gTrain").innerHTML = D.cities.filter(c => c.mode !== "avion").map(cityCard).join("");
+  $("#gMer").innerHTML = D.cities.filter(c => c.sea).map(cityCard).join("");
+  $("#gTrain").innerHTML = D.cities.filter(c => c.mode !== "avion" && !c.sea).map(cityCard).join("");
   $("#gAvion").innerHTML = D.cities.filter(c => c.mode === "avion").map(cityCard).join("");
 }
 function card(it){
@@ -495,7 +498,7 @@ function card(it){
     <div class="ph"><img loading="lazy" referrerpolicy="no-referrer" alt="${esc(it.name)}" src="${esc(it.photo)}" onerror="this.style.display='none'">
       <span class="tier ${it.tier===3?"t3":""}">${esc(t.label)}</span>${it.credit ? `<span class="credit">${esc(it.credit)}</span>` : ""}</div>
     <div class="body">
-      <h4>${esc(it.name)}</h4>
+      ${it.house ? '<span class="tjoke">🏠 Maison entière, rien que pour vous</span>' : ""}<h4>${esc(it.name)}</h4>
       ${t.joke ? `<span class="tjoke">${esc(t.label)} · ${esc(t.joke)}</span>` : ""}
       <p>${esc(it.desc)}</p>
       ${it.ref ? `<span class="ref">${esc(it.ref)}</span>` : ""}
@@ -529,7 +532,7 @@ function renderCity(){
     ? `<button class="back" data-nav="#ville/${c.id}">‹ Les 4 dossiers de ${short}</button>`
     : `<button class="back" data-nav="#villes">‹ Toutes les villes</button>`;
   if(f){
-    const t = D.types[f], list = items.filter(i => i.type === f);
+    const t = D.types[f], list = items.filter(i => i.type === f).sort((a, b) => (b.house ? 1 : 0) - (a.house ? 1 : 0));
     const extra = f === "logement" ? `<div class="search">${searchLinks(c).map(([n,u]) => `<a class="btn" target="_blank" rel="noopener" href="${u}">🔎 ${n} · 7 pers.</a>`).join("")}</div>` : "";
     $("#v-ville").innerHTML = `
       <div class="fhead"><span class="em">📂</span><div><h2>${t.emoji} ${esc(t.label)}</h2><div class="muted">${c.emoji} ${esc(c.name)} · ${list.length} proposition${list.length>1?"s":""}</div></div></div>
